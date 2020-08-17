@@ -1,0 +1,61 @@
+site_name: 实验物理的大数据方法 FAQ
+site_description: 'FAQ for Big Data in Experimental Physics'
+site_author: 'Teaching Team of Big Data in Experimental Physics'
+copyright: 'Copyright &copy; 2020 Teaching Team of Big Data in Experimental Physics, Tsinghua University. All Rights Reserved.'
+
+theme: 
+  name: 'material'
+  language: 'zh'
+  icon:
+    logo: material/router
+    repo: fontawesome/brands/github
+  features:
+    - tabs
+    - instant
+
+repo_name: 'physics-data/faq'
+repo_url: 'https://github.com/physics-data/faq'
+
+extra:
+  pagetime: 'on'
+
+nav:
+  - 常见问题:
+    - WSL 环境配置: wsl.md
+    - Git 使用与配置: git.md
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      fallback_to_build_date: true
+  - git-authors:
+      show_contribution: true
+      show_line_count: true
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+      linenums: true
+  - footnotes
+  - def_list
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
