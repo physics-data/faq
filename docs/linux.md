@@ -1,4 +1,6 @@
-# 配置 TUNA 镜像源
+## 配置 TUNA 镜像源
+
+### Debian
 
 对于 Debian，编辑 `/etc/apt/sources.list`：
 
@@ -11,4 +13,10 @@
 
 然后 `sudo apt update` ，如果没有失败，则配置成功。
 
-如果是 Ubuntu，则用类似的方法把 `archive.ubuntu.com` 替换为 `mirrors.tuna.tsinghua.edu.cn` 。
+### Ubuntu
+
+如果是 Ubuntu，则用类似于 Debian 的方法把 `archive.ubuntu.com` 替换为 `mirrors.tuna.tsinghua.edu.cn` ，然后 `sudo apt update` 即可。
+
+### macOS
+
+请参考 https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/
