@@ -17,3 +17,7 @@
 参考文档：https://docs.microsoft.com/en-us/windows/wsl/install-win10
 
 之后，你就可以到 Microsoft Store 中安装你喜欢的发行版（推荐使用 Debian 或者 Ubuntu，否则可能无法按照老师的教程操作）。
+
+## Terminal
+
+WSL 自带的终端比较难用，我们推荐从 Microsoft Store 安装 [Windows Terminal](https://www.microsoft.com/zh-cn/p/windows-terminal/9n0dx20hk701)。
