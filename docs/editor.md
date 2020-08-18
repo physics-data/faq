@@ -25,3 +25,29 @@ $ sudo nano /etc/apt/sources.list
 - ^\ (Ctrl-\)：进行替换
 
 在执行命令途中，下面的菜单可能会变化，则按照相应的按键执行相应的操作即可。细心的读者可能发现，`^` 在这里表示的就是 Ctrl 键。
+
+## Vim 安装与使用
+
+在 Debian/Ubuntu 中，可以安装 `vim` 软件包，或者安装 `vim-gtk3` 以获得更多功能。
+
+如果需要保存并退出，请按 `Esc :wq`，可将 `wq` 替换为 `q!`，此时不会保存文件。
+
+更详细的介绍，可见 OI Wiki 的 [Vim](https://oi-wiki.org/tools/editor/vim/) 页面。
+
+## VSCode 安装与使用
+
+我们推荐使用 Visual Studio 进行代码编写和工作。它具有大量的插件，也内建了 Git 的支持。
+
+### 环境准备
+
+如果你使用 macOS 或者 Linux，则无需特别配置。
+
+如果你使用 Windows，请参照 [官方教程](https://code.visualstudio.com/docs/remote/wsl-tutorial) 安装 WSL 支持。
+
+如果你在 Windows 上使用 Linux 虚拟机，请参照 [官方教程](https://code.visualstudio.com/docs/remote/ssh-tutorial) 安装 SSH 支持，并连接到你的虚拟机。
+
+### 插件安装
+
+请在从你的**工作环境**（如 WSL / Remote SSH）启动的 VSCode 中，安装 Python 插件。注意安装在 Windows 中的插件不起作用。
+
+然后，打开对应的文件夹，愉快地使用吧！
