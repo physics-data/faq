@@ -25,6 +25,7 @@ nav:
     - Linux 环境配置: linux.md
     - macOS 环境配置: mac.md
     - Git 使用与配置: git.md
+    - 编辑器使用与配置: editor.md
 
 plugins:
   - search
