@@ -28,6 +28,7 @@ nav:
     - 编辑器使用与配置: editor.md
     - 常用命令行工具: tools.md
     - Linux 下的路径: path.md
+    - 常见错误信息: error.md
 
 plugins:
   - search
