@@ -56,3 +56,11 @@ git version 2.x.x
 - 不可以。即使有可能，也非常不推荐。
 - 如果这样做，会给队友造成很多麻烦。
 - 可以加一个新的 commit，说明前一个 commit 哪里错了，是如何修改的。
+
+## Push 的适合出现 Permission denied 错误
+
+Push 的时候，显示 `ERROR: Permission to physics-data/xxx.git denied to xxx` 错误的适合，可能是以下这些情况：
+
+1. 可能是没有配置 SSH Key，请安装 SSH Key 的配置方法进行排查
+2. 可能是用错了仓库，一般来说，如果上面显示 `Permission to physics-data/tpl_xxx.git denied`，一般是你在 `git clone` 的时候目标是错误的，应该是 `git clone git@github.com:physics-data/xxx-xxx.git`，会出现你的 GitHub 用户名
+3. 可能是出现了拼写错误，请仔细和网页版比对
