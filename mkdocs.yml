@@ -29,6 +29,7 @@ nav:
     - 常用命令行工具: tools.md
     - Linux 下的路径: path.md
     - 常见错误信息: error.md
+    - GitHub Workflow 配置: workflow.md
 
 plugins:
   - search
