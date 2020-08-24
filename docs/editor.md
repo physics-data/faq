@@ -3,19 +3,19 @@
 如果是 Debian/Ubuntu 系的系统，可以安装：
 
 ```bash
-$ sudo apt install -y nano
+> sudo apt install -y nano
 ```
 
 如果要编辑文件，运行：
 
 ```bash
-$ nano file_to_edit
+> nano file_to_edit
 ```
 
 比如，如果要编辑 apt 的源，可以：
 
 ```bash
-$ sudo nano /etc/apt/sources.list
+> sudo nano /etc/apt/sources.list
 ```
 
 进入 nano 之后，在屏幕中部应该可以看到文件内容，下面看到若干快捷键的提示，常用的如下：
@@ -48,6 +48,6 @@ $ sudo nano /etc/apt/sources.list
 
 ### 插件安装
 
-请在从你的**工作环境**（如 WSL / Remote SSH）启动的 VSCode 中，安装 Python 插件。注意安装在 Windows 中的插件不起作用。
+请在从你的 **工作环境**（如 WSL / Remote SSH）启动的 VSCode 中，安装 Python 插件。注意安装在 Windows 中的插件不起作用。
 
 然后，打开对应的文件夹，愉快地使用吧！

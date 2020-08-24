@@ -2,7 +2,7 @@
 
 例子：
 
-```
+```bash
 $ git clone git@github.com:physics-data/xxx-xx.git
 fatal: destination path 'xxx-xx' already exists and is not an empty directory.
 ```
@@ -13,7 +13,8 @@ fatal: destination path 'xxx-xx' already exists and is not an empty directory.
 
 请生成 SSH Key（`ssh-keygen`，注意，只要 `~/.ssh/id_rsa` 文件存在就不用再次生成），然后把 `~/.ssh.id_rsa.pub` 的内容添加到 GitHub 的 SSH Keys 设置中。设置好以后，再 `ssh -T git@github.com` 进行测试，如果输出：
 
-```
+```bash
+$ ssh -T git@github.com
 Hi xxx! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 

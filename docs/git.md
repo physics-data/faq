@@ -3,14 +3,14 @@
 如果是 Debian/Ubuntu 系列的发行版：
 
 ```shell
-$ sudo apt update
-$ sudo apt install -y git
+> sudo apt update
+> sudo apt install -y git
 ```
 
 如果是 macOS：
 
 ```shell
-$ brew install git
+> brew install git
 ```
 
 也可以用 macOS 自带的 git 版本。
@@ -51,7 +51,7 @@ git version 2.x.x
 
 如果提示文件夹已存在，可能你已经克隆过了，直接 `cd 目录名` 就可以进入仓库的目录。
 
-## 可以修改 `git push` 之后的 commit 吗？
+## 可以修改 `git push` 之后的 commit 吗
 
 - 不可以。即使有可能，也非常不推荐。
 - 如果这样做，会给队友造成很多麻烦。
