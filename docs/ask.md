@@ -10,4 +10,4 @@
 6. 如果可以的话，尽量缩减代码，得到一个 MWE（最小错误样例），这样可以方便他人
 7. 向别人阐述你的问题，谈你都做了哪些尝试，并且把代码和错误信息截图（或者链接）发给对方
 
-完整版：见 [《提问的艺术》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)
+完整版：见 [《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)
