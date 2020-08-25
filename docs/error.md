@@ -21,3 +21,9 @@ Hi xxx! You've successfully authenticated, but GitHub does not provide shell acc
 那说明配置成功了。
 
 需要注意的是，SSH Key 只需要配置一次即可，它相当于你的 GitHub 帐号的登录凭证。
+
+## Apt install 的时候遇到 Unable to fetch some archives
+
+安装时遇到 `Unable to fetch some archives, maybe run apt-get update or try with --fix-missing` 解决方法：
+
+先尝试 `sudo apt update`，再重新执行之前报错的命令。
