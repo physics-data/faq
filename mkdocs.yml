@@ -31,6 +31,7 @@ nav:
     - 常见错误信息: error.md
     - GitHub Workflow 配置: workflow.md
     - 提问的智慧: ask.md
+    - 常用的软件包的安装方式: install.md
 
 plugins:
   - search
