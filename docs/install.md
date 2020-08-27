@@ -1,13 +1,14 @@
 ## 常用 Python 包安装方式
 
-| 软件包     | Ubuntu/Debian                           | macOS(Homebrew)         |
-| ---------- | --------------------------------------- | ----------------------- |
-| hdf5       | sudo apt install hdf5-tools             | brew install hdf5       |
-| matplotlib | sudo apt install python3-matplotlib     | pip3 install matplotlib |
-| vitables   | sudo apt install vitables python3-pyqt5 | pip3 install vitables   |
-| ipython    | sudo apt install python3-ipython        | pip3 install ipython    |
-| h5py       | sudo apt install python3-h5py           | pip3 install h5py       |
-| numpy      | sudo apt install python3-numpy          | pip3 install numpy      |
+| 软件包           | Ubuntu/Debian                           | macOS(Homebrew)         |
+| ---------------- | --------------------------------------- | ----------------------- |
+| hdf5             | sudo apt install hdf5-tools             | brew install hdf5       |
+| matplotlib       | sudo apt install python3-matplotlib     | pip3 install matplotlib |
+| vitables         | sudo apt install vitables python3-pyqt5 | pip3 install vitables   |
+| ipython          | sudo apt install python3-ipython        | pip3 install ipython    |
+| h5py             | sudo apt install python3-h5py           | pip3 install h5py       |
+| numpy            | sudo apt install python3-numpy          | pip3 install numpy      |
+| jupyter notebook | sudo apt install jupyter                | pip3 install notebook   |
 
 ## 常用软件安装方式
 
