@@ -32,6 +32,7 @@ nav:
     - GitHub Workflow 配置: workflow.md
     - 提问的智慧: ask.md
     - 常用的软件包的安装方式: install.md
+    - 命令行相关问题: command-line.md
 
 plugins:
   - search
