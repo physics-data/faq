@@ -17,4 +17,4 @@ can add a "gnubin" directory to your PATH from your bashrc like:
 这时候，它为了不和自带的 `cut` 发生冲突，把 GNU cut 命名称为了 `gcut`，你可以选择：
 
 1. 把所有 `cut` 出现的地方改成 `gcut`
-2. 按照上面的描述，通过修改 `PATH` 环境变量，把 `cut` 从原来的 `/usr/bin/cut` 换成 `/usr/local/opt/coreutils/libexec/gnubin` 。但要注意，这种做法可能会让一些依赖于 BSD cut 的程序运行失败
+2. 按照上面的描述，通过修改 `PATH` 环境变量，把 `cut` 从原来的 `/usr/bin/cut` 换成 `/usr/local/opt/coreutils/libexec/gnubin/cut` 。但要注意，这种做法可能会让一些依赖于 BSD cut 的程序运行失败
