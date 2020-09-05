@@ -33,6 +33,7 @@ nav:
     - 提问的智慧: ask.md
     - 常用的软件包的安装方式: install.md
     - 命令行相关问题: command-line.md
+    - mail 依赖打环问题: mail.md
 
 plugins:
   - search
