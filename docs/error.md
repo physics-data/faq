@@ -1,4 +1,4 @@
-## Git Clone 时遇到 `destination path alread exists and is not an empty directory`
+## Git Clone 时遇到 `destination path already exists and is not an empty directory`
 
 例子：
 

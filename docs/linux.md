@@ -16,7 +16,3 @@
 ### Ubuntu
 
 如果是 Ubuntu，则用类似于 Debian 的方法把 `archive.ubuntu.com` 替换为 `mirrors.tuna.tsinghua.edu.cn` ，然后 `sudo apt update` 即可。
-
-### macOS
-
-请参考 https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/
