@@ -12,6 +12,7 @@
 
 ```cmd
 > dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+> dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
 
 参考文档：https://docs.microsoft.com/en-us/windows/wsl/install-win10
