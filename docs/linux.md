@@ -1,5 +1,8 @@
+Linux 是最符合课程要求的环境，我们推荐使用 Debian GNU/Linux，Ubuntu 亦是 Debian 地衍生版。
+
 ## 配置 TUNA 镜像源
 
+在安装系统后，建议使用 TUNA 镜像源以提高安装软件的速度。
 ### Debian
 
 对于 Debian，编辑 `/etc/apt/sources.list`：

@@ -22,6 +22,13 @@ $ git --version
 git version 2.x.x
 ```
 
+此后，请使用下面的命令配置 git 身份：
+
+```shell
+git config --global user.name "Your Name" # 通常可以是自己名字，或者 ID
+git config --global user.email "name@example.com" # 请使用注册 GitHub 的邮箱，以便 GitHub 识别你的身份
+```
+
 ## 生成 SSH Key
 
 运行 `ssh-keygen`，一路按回车，会生成密钥：
