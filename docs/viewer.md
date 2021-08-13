@@ -1,5 +1,3 @@
-## Vitables: HDF5 文件查看器
-
 ### Debian Buster Vitables 无效
 
 在 Debian Buster 出现以下错误：

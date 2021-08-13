@@ -21,6 +21,7 @@ extra:
 
 nav:
   - 常见问题:
+    - 先修要求: prerequisite.md
     - WSL 环境配置: wsl.md
     - Linux 环境配置: linux.md
     - macOS 环境配置: mac.md
@@ -30,10 +31,10 @@ nav:
     - Linux 下的路径: path.md
     - 常见错误信息: error.md
     - GitHub Workflow 配置: workflow.md
-    - 提问的智慧: ask.md
     - 常用的软件包的安装方式: install.md
     - 命令行相关问题: command-line.md
     - mail 依赖打环问题: mail.md
+    - vitables 无法启动: viewer.md
 
 plugins:
   - search
