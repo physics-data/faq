@@ -14,7 +14,7 @@ WSL 推出以来，存在 WSL1 与 WSL2 两个版本。如果你已经安装了�
 
 为了方便同学们的安装和使用，今年助教团队基于最新的 Debian 制作了 WSL 镜像（其中包含了课程需要的绝大多数常用软件），并编写脚本支持一键安装、导入、卸载。我们推荐所有新用户使用这一方法安装。
 
-镜像下载地址为：<https://physics-data.meow.plus/wsl/>。请按照页面上的支持执行即可完成安装。安装后，可直接查阅参见 Terminal 一节。
+镜像下载地址为：[https://physics-data.meow.plus/wsl/](https://physics-data.meow.plus/wsl){target="_blank"}。请按照页面上的支持执行即可完成安装。安装后，可直接查阅参见 Terminal 一节。
 
 ### 手工安装
 
