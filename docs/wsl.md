@@ -36,8 +36,8 @@ WSL2 要求 Windows 版本如下：
 或者，你也可以用管理员权限打开 Powershell 或者 cmd，然后运行：
 
 ```cmd
-> dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-> dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
 
 参考文档：https://docs.microsoft.com/en-us/windows/wsl/install-win10
@@ -45,7 +45,7 @@ WSL2 要求 Windows 版本如下：
 如果之前使用过旧版 Windows 或者 WSL1，可以运行下面命令设置默认版本为 WSL2:
 
 ```cmd
-> wsl --set-default-version 2 
+wsl --set-default-version 2 
 ```
 
 之后，你就可以到 Microsoft Store 中安装你喜欢的发行版（推荐使用 Debian 或者 Ubuntu，否则可能无法按照老师的教程操作）。
@@ -65,13 +65,13 @@ Windows Terminal 能够自动检测本机所有的 WSL 发行版。如果在使�
 接着，在 WSL 里面配置 `DISPLAY` 环境变量。如果是临时使用：
 
 ```bash
-> export DISPLAY=:0
+export DISPLAY=:0
 ```
 
 这样做的话，每次在用之前都需要重新运行这条命令。如果想一劳永逸，那么，运行下面的命令一次：
 
 ```bash
-> echo 'export DISPLAY=:0' >> ~/.bashrc
+echo 'export DISPLAY=:0' >> ~/.bashrc
 ```
 
 它会往 `~/.bashrc` 文件中追加一个命令，而 `bash` 在每次启动的时候都会执行 `~/.bashrc` 里面的每条指令。完成后，重新开一个命令行窗口，如果出现下面的效果：
