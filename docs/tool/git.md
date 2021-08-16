@@ -82,3 +82,25 @@ fatal: destination path 'xxx-xx' already exists and is not an empty directory.
 ```
 
 这意味着 `xxx-xx` 目录已经存在，可能你之前已经运行过 `git clone`，不需要再 clone。直接 `cd xxx-xx` 进入目录即可。
+
+## Git Push 遭遇 Support for password authentication was removed 错误
+
+Push 的时候，显示：
+```
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+```
+
+打开仓库目录下`.git/config`文件，检查是否为下列配置：
+```
+[remote "origin"]
+	url = https://github.com/username/repository.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+```
+
+如是，需修改为：
+```
+[remote "origin"]
+	url = git@github.com:username/repository.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+```
