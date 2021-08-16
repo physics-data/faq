@@ -9,6 +9,13 @@ WSL (Windows Subsystem for Linux) 是微软开发的在 Windows 上提供 Linux 
 
 WSL 推出以来，存在 WSL1 与 WSL2 两个版本。如果你已经安装了其中的任何一个，它都可以符合我们的需要；如果没有，则默认将会使用 WSL2。可以通过 `wsl -l -v` 命令来判断目前的 WSL 版本。
 
+WSL2 要求 Windows 版本如下：
+
+- For x64 systems: Version 1903 or higher, with Build 18362 or higher.
+- For ARM64 systems: Version 2004 or higher, with Build 19041 or higher.
+
+如果 Windows 版本低于所要求的版本，建议升级到更新的 Windows 10 版本并安装 WSL2；如果无法升级，再尝试使用 WSL1。
+
 ## 安装 WSL
 ### 推荐：脚本安装
 
@@ -34,6 +41,12 @@ WSL 推出以来，存在 WSL1 与 WSL2 两个版本。如果你已经安装了�
 ```
 
 参考文档：https://docs.microsoft.com/en-us/windows/wsl/install-win10
+
+如果之前使用过旧版 Windows 或者 WSL1，可以运行下面命令设置默认版本为 WSL2:
+
+```cmd
+> wsl --set-default-version 2 
+```
 
 之后，你就可以到 Microsoft Store 中安装你喜欢的发行版（推荐使用 Debian 或者 Ubuntu，否则可能无法按照老师的教程操作）。
 
