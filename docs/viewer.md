@@ -1,6 +1,6 @@
-### Debian Buster Vitables 无效
+## Debian Buster Vitables 无法运行
 
-在 Debian Buster 出现以下错误：
+在 Debian Buster 运行 Vitables 出现以下错误：
 
 ```
 vitables hz.h5                

@@ -86,6 +86,7 @@ $ echo $DISPLAY
 如果上述方法不工作，可以参考 [@Light1110 同学提供的解决方案](https://github.com/physics-data/faq/issues/6#issuecomment-680972955)：
 
 解决方案：
+
 1. 如下配置环境变量 `DISPLAY`：
 
 ```
@@ -93,6 +94,7 @@ export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/nu
 ```
 
 2. 配置 X11 server 使其允许远程接入。
+
 如：使用 VcXsrv 时，勾选 `Disable access control`   
 
 参考：https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2
