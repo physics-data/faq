@@ -23,10 +23,15 @@ sudo systemctl enable ssh
 ps aux | grep sshd
 ```
 
-第二种方法：查看 sshd 是否监听了 TCP 22 端口：
+
+第二种方法：查看 sshd 是否监听了 TCP 22 端口，观察有没有 sshd：
 
 ```shell
 sudo lsof -i tcp -nP | grep "22 (LISTEN)"
 ```
 
-观察有没有 sshd
+第三种方法：用 systemctl 命令查看服务状态，是否是 running 状态：
+
+```shell
+sudo systemctl status ssh
+```
