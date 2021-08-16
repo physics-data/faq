@@ -3,14 +3,14 @@
 如果是 Debian/Ubuntu 系列的发行版：
 
 ```shell
-> sudo apt update
-> sudo apt install -y git
+sudo apt update
+sudo apt install -y git
 ```
 
 如果是 macOS：
 
 ```shell
-> brew install git
+brew install git
 ```
 
 也可以用 macOS 自带的 git 版本。
