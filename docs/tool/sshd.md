@@ -1,5 +1,7 @@
 ## 安装 SSH Server
 
+如果你使用的是 WSL，一般不需要 SSH Server；如果你使用的是虚拟机，并且想用 VSCode 通过 SSH 访问虚拟机，则需要安装和配置 SSH Server。
+
 如果使用的是 Debian/Ubuntu，可以按照下面的命令安装 openssh server：
 
 ```shell
