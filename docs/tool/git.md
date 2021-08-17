@@ -76,7 +76,7 @@ Push 的时候，显示 `ERROR: Permission to physics-data/xxx.git denied to xxx
 
 例子：
 
-```bash
+```shell
 $ git clone git@github.com:physics-data/xxx-xx.git
 fatal: destination path 'xxx-xx' already exists and is not an empty directory.
 ```
@@ -86,13 +86,13 @@ fatal: destination path 'xxx-xx' already exists and is not an empty directory.
 ## Git Push 遭遇 Support for password authentication was removed 错误
 
 Push 的时候，显示：
-```
+```shell
 remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
 remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
 ```
 
 输入`git remote -v`命令查看，如果输出结果为：
-```
+```shell
 origin  https://github.com/username/repository.git (fetch)
 origin  https://github.com/username/repository.git (push)
 ```

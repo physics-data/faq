@@ -1,7 +1,7 @@
 ## Git Clone 时遇到 destination path already exists and is not an empty directory
 
 例子：
-```
+```shell
 $ git clone git@github.com:physics-data/xxx-xx.git
 fatal: destination path 'xxx-xx' already exists and is not an empty directory.
 ```
@@ -11,7 +11,7 @@ fatal: destination path 'xxx-xx' already exists and is not an empty directory.
 ## 访问 GitHub 时遇到 Permission denied (publickey)
 
 请生成 SSH Key（`ssh-keygen`，注意，只要 `~/.ssh/id_rsa` 文件存在就不用再次生成），然后把 `~/.ssh.id_rsa.pub` 的内容添加到 GitHub 的 SSH Keys 设置中。设置好以后，再 `ssh -T git@github.com` 进行测试，如果输出：
-```
+```shell
 $ ssh -T git@github.com
 Hi xxx! You've successfully authenticated, but GitHub does not provide shell access.
 ```
@@ -30,6 +30,6 @@ Hi xxx! You've successfully authenticated, but GitHub does not provide shell acc
 
 一般是DNS问题，可以参考[WSL2 DNS issues](https://github.com/microsoft/WSL/issues/5256)，执行命令`sudo vim /etc/resolv.conf`，在文件最后添加：
 ```
-nameserver 8.8.8.8
 nameserver 114.114.114.114
+nameserver 180.76.76.76
 ```
