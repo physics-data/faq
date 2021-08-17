@@ -91,16 +91,10 @@ remote: Support for password authentication was removed on August 13, 2021. Plea
 remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
 ```
 
-打开仓库目录下`.git/config`文件，检查是否为下列配置：
+输入`git remote -v`命令查看，如果输出结果为：
 ```
-[remote "origin"]
-	url = https://github.com/username/repository.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
+origin  https://github.com/username/repository.git (fetch)
+origin  https://github.com/username/repository.git (push)
 ```
 
-如是，需修改为：
-```
-[remote "origin"]
-	url = git@github.com:username/repository.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
-```
+则需执行`git remote set-url origin git@github.com:username/repository.git`，然后再次尝试进行`git push`，注意`username`为 Github 用户名，`repository`为仓库名。

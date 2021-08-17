@@ -38,7 +38,7 @@ nav:
   - 常见错误:
     - 常见错误信息: error/error.md
     - WSL 中使用 VScode: error/code.md
-    - 命令行相关问题: error/command-line.md
+    - 命令行相关问题: error/command.md
     - mail 依赖打环问题: error/mail.md
     - vitables 无法启动: error/viewer.md
 
