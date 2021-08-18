@@ -6,15 +6,15 @@
 
 无论使用哪种方式安装，请不要同时使用两种方式安装同一个包，否则可能带来意想不到的麻烦。
 
-| 软件包           | Ubuntu/Debian                           | macOS(Homebrew)         |
-| ---------------- | --------------------------------------- | ----------------------- |
-| hdf5             | sudo apt install hdf5-tools             | brew install hdf5       |
-| matplotlib       | sudo apt install python3-matplotlib     | pip3 install matplotlib |
-| vitables         | sudo apt install vitables python3-pyqt5 | 不支持                  |
-| ipython          | sudo apt install python3-ipython        | pip3 install ipython    |
-| h5py             | sudo apt install python3-h5py           | pip3 install h5py       |
-| numpy            | sudo apt install python3-numpy          | pip3 install numpy      |
-| jupyter notebook | sudo apt install jupyter                | pip3 install notebook   |
+| 软件包           | Ubuntu/Debian                           | macOS(Homebrew)                                              |
+| ---------------- | --------------------------------------- | ------------------------------------------------------------ |
+| hdf5             | sudo apt install hdf5-tools             | brew install hdf5                                            |
+| matplotlib       | sudo apt install python3-matplotlib     | pip3 install matplotlib                                      |
+| vitables         | sudo apt install vitables python3-pyqt5 | 不支持，建议使用 [Panoply](https://www.giss.nasa.gov/tools/panoply/download/) |
+| ipython          | sudo apt install python3-ipython        | pip3 install ipython                                         |
+| h5py             | sudo apt install python3-h5py           | pip3 install h5py                                            |
+| numpy            | sudo apt install python3-numpy          | pip3 install numpy                                           |
+| jupyter notebook | sudo apt install jupyter                | pip3 install notebook                                        |
 
 ## 常用软件安装方式
 
