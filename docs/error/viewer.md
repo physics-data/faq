@@ -1,60 +1,60 @@
 ## Debian Buster Vitables 无法运行
 
-在 Debian Buster 运行 Vitables 出现以下错误：
+Debian 为了配合 2021 年 8 月 16 日开课，在 14 日发布了 Debian 11，代号为 `bullseye`。将 Debian 10 升级至 11 后即可使用 ViTables 3。
 
+### 查看 Debian 的版本
+
+安装 `lsb-release`
 ```
-vitables hz.h5                
-Creating the Query results file...
-
-Traceback (most recent call last):
-  File "/usr/share/vitables/vitables/h5db/dbDoc.py", line 115, in openH5File
-    h5file = tables.openFile(self.filepath, self.mode)
-AttributeError: 'module' object has no attribute 'openFile'
-
-
-Please, if you think it is a bug, report it to developers.
-
-File creation failed due to unknown reasons!
-Please, have a look to the last error displayed in the logger. If you think it's a bug, please report it to developers.
+apt install lsb-release
 ```
-
-这是因为 Debian Buster 中的 vitables 版本过低，维护失误。解决方案是将其升级。
-
-1. 创建 `/etc/apt/apt.conf.d/07repo`，内容为
+执行`lsb_release -a`，例如
 ```
-APT {
-        Default-Release "buster";
-}
+$ lsb_release -a
+No LSB modules are available.
+Distributor ID: Debian
+Description:    Debian GNU/Linux bullseye/sid
+Release:        testing
+Codename:       bullseye
 ```
+如果"Codename"显示是"bullseye"，表明是 Debian 11 系统。如果"Codename"是"buster"，表明是 Debian 10，需要升级。
 
-2. 在 `/etc/apt/sources.list` 里加入 `Debian Sid` 源
+### 升级 Debian 
+1. 使用 root 权限修改 /etc/apt/sources.list，
+
+   Debian 选择 bullseye 参考 https://mirrors.tuna.tsinghua.edu.cn/help/debian/
+
+2. 使用 root 权限执行以下命令：
+
+   ```
+   apt update  # 更新索引
+   apt full-upgrade # 升级操作系统
+   ```
+
+   过程会遇到很提示，默认选择 "Yes"。
+
+参考：https://github.com/physics-data/faq/discussions/67
+
+## Vitables 无法调用 PyQt5
+
+在 WSL 1 上的 Debian 11 和 Ubuntu 20.04 LTS 中，执行 vitables 会出现 `PySide2` 无法找到的错误。其根本原因是 `/usr/lib/x86_64-linux-gnu/libQt5Core.so.5` 的 `ABI-tag` 与 WSL 1 的内核不兼容，导致 PyQt5 无法被正常调用。
+
+### 确认 WSL 版本
+
+在 Windows Power Shell 中执行
 ```
-...
-deb http://mirrors.tuna.tsinghua.edu.cn/debian/ sid main non-free contrib
-...
+wsl --list -v
 ```
-
-3. `apt install vitables/sid`
-
-注意，此时安装的 vitables 是来自 Debian Sid 的 3.0 版本，并非 Debian Buster 中的 2.1 版本。会有如下输出：
-
+查看"VERSION" 列的输出，如
 ```
-...
-Selected version '3.0.0-1.1' (Debian:unstable [all]) for 'vitables'
+  NAME   STATE   VERSION
+* Debian Running 1
 ```
+表明 Debian 运行的环境为 WSL 1。如果`wsl`提示不支持`-v`选项，则代表它的版本是 1。
 
-4. 确认 vitables 的版本
+### 解决方法
 
-```
-$ vitables --version
-vitables 3.0.0
-```
-
-### Vitables 无法调用 PyQt5
-
-在某些系统比如 Ubuntu 20.04 LTS 中，执行 vitables 会出现 `PySide2` 无法找到的错误。但经过分析，其根本原因为 PyQt5 无法被正常调用，因为 `/usr/lib/x86_64-linux-gnu/libQt5Core.so.5` 的 `ABI-tag` 与 WSL 的内核不兼容。
-
-解决方法是使用 `strip` 把不兼容的部分去掉。以 `root` 用户执行，
+使用 `strip` 把不兼容的部分去掉。以 `root` 用户执行，
 
 ```
 strip --remove-section=.note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5
