@@ -74,7 +74,7 @@ WSL2 可以参考 [@Light1110 同学提供的解决方案](https://github.com/ph
 首先，如下配置环境变量 `DISPLAY`：
 
 ```
-export DISPLAY=$(ip route show default | cut -d' ' -f3)
+export DISPLAY=$(ip route show default | cut -d' ' -f3):0
 ```
 
 如果上述命令还是不能工作，可以尝试下面的命令：
