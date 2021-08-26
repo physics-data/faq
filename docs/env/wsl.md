@@ -62,7 +62,36 @@ Windows Terminal 能够自动检测本机所有的 WSL 发行版。如果在使�
 
 如果需要在 WSL 中使用 GUI 程序，最简单的办法是在 Windows 上安装 [vcXsrv](https://sourceforge.net/projects/vcxsrv/files/) ，然后运行 `XLaunch` ，然后应该可以在右下角的状态栏中找到它。
 
-接着，在 WSL 里面配置 `DISPLAY` 环境变量。如果是临时使用：
+接着，在 WSL 里面配置 `DISPLAY` 环境变量。这一步在不同的 WSL 版本中要用不同的办法。
+
+
+### WSL2
+
+WSL2 可以参考 [@Light1110 同学提供的解决方案](https://github.com/physics-data/faq/issues/6#issuecomment-680972955)：
+
+解决方案：
+
+首先，如下配置环境变量 `DISPLAY`：
+
+```
+export DISPLAY=$(ip route show default | cut -d' ' -f3)
+```
+
+如果上述命令还是不能工作，可以尝试下面的命令：
+
+```
+export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
+```
+
+同时，配置 X11 server 使其允许远程接入：如：使用 VcXsrv 时，勾选 `Disable access control`   
+
+参考：https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2
+
+如果你是 Windows 高级用户，可以体验 Windows 新的 [WSLg](https://github.com/microsoft/wslg) 功能，可能获得更好的图形性能和体验。
+
+### WSL1
+
+如果是临时使用：
 
 ```bash
 export DISPLAY=:0
@@ -82,21 +111,3 @@ $ echo $DISPLAY
 ```
 
 那么，设置就成功了。注意，这样设置只对新开的窗口有效果。
-
-如果上述方法不工作，可以参考 [@Light1110 同学提供的解决方案](https://github.com/physics-data/faq/issues/6#issuecomment-680972955)：
-
-解决方案：
-
-1. 如下配置环境变量 `DISPLAY`：
-
-```
-export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
-```
-
-2. 配置 X11 server 使其允许远程接入。
-
-如：使用 VcXsrv 时，勾选 `Disable access control`   
-
-参考：https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2
-
-如果你是 Windows 高级用户，可以体验 Windows 新的 [WSLg](https://github.com/microsoft/wslg) 功能，可能获得更好的图形性能和体验。
