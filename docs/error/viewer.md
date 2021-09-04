@@ -20,17 +20,13 @@ Codename:       bullseye
 如果"Codename"显示是"bullseye"，表明是 Debian 11 系统。如果"Codename"是"buster"，表明是 Debian 10，需要升级。
 
 ### 升级 Debian 
-1. 使用 root 权限修改 /etc/apt/sources.list，
-
-   Debian 选择 bullseye 参考 https://mirrors.tuna.tsinghua.edu.cn/help/debian/
+1. 使用 root 权限修改 /etc/apt/sources.list。Debian 系统应选择 bullseye，可参考 https://mirrors.tuna.tsinghua.edu.cn/help/debian/
 
 2. 使用 root 权限执行以下命令：
-
    ```
    apt update  # 更新索引
    apt full-upgrade # 升级操作系统
    ```
-
    过程会遇到很提示，默认选择 "Yes"。
 
 参考：https://github.com/physics-data/faq/discussions/67
