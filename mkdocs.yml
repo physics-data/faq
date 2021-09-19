@@ -35,12 +35,12 @@ nav:
     - Linux 下的路径: tutorials/path.md
     - GitHub Workflow 配置: tutorials/workflow.md
     - 常用的软件包的安装方式: tutorials/install.md
-  - 常见错误:
-    - 常见错误信息: error/error.md
-    - WSL 中使用 VScode: error/code.md
-    - 命令行相关问题: error/command.md
-    - mail 依赖打环问题: error/mail.md
-    - vitables 无法启动: error/viewer.md
+  - 常见问题:
+    - 常见错误信息: misc/error.md
+    - WSL 中使用 VScode: misc/code.md
+    - 命令行相关问题: misc/command.md
+    - mail 依赖打环问题: misc/mail.md
+    - vitables 无法启动: misc/viewer.md
 
 plugins:
   - search
