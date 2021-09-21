@@ -41,6 +41,7 @@ nav:
     - 命令行相关问题: misc/command.md
     - mail 依赖打环问题: misc/mail.md
     - vitables 无法启动: misc/viewer.md
+    - 并行计算与加速手段: misc/parallel-accel.md
 
 plugins:
   - search
