@@ -23,7 +23,7 @@
 * <https://cenalulu.github.io/python/gil-in-python/>
 * <https://cloud.tencent.com/developer/news/743497>
 
-鉴于上述的原因， **在你你没有深入地了解多线程、锁、 GIL 等原理前，不要在 Python 中使用多线程**
+鉴于上述的原因， **在你没有深入地了解多线程、锁、 GIL 等原理前，不要在 Python 中手工编写多线程代码**。
 
 事实上，一些 Python 库（如 `numpy`）会调用原生代码（native code）并使用多个线程进行计算，此时则不会受到 GIL 的影响。
 
@@ -47,7 +47,7 @@ Python 的 [`multiprocessing` 标准库](https://docs.python.org/zh-cn/3/library
 
 [MPI](https://en.wikipedia.org/wiki/Message_Passing_Interface) 是一套被并行计算业界广泛使用的编程接口，提供了完善的点对点（P2P）、集合（collective）通信原语，有强大的能力。各类超算平台、高速网卡、加速器等都能够完善地支持 MPI，绝大部分复杂的计算软件都是使用 MPI 接口编写的。
 
-Python 的 [MPI for Python](https://mpi4py.readthedocs.io/) 包提供了在 Python 中使用 MPI 接口的能力（注意它并非一个 MPI 库，在使用前你依旧应当在系统中安装一个 MPI 的实现，如 [OpenMPI](https://www.open-mpi.org/)、[MPICH](https://www.mpich.org/) 或者 [MVAPICH](https://mvapich.cse.ohio-state.edu/)。在使用 `mpi4py` 前，你需要对 MPI 的编程接口、运行方式等有基本的认识。
+Python 的 [MPI for Python](https://mpi4py.readthedocs.io/) 包提供了在 Python 中使用 MPI 接口的能力。它并非一个 MPI 库，在使用前你依旧应当在系统中安装一个 MPI 的实现，如 [OpenMPI](https://www.open-mpi.org/)、[MPICH](https://www.mpich.org/) 或者 [MVAPICH](https://mvapich.cse.ohio-state.edu/)。在使用 `mpi4py` 前，你需要对 MPI 的编程接口、运行方式等有基本的认识。
 
 !!! warning "审慎判断"
 
