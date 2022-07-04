@@ -29,7 +29,7 @@ jobs:
         ssh-private-key: ${{ secrets.MEOW_PLUS_DEPLOY_KEY }}
     - name: Upload to server
       run: |
-        cd build
+        cd site
         git init && git remote add deploy git@meow.plus:physics-data/faq.git
         git add . && git commit -m "Deploy"
         git push deploy master
