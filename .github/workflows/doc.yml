@@ -30,6 +30,8 @@ jobs:
     - name: Upload to server
       run: |
         cd site
+        git config --global user.email "actions@github.com"
+        git config --global user.name "GitHub Actions"
         git init && git remote add deploy git@meow.plus:physics-data/faq.git
         git add . && git commit -m "Deploy"
         git push deploy master
