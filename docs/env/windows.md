@@ -91,7 +91,17 @@ export DISPLAY=$(ip route show default | cut -d' ' -f3):0
 export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
 ```
 
-同时，配置 X11 server 使其允许远程接入：如：使用 VcXsrv 时，勾选 `Disable access control`   
+如果**类似**下面的效果(IP 可能不同)：
+
+```bash
+$ echo $DISPLAY
+:0
+172.22.192.1:0
+```
+
+就算设置成功了，可以把这个设置写入到 `~/.bashrc` 中。
+
+同时，配置 X11 server 使其允许远程接入：如：使用 VcXsrv 时，勾选 `Disable access control`
 
 参考：https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2
 
@@ -131,3 +141,7 @@ $ echo $DISPLAY
 - VMware：商业软件
 
 实际使用的时候，选择其中一个即可，使用多个可能在某些情况下会有冲突的问题。
+
+## MinGW/Cygwin
+
+不建议使用，同学可以自己摸索。
