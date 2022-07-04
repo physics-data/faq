@@ -46,6 +46,7 @@ nav:
     - vitables 相关问题: misc/vitables.md
     - macOS 相关问题: misc/mac.md
     - mail 作业依赖打环问题: misc/mail.md
+    - 课程相关问题: misc/course.md
 
 plugins:
   - search
