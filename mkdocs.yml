@@ -33,6 +33,7 @@ nav:
     - 常用命令行工具: tool/command.md
   - 教程:
     - Linux 下的路径: tutorials/path.md
+    - GitLab CI 配置: tutorials/ci.md
     - GitHub Workflow 配置: tutorials/workflow.md
     - 常用的软件包的安装方式: tutorials/install.md
   - 常见问题:
