@@ -21,6 +21,7 @@ can add a "gnubin" directory to your PATH from your bashrc like:
 1. 安装 GNU awk：`brew install gawk` 并添加相应的 PATH 环境变量
 2. 安装 GNU sed：`brew install gnu-sed` 并添加相应的 PATH 环境变量
 3. 安装 GNU find：`brew install findutils` 并添加相应的 PATH 环境变量
+4. 安装 GNU make：`brew install make` 并添加相应的 PATH 环境变量
 
 总结一下，可以用下面的命令来配置 PATH 环境变量：
 
@@ -29,6 +30,7 @@ export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix)/opt/gawk/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix)/opt/findutils/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/make/libexec/gnubin:$PATH"
 ```
 
 确认相关的命令行工具确实是 GNU 版本：
@@ -39,6 +41,7 @@ cut --version | grep GNU
 awk --version | grep GNU
 sed --version | grep GNU
 find --version | grep GNU
+make --version | grep GNU
 ```
 
 如果每个命令的版本信息都有 `GNU`，就说明配置正确了。
