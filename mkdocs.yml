@@ -43,6 +43,7 @@ nav:
     - vitables 相关问题: misc/vitables.md
     - 并行计算与加速手段: misc/parallel-accel.md
     - macOS 相关问题: misc/mac.md
+    - 代码风格: misc/coding-style.md
 
 plugins:
   - search
