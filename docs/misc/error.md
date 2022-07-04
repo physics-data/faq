@@ -7,7 +7,7 @@ $ git clone git@github.com:physics-data/xxx-xx.git
 fatal: destination path 'xxx-xx' already exists and is not an empty directory.
 ```
 
-这意味着`xxx-xx`目录已经存在，可能你之前已经运行过`git`clone，不需要再 clone。直接`cd xxx-xx`进入目录即可。
+这意味着 `xxx-xx` 目录已经存在，可能你之前已经运行过 `git clone`，不需要再 clone。直接 `cd xxx-xx` 进入目录即可。
 
 ## 访问 GitHub 时遇到 Permission denied (publickey)
 
@@ -28,9 +28,9 @@ Hi xxx! You've successfully authenticated, but GitHub does not provide shell acc
 
 先尝试 `sudo apt update`，再重新执行之前报错的命令。
 
-## 执行`apt update`或`git push`等操作遇到`unresolved hostname`或`Temporary failure in name resolution`
+## 执行 `apt update` 或 `git push` 等操作遇到 `unresolved hostname` 或 `Temporary failure in name resolution`
 
-一般是DNS问题，可以参考[WSL2 DNS issues](https://github.com/microsoft/WSL/issues/5256)，执行命令`sudo vim /etc/resolv.conf`，在文件最后添加：
+一般是 DNS 问题，可以参考 [WSL2 DNS issues](https://github.com/microsoft/WSL/issues/5256)，执行命令 `sudo vim /etc/resolv.conf`，在文件最后添加：
 
 ```
 nameserver 114.114.114.114

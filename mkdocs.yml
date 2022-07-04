@@ -40,8 +40,9 @@ nav:
     - WSL 中使用 VScode: misc/code.md
     - 命令行相关问题: misc/command.md
     - mail 依赖打环问题: misc/mail.md
-    - vitables 无法启动: misc/viewer.md
+    - vitables 无法启动: misc/vitables.md
     - 并行计算与加速手段: misc/parallel-accel.md
+    - macOS 相关: misc/mac.md
 
 plugins:
   - search
