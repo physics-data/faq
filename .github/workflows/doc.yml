@@ -1,7 +1,11 @@
   
 name: Build documentation with mkdocs
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
+      - ci-test
 
 jobs:
   build:
@@ -19,3 +23,13 @@ jobs:
         pip install -r requirements.txt
     - name: Build with mkdocs
       run: mkdocs build
+    - name: Add deploy key
+      uses: webfactory/ssh-agent@v0.5.4
+      with:
+        ssh-private-key: ${{ secrets.MEOW_PLUS_DEPLOY_KEY }}
+    - name: Upload to server
+      run: |
+        cd build
+        git init && git remote add deploy git@meow.plus:physics-data/faq.git
+        git add . && git commit -m "Deploy"
+        git push deploy master
