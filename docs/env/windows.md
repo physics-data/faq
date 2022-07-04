@@ -109,8 +109,6 @@ $ echo $DISPLAY
 
 参考：https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2
 
-如果你是 Windows 高级用户，可以体验 Windows 新的 [WSLg](https://github.com/microsoft/wslg) 功能，可能获得更好的图形性能和体验。
-
 #### WSL1
 
 如果是临时使用：
