@@ -33,17 +33,19 @@ nav:
     - 常用命令行工具: tool/command.md
   - 教程:
     - Linux 下的路径: tutorials/path.md
+    - GitLab CI 配置: tutorials/ci.md
     - GitHub Workflow 配置: tutorials/workflow.md
     - 常用的软件包的安装方式: tutorials/install.md
+    - 并行计算与加速手段: tutorials/parallel-accel.md
+    - 代码风格: tutorials/coding-style.md
   - 常见问题:
-    - 常见错误信息: misc/error.md
-    - WSL 中使用 VSCode: misc/code.md
+    - APT 相关问题: misc/apt.md
+    - Git 相关问题: misc/git.md
+    - WSL 相关问题: misc/wsl.md
     - 命令行相关问题: misc/command.md
-    - mail 依赖打环问题: misc/mail.md
     - vitables 相关问题: misc/vitables.md
-    - 并行计算与加速手段: misc/parallel-accel.md
     - macOS 相关问题: misc/mac.md
-    - 代码风格: misc/coding-style.md
+    - mail 作业依赖打环问题: misc/mail.md
 
 plugins:
   - search
