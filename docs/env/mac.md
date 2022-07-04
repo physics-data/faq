@@ -27,4 +27,4 @@ brew install xxx
 nix-env -i xxx
 ```
 
-可以在 <search.nixos.org> 来搜索想要安装的包的名字。
+可以在 <https://search.nixos.org> 上搜索想要安装的包的名字。
