@@ -14,9 +14,19 @@ can add a "gnubin" directory to your PATH from your bashrc like:
   PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 ```
 
-这时候，它为了不和自带的 `cut` 发生冲突，把 GNU cut 命名称为了 `gcut`，你可以选择：
+这时候，它为了不和自带的 `cut` 发生冲突，把 GNU cut 命名称为了 `gcut`。这时候要按照上面的描述，通过修改 `PATH` 环境变量，把 `cut` 从原来的 `/usr/bin/cut` 换成 `/usr/local/opt/coreutils/libexec/gnubin/cut` 。但要注意，这种做法可能会让一些依赖于 BSD cut 的程序运行失败
 
-1. 把所有 `cut` 出现的地方改成 `gcut`
-2. 按照上面的描述，通过修改 `PATH` 环境变量，把 `cut` 从原来的 `/usr/bin/cut` 换成 `/usr/local/opt/coreutils/libexec/gnubin/cut` 。但要注意，这种做法可能会让一些依赖于 BSD cut 的程序运行失败
+类似的还有：
 
-此外，你可能会遇到 BSD wc 和 GNU wc 行为也不一样的问题，可以用类似的方法解决。
+1. 安装 GNU awk：`brew install gawk` 并添加相应的 PATH 环境变量
+2. 安装 GNU sed：`brew install gnu-sed` 并添加相应的 PATH 环境变量
+
+总结一下，可以用下面的命令来配置 PATH 环境变量：
+
+```
+export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/gawk/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
+```
+
+
