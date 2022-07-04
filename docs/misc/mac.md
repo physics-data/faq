@@ -29,3 +29,13 @@ export PATH="$(brew --prefix)/opt/gawk/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
 ```
 
+确认相关的命令行工具确实是 GNU 版本：
+
+```shell
+wc --version | grep GNU
+cut --version | grep GNU
+awk --version | grep GNU
+sed --version | grep GNU
+```
+
+如果每个命令的版本信息都有 `GNU`，就说明配置正确了。
