@@ -34,4 +34,4 @@ jobs:
         git config --global user.name "GitHub Actions"
         git init && git remote add deploy git@meow.plus:physics-data/faq.git
         git add . && git commit -m "Deploy"
-        git push deploy master
+        GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git push deploy master
