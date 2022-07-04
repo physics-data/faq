@@ -37,12 +37,12 @@ nav:
     - 常用的软件包的安装方式: tutorials/install.md
   - 常见问题:
     - 常见错误信息: misc/error.md
-    - WSL 中使用 VScode: misc/code.md
+    - WSL 中使用 VSCode: misc/code.md
     - 命令行相关问题: misc/command.md
     - mail 依赖打环问题: misc/mail.md
-    - vitables 无法启动: misc/vitables.md
+    - vitables 相关问题: misc/vitables.md
     - 并行计算与加速手段: misc/parallel-accel.md
-    - macOS 相关: misc/mac.md
+    - macOS 相关问题: misc/mac.md
 
 plugins:
   - search
