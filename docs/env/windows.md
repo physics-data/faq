@@ -69,9 +69,15 @@ Windows Terminal 能够自动检测本机所有的 WSL 发行版。如果在使�
 
 ### WSL 下 X11 环境的配置
 
-如果需要在 WSL 中使用 GUI 程序，最简单的办法是在 Windows 上安装 [vcXsrv](https://sourceforge.net/projects/vcxsrv/files/) ，然后运行 `XLaunch` ，然后应该可以在右下角的状态栏中找到它。
+如果需要在 WSL 中使用 GUI 程序，需要安装 X Server。
 
-接着，在 WSL 里面配置 `DISPLAY` 环境变量。这一步在不同的 WSL 版本中要用不同的办法。
+- **如果你正在使用 Windows 11**: WSL2 可能已经带有了一个 X Server 实现 ([WSLg](https://github.com/microsoft/wslg)])。通过以下方法检查：
+
+  - 启动终端进入 WSL2 发行版，执行 `echo $DISPLAY`，如果显示不为空，说明存在 WSlg。
+
+- **如果你没有在使用 Windows 11，或者上述测试输出为空**: 需要自行安装 X Server，并手动设置 DISPLAY 环境变量。
+  - 推荐安装 [vcXsrv](https://sourceforge.net/projects/vcxsrv/files/)。然后运行 `XLaunch` ，然后应该可以在右下角的状态栏中找到它。这时 X Server 已经启动
+  - 接着需要在 WSL 里面配置 `DISPLAY` 环境变量。这一步在不同的 WSL 版本中要用不同的办法。
 
 #### WSL2
 
@@ -129,6 +135,17 @@ $ echo $DISPLAY
 ```
 
 那么，设置就成功了。注意，这样设置只对新开的窗口有效果。
+
+#### 测试 X Server
+
+可以安装 `x11-apps` 软件包并执行 xclock，如果 X Server 运转正常，可以显示出一个钟表。
+
+```
+sudo apt install x11-apps
+xclock
+```
+
+注：如果你在使用 WSLg，初次启动图形程序会有一定延迟，大约 10-20 秒，是正常现象。
 
 ## 虚拟机
 
