@@ -64,3 +64,8 @@ strip --remove-section=.note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5
 ```
 
 参考：<https://github.com/microsoft/WSL/issues/3023>。
+
+
+## macOS 上无法安装 Vitables
+
+Vitables 不支持 macOS，建议使用 [HDFView](https://www.hdfgroup.org/downloads/hdfview/#download)，可以从 <https://support.hdfgroup.org/ftp/HDF5/releases/HDF-JAVA/hdfview-3.2.0/bin/> 下载。
