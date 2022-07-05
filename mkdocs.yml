@@ -37,7 +37,7 @@ nav:
     - GitHub Workflow 配置: tutorials/workflow.md
     - 常用的软件包的安装方式: tutorials/install.md
     - 并行计算与加速手段: tutorials/parallel-accel.md
-    - 代码风格: tutorials/coding-style.md
+    - 白盒标准: tutorials/whitebox.md
   - 常见问题:
     - APT 相关问题: misc/apt.md
     - Git 相关问题: misc/git.md
