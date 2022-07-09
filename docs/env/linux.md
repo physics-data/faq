@@ -2,6 +2,8 @@ Linux 是最符合课程要求的环境，我们推荐使用 Debian GNU/Linux，
 
 ## Linux 发行版安装
 
+如果你是 WSL 用户，已经安装好了 Linux 发行版，可以跳过这一步。
+
 如果要安装一个新的 Linux 发行版，那么：
 
 - Ubuntu：使用 20.04 或更新的版本
