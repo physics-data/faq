@@ -9,7 +9,7 @@ theme:
   custom_dir: 'theme-override/'
   icon:
     logo: material/help
-    repo: fontawesome/brands/github
+    repo: fontawesome/brands/gitlab
   features:
     - tabs
     - instant
