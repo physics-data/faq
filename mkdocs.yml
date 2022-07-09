@@ -15,7 +15,7 @@ theme:
     - instant
 
 repo_name: 'physics-data/faq'
-repo_url: 'https://github.com/physics-data/faq'
+repo_url: 'https://git.tsinghua.edu.cn/physics-data/faq'
 
 extra:
   pagetime: 'on'
