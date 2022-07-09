@@ -8,7 +8,34 @@ macOS 提供了标准的 POSIX 环境，但没有内置包管理器。因此我�
 
 Homebrew 是 macOS 上的包管理器，可以方便地安装各类工具。
 
+### 安装 Homebrew
+
 详细安装方式，请参考 https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/。
+
+简单来说，首先打开终端，然后按顺序执行下列这些命令：
+
+```shell
+# 设置 Homebrew 镜像
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+
+# 从本镜像下载安装脚本并安装 Homebrew / Linuxbrew
+git clone --depth=1 https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/install.git brew-install
+/bin/bash brew-install/install.sh
+
+# 更新 homebrew
+brew update
+
+# 替换仓库上游
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+for tap in core cask{,-fonts,-drivers,-versions} command-not-found; do
+    brew tap --custom-remote --force-auto-update "homebrew/${tap}" "https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-${tap}.git"
+done
+brew update
+```
+
+### 使用 Homebrew
 
 安装后，就可以用 `brew` 命令安装包了：
 
