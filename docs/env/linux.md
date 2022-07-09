@@ -43,3 +43,23 @@ Linux 是最符合课程要求的环境，我们推荐使用 Debian GNU/Linux，
 2. 运行 `sudo apt install xxxx`，安装指定的包
 
 如果不知道包的名字，可以尝试在本地寻找：`sudo apt search xxx`；也可以在网页上搜索，例如 <https://packages.ubuntu.com/> 和 <https://www.debian.org/distrib/packages> 。
+
+## 用 apt 安装 python
+
+安装好 Ubuntu/Debian 系统以后，我们可以安装 python3:
+
+```shell
+sudo apt install python3 python3-pip
+python3 --version
+```
+
+安装好后，就可以看到 python3 的版本了。你应该可以看到 Python 3.8 或者更高的版本，否则就说明你的系统太老了。
+
+接下来，我们就可以用 `pip3` 来安装一些常用的 python 包：
+
+```shell
+pip3 install matplotlib numpy
+python3 -c 'import matplotlib;import numpy'
+```
+
+如果第二条命令导入的时候没有出错，就说明安装成功了。
