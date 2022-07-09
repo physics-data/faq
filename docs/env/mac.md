@@ -17,6 +17,26 @@ brew install xxx
 
 由于 `brew` 运行的时候会从 GitHub 上更新仓库，所以这一步可能会卡住，建议使用一些方法来加速 GitHub 访问。
 
+### 配置 python 环境
+
+安装 brew 以后，可以用 brew 来安装 python 环境：
+
+```shell
+brew install python3
+python3 --version
+```
+
+如果安装成功了，应该可以看到 Python 3.9 或者更加新的版本。
+
+接下来，就可以用 pip 来安装包了：
+
+```shell
+pip3 install matplotlib numpy
+python3 -c 'import matplotlib;import numpy'
+```
+
+如果第二条命令导入的时候没有出错，就说明安装成功了。
+
 ## 配置 Nix
 
 首先按照 <https://nixos.org/download.html> 上的方法，进行 `Multi-user installation`。执行成功以后，就可以在命令行中执行 `nix-env` 命令了。
