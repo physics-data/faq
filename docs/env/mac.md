@@ -2,6 +2,7 @@ macOS 提供了标准的 POSIX 环境，但没有内置包管理器。因此我�
 
 - Homebrew
 - Nix
+- MacPorts
 
 ## 配置 Homebrew
 
@@ -48,3 +49,7 @@ nix-env -i xxx
 ```
 
 可以在 <https://search.nixos.org> 上搜索想要安装的包的名字。
+
+## 配置 MacPorts
+
+助教不使用这个环境，如果有同学要使用的话，可以自己摸索。
