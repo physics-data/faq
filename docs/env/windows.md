@@ -85,7 +85,9 @@ WSL2 可以参考 [@Light1110 同学提供的解决方案](https://github.com/ph
 
 解决方案：
 
-首先，如下配置环境变量 `DISPLAY`：
+启动 X11 server，同时，配置 X11 server 使其允许远程接入：如：启动 vcXsrv 时，**勾选 `Disable access control`**。
+
+首先，按如下命令配置环境变量 `DISPLAY`：
 
 ```bash
 export DISPLAY=$(ip route show default | cut -d' ' -f3):0
@@ -106,8 +108,6 @@ $ echo $DISPLAY
 ```
 
 这样就算设置成功了。可以把这个设置写入到 `~/.bashrc` 中，这样下次启动 wsl bash 的时候也会生效。
-
-同时，配置 X11 server 使其允许远程接入：如：使用 vcXsrv 时，**勾选 `Disable access control`**
 
 如果还是连不上，可以尝试用管理员权限启动 vcXsrv。
 
