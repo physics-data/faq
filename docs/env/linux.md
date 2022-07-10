@@ -65,3 +65,11 @@ python3 -c 'import matplotlib;import numpy'
 ```
 
 如果第二条命令导入的时候没有出错，就说明安装成功了。
+
+测试 matplotlib 能否显示图像：
+
+```shell
+python3 -c 'import matplotlib.pyplot;matplotlib.pyplot.plot([1,2,3,4]);matplotlib.pyplot.show()'
+```
+
+如果弹出了窗口，窗口显示了一条直线，就说明绘图功能正常。
