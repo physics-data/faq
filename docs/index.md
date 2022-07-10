@@ -15,3 +15,14 @@
 7. 向别人阐述你的问题，谈你都做了哪些尝试，并且把代码和错误信息截图（或者链接）发给对方
 
 完整版：见 [《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)
+
+## 提问途径
+
+本课程的提问/答疑/讨论途径有：
+
+1. 网络学堂的课程答疑和课程讨论
+2. 在 https://git.tsinghua.edu.cn/physics-data/faq/issues 下创建 issue
+3. 在 https://github.com/physics-data/faq/discussions 下发起讨论
+4. FAQ 相关页面的下方讨论区
+5. 课程微信群
+6. 通过邮件发送给老师/助教
