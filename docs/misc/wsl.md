@@ -54,3 +54,8 @@ sudo e2fsck $(mount | grep ext4 | awk '{print $1}') -p
 ```
 
 如果成功修复，则在命令提示符中运行 `wsl --shutdown`，然后再启动 wsl。
+
+参考文档：
+
+- https://github.com/microsoft/WSL/issues/8340
+- https://github.com/microsoft/WSL/issues/4833
