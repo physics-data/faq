@@ -136,7 +136,7 @@ $ echo $DISPLAY
 
 可以安装 `x11-apps` 软件包并执行 xclock，如果 X Server 运转正常，可以显示出一个钟表。
 
-```
+```bash
 sudo apt install x11-apps
 xclock
 ```

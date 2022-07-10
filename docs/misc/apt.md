@@ -8,7 +8,7 @@
 
 一般是 DNS 问题，可以参考 [WSL2 DNS issues](https://github.com/microsoft/WSL/issues/5256)，执行命令 `sudo vim /etc/resolv.conf`，在文件最后添加：
 
-```
+```config
 nameserver 114.114.114.114
 nameserver 180.76.76.76
 ```

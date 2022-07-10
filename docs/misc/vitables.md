@@ -6,13 +6,13 @@ Debian 为了配合 2021 年 8 月 16 日开课，在 14 日发布了 Debian 11�
 
 安装 `lsb-release`：
 
-```
+```shell
 apt install lsb-release
 ```
 
 执行`lsb_release -a`，例如:
-```
 
+```shell
 $ lsb_release -a
 No LSB modules are available.
 Distributor ID: Debian
@@ -27,7 +27,7 @@ Codename:       bullseye
 
 1. 使用 root 权限修改 `/etc/apt/sources.list`。Debian 系统应选择 `bullseye`，可参考 <https://mirrors.tuna.tsinghua.edu.cn/help/debian/>。
 2. 使用 root 权限执行以下命令：
-   ```
+   ```shell
    apt update  # 更新索引
    apt full-upgrade # 升级操作系统
    ```
@@ -43,12 +43,13 @@ Codename:       bullseye
 
 在 Windows Power Shell 中执行
 
-```
+```shell
 wsl --list -v
 ```
 
 查看 `VERSION` 列的输出，如
-```
+
+```shell
   NAME   STATE   VERSION
 * Debian Running 1
 ```

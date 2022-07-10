@@ -25,7 +25,7 @@ can add a "gnubin" directory to your PATH from your bashrc like:
 
 总结一下，可以用下面的命令来配置 PATH 环境变量：
 
-```
+```shell
 export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix)/opt/gawk/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
