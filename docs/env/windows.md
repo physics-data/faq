@@ -150,12 +150,14 @@ xclock
 如果还是连不上，按照以下的方式检查：
 
 1. 检查 DISPLAY 环境变量是否配置了：`echo $DISPLAY`
-2. 检查 vcXsrv 是否启动：桌面右下角应该可以找到它的图标
-3. 确认 vcXsrv 启动的时候勾选了 **Disable access control**：如果不记得了，退出 vcXsrv 再重新开一次
-4. 在桌面右下角图标里右键，选择 Applications -> xcalc，确认 vcXsrv 本身可以显示窗口
-5. 如果还是不行，尝试关闭杀毒软件
-6. 如果还是不行，尝试用管理员权限启动 vcXsrv
-7. 如果还是不行，尝试关闭防火墙
+2. 确认你用的是 WSL1 还是 WSL2：在命令提示符里运行 `wsl -l -v` 可以看到版本
+3. 确认你在上面运行的命令和你的 WSL 版本是一致的
+4. 检查 vcXsrv 是否启动：桌面右下角应该可以找到它的图标
+5. 确认 vcXsrv 启动的时候勾选了 **Disable access control**：如果不记得了，退出 vcXsrv 再重新开一次
+6. 在桌面右下角图标里右键，选择 Applications -> xcalc，确认 vcXsrv 本身可以显示窗口
+7. 如果还是不行，尝试关闭杀毒软件
+8. 如果还是不行，尝试用管理员权限启动 vcXsrv
+9. 如果还是不行，尝试关闭防火墙
 
 ## 虚拟机
 
