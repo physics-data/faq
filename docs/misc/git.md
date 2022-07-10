@@ -32,7 +32,7 @@ Hi xxx! You've successfully authenticated, but GitHub does not provide shell acc
 
 出现上面的消息，就说明 SSH Key 配置成功了。否则，按照下面的步骤配置 SSH Key：
 
-生成 SSH Key（`ssh-keygen`，注意，只要 `~/.ssh/id_rsa` 文件存在就不用再次生成），然后把 `~/.ssh.id_rsa.pub` 的内容添加到 GitHub 的 SSH Keys 设置中。
+生成 SSH Key（运行 `ssh-keygen`，一路回车，注意，只要 `~/.ssh/id_rsa` 文件存在就不用再次生成），然后把 `~/.ssh.id_rsa.pub` 的内容添加到 GitHub 的 SSH Keys 设置中。
 
 需要注意的是，SSH Key 只需要配置一次即可，它相当于你的 GitHub 帐号的登录凭证。
 
