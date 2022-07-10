@@ -149,7 +149,7 @@ xclock
 
 1. 检查 DISPLAY 环境变量是否配置了：`echo $DISPLAY`
 2. 检查 vcXsrv 是否启动：桌面右下角应该可以找到它的图标
-3. 确认 vcXsrv 启动的时候勾选了 **Disable access contro**：如果不记得了，退出重新开一次
+3. 确认 vcXsrv 启动的时候勾选了 **Disable access control**：如果不记得了，退出重新开一次
 4. 在桌面右下角图标里右键，选择 Applications -> xcalc，确认 vcXsrv 本身可以显示窗口
 5. 如果还是不行，尝试关闭杀毒软件
 6. 如果还是不行，尝试用管理员权限启动 vcXsrv
