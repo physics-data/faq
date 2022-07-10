@@ -11,3 +11,7 @@ sudo apt install python3-tk
 ```
 
 这是因为如果没有安装 `python3-tk`，matplotlib 找不到图形界面库，就无法显示图形界面。
+
+## 运行 `ssh-keygen` 以后找不到 `~/.ssh/id_rsa.pub`
+
+运行 `ssh-keygen` 的时候，它会问你生成的的路径等问题，这时候不要输入内容（姓名、学号等等），直接一路回车即可。
