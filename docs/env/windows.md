@@ -13,7 +13,7 @@ WSL (Windows Subsystem for Linux) 是微软开发的在 Windows 上提供 Linux 
 
 WSL 推出以来，存在 WSL1 与 WSL2 两个版本。如果你已经安装了其中的任何一个，它都可以符合我们的需要；如果没有，则默认将会使用 WSL2。
 
-**可以通过 `wsl -l -v` 命令来判断目前的 WSL 版本。**
+**可以通过在命令提示符中运行 `wsl -l -v` 命令来判断目前的 WSL 版本。**
 
 WSL2 要求 Windows 版本如下：
 
@@ -155,7 +155,7 @@ xclock
 如果还是连不上，按照以下的方式检查：
 
 1. 检查 DISPLAY 环境变量是否配置了：`echo $DISPLAY`
-2. 确认你用的是 WSL1 还是 WSL2：在命令提示符里运行 `wsl -l -v` 可以看到版本
+2. 确认你用的是 WSL1 还是 WSL2：在 **命令提示符** 里运行 `wsl -l -v` 可以看到版本
 3. 确认你在上面运行的命令和你的 WSL 版本是一致的
 4. 检查 VcXsrv 是否启动：桌面右下角应该可以找到它的图标
 5. 确认 VcXsrv 启动的时候勾选了 **Disable access control**：如果不记得了，退出 VcXsrv 再重新开一次
