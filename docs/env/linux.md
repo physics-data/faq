@@ -70,7 +70,14 @@ python3 --version
 
 安装好后，就可以看到 python3 的版本了。你应该可以看到 Python 3.8 或者更高的版本，否则就说明你的系统太老了。
 
-接下来，我们就可以用 `pip3` 来安装一些常用的 python 包：
+接下来，我们就可以用 `apt` 来安装一些常用的 python 包：
+
+```shell
+sudo apt install -y python3-matplotlib python3-numpy
+python3 -c 'import matplotlib;import numpy'
+```
+
+用 pip3 也可以：
 
 ```shell
 pip3 install matplotlib numpy
