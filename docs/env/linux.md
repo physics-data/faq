@@ -66,6 +66,13 @@ python3 -c 'import matplotlib;import numpy'
 
 如果第二条命令导入的时候没有出错，就说明安装成功了。
 
+如果 `pip3 install` 的时候显示网络错误，可以用 TUNA 镜像安装：
+
+```shell
+pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+pip3 install matplotlib numpy
+```
+
 测试 matplotlib 能否显示图像：
 
 ```shell
