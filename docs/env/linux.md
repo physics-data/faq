@@ -61,10 +61,10 @@ deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu focal main restricted universe mu
 
 ## 用 apt 安装 python
 
-安装好 Ubuntu/Debian 系统以后，我们可以安装 python3:
+安装好 Ubuntu/Debian 系统以后，我们可以安装 python3 和一些常用的包:
 
 ```shell
-sudo apt install python3 python3-pip
+sudo apt install python3 python3-pip python3-tk
 python3 --version
 ```
 
@@ -73,7 +73,7 @@ python3 --version
 接下来，我们就可以用 `pip3` 来安装一些常用的 python 包：
 
 ```shell
-pip3 install matplotlib numpy
+pip3 install matplotlib numpy python3-tk
 python3 -c 'import matplotlib;import numpy'
 ```
 
