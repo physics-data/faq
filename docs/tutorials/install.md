@@ -16,6 +16,13 @@
 | numpy            | sudo apt install python3-numpy          | brew install numpy                                           |
 | jupyter notebook | sudo apt install jupyter                | pip3 install notebook                                        |
 
+用 apt 和 pip3 安装的区别是：
+
+- pip3 安装的版本比较新，但是容易出现版本不兼容问题
+- apt 安装的版本比 pip3 安装旧一些，但是很少出现版本兼容的问题
+
+为了减少版本兼容性的各种问题，我们建议用 apt 来安装这些包。
+
 ## 常用软件安装方式
 
 | 软件包  | Ubuntu/Debian            | macOS(Homebrew)      |
