@@ -73,7 +73,7 @@ python3 --version
 接下来，我们就可以用 `pip3` 来安装一些常用的 python 包：
 
 ```shell
-pip3 install matplotlib numpy python3-tk
+pip3 install matplotlib numpy
 python3 -c 'import matplotlib;import numpy'
 ```
 
