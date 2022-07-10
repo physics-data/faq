@@ -95,7 +95,7 @@ export DISPLAY=$(ip route show default | cut -d' ' -f3):0
 export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
 ```
 
-如果**类似**下面的效果(IP 可能不同)：
+如果 **类似** 下面的效果(IP 可能不同)：
 
 ```bash
 $ echo $DISPLAY
