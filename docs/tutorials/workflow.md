@@ -11,6 +11,6 @@ steps:
 ...
 ```
 
-其中 `numpy` 可以替换为任意可用 `pip` 安装的 package。
+其中 `numpy` 可以替换为任意可用 `pip3` 安装的 package。
 
 其他更复杂的配置，可见 GitHub Docs 中的 [GitHub Actions Documentation](https://docs.github.com/en/actions) 页面。

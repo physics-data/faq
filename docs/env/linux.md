@@ -4,10 +4,10 @@ Linux 是最符合课程要求的环境，我们推荐使用 Debian GNU/Linux，
 
 如果你是 WSL 用户，已经安装好了 Linux 发行版，可以跳过这一步。
 
-如果要安装一个新的 Linux 发行版，那么：
+如果要安装一个新的 Linux 发行版，优先级从高到低：
 
-- Ubuntu：使用 20.04 或更新的版本
 - Debian：使用 bullseye 或更新的版本
+- Ubuntu：使用 20.04 或更新的版本
 - CentOS：不建议使用
 
 在虚拟机中或者物理机中安装一个 Linux 发行版的流程大致是：
@@ -49,6 +49,8 @@ deb http://mirrors.tuna.tsinghua.edu.cn/debian bullseye main contrib non-free
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu focal main restricted universe multiverse
 ```
 
+其中 focal 是 20.04 LTS 的代号。如果看到的是 bionic，那就说明安装了错误的 Ubuntu 版本。
+
 
 ## 常用 apt 命令
 
@@ -64,7 +66,7 @@ deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu focal main restricted universe mu
 安装好 Ubuntu/Debian 系统以后，我们可以安装 python3 和一些常用的包:
 
 ```shell
-sudo apt install python3 python3-pip python3-tk
+sudo apt install -y python3 python3-pip python3-tk
 python3 --version
 ```
 

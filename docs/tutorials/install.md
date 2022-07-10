@@ -13,7 +13,7 @@
 | vitables         | sudo apt install vitables python3-pyqt5 | 不支持，建议使用 [HDFView](https://www.hdfgroup.org/downloads/hdfview/#download) |
 | ipython          | sudo apt install python3-ipython        | pip3 install ipython                                         |
 | h5py             | sudo apt install python3-h5py           | pip3 install h5py                                            |
-| numpy            | sudo apt install python3-numpy          | pip3 install numpy                                           |
+| numpy            | sudo apt install python3-numpy          | brew install numpy                                           |
 | jupyter notebook | sudo apt install jupyter                | pip3 install notebook                                        |
 
 ## 常用软件安装方式
