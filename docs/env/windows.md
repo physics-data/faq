@@ -105,7 +105,7 @@ $ echo $DISPLAY
 172.22.192.1:0
 ```
 
-就算设置成功了，可以把这个设置写入到 `~/.bashrc` 中。
+这样就算设置成功了。可以把这个设置写入到 `~/.bashrc` 中，这样下次启动 wsl bash 的时候也会生效。
 
 同时，配置 X11 server 使其允许远程接入：如：使用 vcXsrv 时，**勾选 `Disable access control`**
 
