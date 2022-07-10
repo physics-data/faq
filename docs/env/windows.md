@@ -105,7 +105,9 @@ $ echo $DISPLAY
 
 就算设置成功了，可以把这个设置写入到 `~/.bashrc` 中。
 
-同时，配置 X11 server 使其允许远程接入：如：使用 VcXsrv 时，勾选 `Disable access control`
+同时，配置 X11 server 使其允许远程接入：如：使用 vcXsrv 时，**勾选 `Disable access control`**
+
+如果还是连不上，可以尝试用管理员权限启动 vcXsrv。
 
 参考：https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2
 
