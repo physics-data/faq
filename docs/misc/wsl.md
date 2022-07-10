@@ -39,3 +39,18 @@ Procedure to fix the issue :-
 Demo Video for graphical representation
 https://youtu.be/4czn-4uu65c
 ```
+
+## WSL2 中程序运行时出现 "Read-only filesystem"
+
+这一般是因为文件系统损坏（或者 Windows 盘满了），系统自动设置文件系统为只读模式。
+
+如果是盘满了，先清理一下，保证至少有几个 G 的空闲空间。
+
+然后，为了解决文件系统的损坏问题，在 WSL2 中运行：
+
+```shell
+sudo e2fsck $(mount | grep ext4 | awk '{print $1}') -y
+sudo e2fsck $(mount | grep ext4 | awk '{print $1}') -p
+```
+
+如果成功修复，则在命令提示符中运行 `wsl --shutdown`，然后再启动 wsl。
