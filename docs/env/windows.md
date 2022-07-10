@@ -85,13 +85,13 @@ WSL2 可以参考 [@Light1110 同学提供的解决方案](https://github.com/ph
 
 首先，如下配置环境变量 `DISPLAY`：
 
-```
+```bash
 export DISPLAY=$(ip route show default | cut -d' ' -f3):0
 ```
 
 如果上述命令还是不能工作，可以尝试下面的命令：
 
-```
+```bash
 export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
 ```
 
