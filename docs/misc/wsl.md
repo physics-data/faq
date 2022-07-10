@@ -59,3 +59,31 @@ sudo e2fsck $(mount | grep ext4 | awk '{print $1}') -p
 
 - https://github.com/microsoft/WSL/issues/8340
 - https://github.com/microsoft/WSL/issues/4833
+
+## WSL 忘记密码怎么办？
+
+@liuyiqi20 同学提供了回答：
+
+WSL 系统中可以使用 root 用户身份重置普通用户的密码。
+
+启用命令行或 PowerShell，如果需要重置的用户是 **默认WSL分发版** 的用户，使用以下命令登录 root 用户：
+
+```cmd
+wsl -u root
+```
+
+如果在 Windows 中只安装了一种版本的 WSL，就只需要按照上述操作登入 root 用户。
+
+如果安装了多种版本，可以在命令行或 PowerShell 中使用 ```wsl -l``` 查看 WSL 分发版名称以及默认情况。倘若要重置的用户是非默认 WSL 分发版的用户，则需要使用以下命令登录 root 用户：
+
+```cmd
+wsl -d <Linux_name> -u root
+```
+
+其中 ```<Linux_name>``` 为对应分发版的名称，如 Debian 或 Ubuntu 等。
+
+登入 root 用户后，可以使用 ```passwd <username>``` 来更新密码，其中 ```<username>``` 是需要重置的用户名。
+
+输入并确认密码后，最好通过 ```exit``` 关闭 WSL。
+
+参考：[设置 Linux 用户名和密码-Microsoft Docs](https://docs.microsoft.com/zh-cn/windows/wsl/setup/environment#set-up-your-linux-username-and-password)
