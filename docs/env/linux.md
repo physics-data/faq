@@ -35,7 +35,7 @@ Linux 是最符合课程要求的环境，我们推荐使用 Debian GNU/Linux，
 
 ### Ubuntu
 
-如果是 Ubuntu，则用类似于 Debian 的方法把 `archive.ubuntu.com` 替换为 `mirrors.tuna.tsinghua.edu.cn` ，然后 `sudo apt update` 即可。
+如果是 Ubuntu，则用类似于 Debian 的方法把 `archive.ubuntu.com`（或者 `cn.archive.ubuntu.com`） 替换为 `mirrors.tuna.tsinghua.edu.cn` ，然后 `sudo apt update` 即可。
 
 ## 常用 apt 命令
 
