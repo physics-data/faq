@@ -69,7 +69,7 @@ python3 -c 'import matplotlib;import numpy'
 测试 matplotlib 能否显示图像：
 
 ```shell
-python3 -c 'import matplotlib.pyplot;matplotlib.pyplot.plot([1,2,3,4]);matplotlib.pyplot.show()'
+python3 -c 'import matplotlib.pyplot;matplotlib.pyplot.plot([3,2,1,2,3]);matplotlib.pyplot.show()'
 ```
 
-如果弹出了窗口，窗口显示了一条直线，就说明绘图功能正常。
+如果弹出了窗口，并且窗口中出现了一个 V 字型，就说明绘图功能正常。
