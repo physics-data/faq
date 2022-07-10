@@ -10,4 +10,4 @@
 sudo apt install python3-tk
 ```
 
-这是因为如果没有安装 `python3-tk` 的时候，matplotlib 找不到图形界面库，就无法图形图形界面。
+这是因为如果没有安装 `python3-tk`，matplotlib 找不到图形界面库，就无法显示图形界面。
