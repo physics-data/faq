@@ -1,4 +1,4 @@
-macOS 提供了标准的 POSIX 环境，但没有内置包管理器。因此我们一般会使用第三方的包管理器，推荐程度从高到低：
+macOS 提供了较为标准的 POSIX 环境，但没有内置包管理器。因此我们一般会使用第三方的包管理器，推荐程度从高到低：
 
 - Homebrew
 - Nix
@@ -20,7 +20,7 @@ export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebr
 export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
 
-# 从本镜像下载安装脚本并安装 Homebrew / Linuxbrew
+# 从本镜像下载安装脚本并安装 Homebrew
 git clone --depth=1 https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/install.git brew-install
 /bin/bash brew-install/install.sh
 

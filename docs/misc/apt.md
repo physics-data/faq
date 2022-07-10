@@ -13,4 +13,4 @@ nameserver 114.114.114.114
 nameserver 180.76.76.76
 ```
 
-需要注意，修改 `/etc/resolv.conf` 的方法可能会导致之前 WSL 配置 DISPLAY 的方法冲突。
+需要注意，修改 `/etc/resolv.conf` 的方法可能会与之前 WSL 配置 DISPLAY 的方法冲突。
