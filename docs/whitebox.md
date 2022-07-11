@@ -71,11 +71,9 @@
     * 不掺杂个人情绪
     * 可以添加一些 Emoji
 
-
-
 ## Honor Code
 
-同学在实现过程中，如果参考了网上的代码，或者和其他同学（包括助教和没有选课的同学）交流，请把相关的网址、同学姓名和交流内容写到 `HONOR-CODE.md` 文件并提交到仓库中。参考资料标注的具体编写规范可以参考[Cite when Writing Code](https://integrity.mit.edu/handbook/writing-code)
+同学在实现过程中，如果参考了网上的代码，或者和其他同学（包括助教和没有选课的同学）交流，请把相关的网址、同学姓名和交流内容写到 `HONOR-CODE.md` 文件并提交到仓库中。参考资料标注的具体编写规范可以参考 [Cite when Writing Code](https://integrity.mit.edu/handbook/writing-code)
 
 如：
 
@@ -84,4 +82,4 @@
 - 在实现 XX 功能的时候，我 YY 地方没有想清楚如何实现，询问了 ZZ 同学。
 - 在题目 XX 里，我和同学 YY 遇到了一些困难，一起讨论以后，最终一致决定要用 ZZ 方法实现。
 
-关于作业中可能涉及的代码雷同、疑似抄袭、学术不端等情况，请**仔细阅读[学术诚信规则](plagiarism.md)**。
+关于作业中可能涉及的代码雷同、疑似抄袭、学术不端等情况，请 **仔细阅读[学术诚信规则](plagiarism.md)**。
