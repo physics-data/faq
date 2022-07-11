@@ -15,3 +15,12 @@ sudo apt install python3-tk
 ## 运行 `ssh-keygen` 以后找不到 `~/.ssh/id_rsa.pub`
 
 运行 `ssh-keygen` 的时候，它会问你生成的的路径等问题，这时候不要输入内容（姓名、学号等等），直接一路回车即可。
+
+
+## 运行 `ssh-keygen` 显示找不到命令 `command not found`
+
+请安装 `openssh-client`：
+
+```shell
+sudo apt install openssh-client
+```
