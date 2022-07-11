@@ -87,3 +87,13 @@ wsl -d <Linux_name> -u root
 输入并确认密码后，最好通过 ```exit``` 关闭 WSL。
 
 参考：[设置 Linux 用户名和密码-Microsoft Docs](https://docs.microsoft.com/zh-cn/windows/wsl/setup/environment#set-up-your-linux-username-and-password)
+
+## WSL 出现报错 "参考的对象类型不支持尝试的操作"
+
+用管理员权限运行：
+
+```cmd
+netsh winsock reset
+```
+
+参考：https://github.com/microsoft/WSL/issues/4194
