@@ -24,3 +24,7 @@ sudo apt install python3-tk
 ```shell
 sudo apt install openssh-client
 ```
+
+## 命令行下面中文显示不正常，变成了豆腐块
+
+请修改一下字体。例如，对于命令提示符，可以在标题栏右键，找到字体设置，然后设置为中文字体。
