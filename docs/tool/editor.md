@@ -18,6 +18,8 @@ nano file_to_edit
 sudo nano /etc/apt/sources.list
 ```
 
+这里用 sudo 的原因是，root 用户才有权限修改这个文件。
+
 进入 nano 之后，在屏幕中部应该可以看到文件内容，下面看到若干快捷键的提示，常用的如下：
 
 - ^X (Ctrl-X)：退出 nano
@@ -25,6 +27,13 @@ sudo nano /etc/apt/sources.list
 - ^\\ (Ctrl-\\)：进行替换
 
 在执行命令途中，下面的菜单可能会变化，则按照相应的按键执行相应的操作即可。细心的读者可能发现，`^` 在这里表示的就是 Ctrl 键。
+
+## Emacs 安装与使用
+
+在 Debian/Ubuntu 中，可以安装 `emacs` 软件包，或者安装 `emacs-gtk` 以获得更多功能。
+
+- 保存：C-x C-s
+- 退出：C-x C-c
 
 ## Vim 安装与使用
 
