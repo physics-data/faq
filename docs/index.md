@@ -7,17 +7,15 @@
 在本文中，经常会出现一些命令块，会出现两种类型：
 
 1. 只有命令，没有输出，如：
-
-```shell
-sudo apt install python3
-```
+    ```shell
+    sudo apt install python3
+    ```
 
 2. 命令和输出同时出现，为了区分命令和输出，在命令前加上 `$`：
-
-```shell
-$ python3 --version
-Python 3.9.13
-```
+    ```shell
+    $ python3 --version
+    Python 3.9.13
+    ```
 
 ## 遇到问题的时候应该怎么办
 
