@@ -89,7 +89,7 @@ WSL2 可以参考 [@Light1110 同学提供的解决方案](https://github.com/ph
 
 启动 X11 server，同时，配置 X11 server 使其允许远程接入：如：启动 VcXsrv 时，**勾选 `Disable access control`**。
 
-按如下命令配置环境变量 `DISPLAY`：
+在 WSL 内按如下命令配置环境变量 `DISPLAY`：
 
 ```bash
 export DISPLAY=$(ip route show default | cut -d' ' -f3):0
@@ -139,7 +139,7 @@ $ echo $DISPLAY
 
 #### 测试 X Server
 
-可以安装 `x11-apps` 软件包并执行 xclock，如果 X Server 运转正常，可以显示出一个钟表。
+可以在 Linux 中安装 `x11-apps` 软件包并执行 xclock，如果 X Server 运转正常，可以显示出一个钟表。
 
 ```bash
 sudo apt install x11-apps
