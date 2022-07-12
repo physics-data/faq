@@ -67,3 +67,9 @@ origin  https://github.com/username/repository.git (push)
 
 1. 首先检查网络，尝试访问其他网站，例如用浏览器访问 `https://git.tsinghua.edu.cn`，在 WSL 中运行 `ping 101.6.6.6`
 2. 如果网络正常，请配置清华的 [SSLVPN](https://deny.tsinghua.edu.cn)
+
+## Push 的时候出现 "setsockopt IPV6_TCLASS 8: Operation not permitted"
+
+这是因为 WSL1 实现不完整的问题。可以忽略，不影响使用。
+
+参考：<https://github.com/microsoft/WSL/issues/1869>
