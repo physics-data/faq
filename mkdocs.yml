@@ -23,8 +23,10 @@ extra:
 nav:
   - 主页: index.md
   - 先修要求: prerequisite.md
-  - 学术诚信: plagiarism.md
-  - 白盒评分: whitebox.md
+  - 作业评分:
+    - 白盒评分: whitebox.md
+    - 查重规则: plagiarism.md
+    - 迟交规则: late_submission.md
   - 环境配置:
     - Windows 环境配置: env/windows.md
     - Linux 环境配置: env/linux.md
