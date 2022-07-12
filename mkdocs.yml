@@ -59,6 +59,11 @@ plugins:
   - git-authors:
       show_contribution: true
       show_line_count: true
+  - redirects:
+      redirect_maps:
+        'tutorials/whitebox.md': 'rules/whitebox.md'
+        'whitebox.md': 'rules/whitebox.md'
+        'plagiarism.md': 'rules/plagiarism.md'
 
 markdown_extensions:
   - admonition
