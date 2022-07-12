@@ -20,11 +20,11 @@ Git 用户名：orv
 提交链接：https://git.tsinghua.edu.cn/physics-data/2022/aplusb/aplusb-orv/-/commit/fe19a62be71616fde0846209ef3b0615f694a8ad
 ```
 
-当助教处理请求后，会在网络学堂更新你的分数，并回复你的邮件。
+当助教处理请求后，会在网络学堂更新你的分数，并回复你的对应邮件。
 
 除非特别说明，迟交作业的得分 $S'$ 按照如下公式计算：
 
-$ S' = S \ times \min\(0.9, 0.95^D\)$
+$$ S' = S \times \min\(0.9, 0.95^D\) $$
 
 其中 $S$ 是作业原始得分， $D$ 是向上取整的迟交天数（即 deadline 后即记为迟交一天）。
 
