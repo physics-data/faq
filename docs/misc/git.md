@@ -61,4 +61,9 @@ origin  https://github.com/username/repository.git (fetch)
 origin  https://github.com/username/repository.git (push)
 ```
 
-则需执行`git remote set-url origin git@github.com:username/repository.git`，然后再次尝试进行`git push`，注意`username`为 Github 用户名，`repository`为仓库名。
+则需执行 `git remote set-url origin git@github.com:username/repository.git`，然后再次尝试进行 `git push`，注意 `username` 为 Github 用户名，`repository` 为仓库名。
+
+## Push 的时候出现 "port 22: Network is unreachable"
+
+1. 首先检查网络，尝试访问其他网站，例如用浏览器访问 `https://git.tsinghua.edu.cn`，在 WSL 中运行 `ping 101.6.6.6`
+2. 如果网络正常，请配置清华的 [SSLVPN](https://deny.tsinghua.edu.cn)
