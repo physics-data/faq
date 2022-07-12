@@ -104,6 +104,6 @@ netsh winsock reset
 
 1. Windows 的命令行提示符：显示当前路径+`>`，如：`C:\Users\xxxx>`
 2. Windows 的 PowerShell：显示 PS+当前路径+`>`，如：`PS C:\Users\xxxx>`
-3. WSL 的命令行：显示用用户名+`@`+机器名字+`$`+当前路径，如：`user@machine:~/`
+3. WSL 的命令行：显示用户名+`@`+机器名+`$`+当前路径，如：`user@machine:~/`
 
 本课程的大部分命令都是在第三种命令行环境下运行。`wsl` 命令在第一种或者第二种命令行环境下运行。
