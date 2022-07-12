@@ -37,7 +37,7 @@ sudo nano /etc/apt/sources.list
 
 ## Vim 安装与使用
 
-在 Debian/Ubuntu 中，可以安装 `vim` 软件包，或者安装 `vim-gtk3` 以获得更多功能。
+在 Debian/Ubuntu 中，可以安装 `vim` 软件包，或者安装 `vim-gtk3`（可能会使vim启动变慢） 以获得更多功能。
 
 如果需要保存并退出，请按 `Esc :wq`，可将 `wq` 替换为 `q!`，此时不会保存文件。
 
