@@ -3,6 +3,7 @@ stages:
   - deploy
 
 build:
+  stage: build
   image: python:3.10-bullseye
   before_script:
     - python3 -m pip install -U pip
@@ -17,15 +18,14 @@ deploy:
     - master
     - ci-test
   before_script:
-    before_script:
-      - eval $(ssh-agent -s)
-      - echo "$DEPLOY_KEY" | tr -d '\r' | ssh-add -
-      - mkdir -p ~/.ssh
-      - chmod 700 ~/.ssh
-      - git config --global user.email "ci@git.tsinghua.edu.cn"
-      - git config --global user.name "GitLab CI"
-    script:
-      - cd site
-      - git init && git remote add deploy git@meow.plus:physics-data/faq.git
-      - git add . && git commit -m "Deploy"
-      - GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git push deploy master -f
+    - eval $(ssh-agent -s)
+    - echo "$DEPLOY_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - git config --global user.email "ci@git.tsinghua.edu.cn"
+    - git config --global user.name "GitLab CI"
+  script:
+    - cd site
+    - git init && git remote add deploy git@meow.plus:physics-data/faq.git
+    - git add . && git commit -m "Deploy"
+    - GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git push deploy master -f
