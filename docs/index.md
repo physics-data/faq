@@ -2,6 +2,21 @@
 
 请在左边的目录里寻找要查看的问题分类，或者按关键词搜索。
 
+## 一些约定
+
+在本文中，经常会出现一些命令块，会出现两种类型：
+
+1. 只有命令，没有输出，如：
+    ```shell
+    sudo apt install python3
+    ```
+
+2. 命令和输出同时出现，为了区分命令和输出，在命令前加上 `$`：
+    ```shell
+    $ python3 --version
+    Python 3.9.13
+    ```
+
 ## 遇到问题的时候应该怎么办
 
 简单版：
@@ -15,3 +30,21 @@
 7. 向别人阐述你的问题，谈你都做了哪些尝试，并且把代码和错误信息截图（或者链接）发给对方
 
 完整版：见 [《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)
+
+## 提问途径
+
+本课程的提问/答疑/讨论途径有：
+
+1. 网络学堂的课程答疑和课程讨论
+2. 在 https://git.tsinghua.edu.cn/physics-data/faq/issues 下创建 issue
+3. 在 https://github.com/physics-data/faq/discussions 下发起讨论
+4. FAQ 相关页面的下方讨论区
+5. 课程微信群
+6. 通过邮件发送给老师/助教
+7. 在指定的时间参加集中答疑
+
+不建议私聊助教微信，因为这样其他同学看不到，无法给其他同学带来帮助。
+
+## 意见与建议
+
+如有其他意见或建议想向教学团队反映，请发送邮件至 <physics-data@tuna.tsinghua.edu.cn>。

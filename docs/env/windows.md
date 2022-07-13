@@ -11,7 +11,9 @@ WSL (Windows Subsystem for Linux) 是微软开发的在 Windows 上提供 Linux 
 
 ### 版本
 
-WSL 推出以来，存在 WSL1 与 WSL2 两个版本。如果你已经安装了其中的任何一个，它都可以符合我们的需要；如果没有，则默认将会使用 WSL2。可以通过 `wsl -l -v` 命令来判断目前的 WSL 版本。
+WSL 推出以来，存在 WSL1 与 WSL2 两个版本。如果你已经安装了其中的任何一个，它都可以符合我们的需要；如果没有，则默认将会使用 WSL2。
+
+**可以通过在命令提示符中运行 `wsl -l -v` 命令来判断目前的 WSL 版本。**
 
 WSL2 要求 Windows 版本如下：
 
@@ -22,15 +24,9 @@ WSL2 要求 Windows 版本如下：
 
 ### 安装 WSL
 
-#### 推荐：脚本安装
+可以观看[助教录制的 WSL 安装视频](http://hep.tsinghua.edu.cn/~berrysoft/bdeph2022/WSL2Tutorial.mp4)。
 
-为了方便同学们的安装和使用，今年助教团队基于最新的 Debian 制作了 WSL 镜像（其中包含了课程需要的绝大多数常用软件），并编写脚本支持一键安装、导入、卸载。我们推荐所有新用户使用这一方法安装。
-
-镜像下载地址为：[https://physics-data.meow.plus/wsl/](https://physics-data.meow.plus/wsl){target="_blank"}。请按照页面上的支持执行即可完成安装。安装后，可直接查阅参见 Terminal 一节。
-
-#### 手工安装
-
-详细的介绍，可见 OI Wiki 的 [WSL (Windows 10)](https://oi-wiki.org/tools/wsl/) 页面。
+详细的介绍，可见 OI Wiki 的 [WSL (Windows 10)](https://oi-wiki.org/tools/wsl/) 页面。简单来说，有如下几步：
 
 1. 打开控制面板
 2. 所有控制面板项
@@ -53,10 +49,12 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 wsl --set-default-version 2 
 ```
 
-之后，你就可以到 Microsoft Store 中安装你喜欢的发行版（推荐使用 Debian 或者 Ubuntu，否则可能无法按照老师的教程操作）：
+### 安装 Linux 发行版
 
-- Ubuntu：使用 20.04 或更新的版本
+之后，你就可以到 Microsoft Store 中安装你喜欢的发行版（推荐使用 Debian，其次 Ubuntu，否则可能无法按照老师的教程操作）：
+
 - Debian：使用 bullseye 或更新的版本
+- Ubuntu：使用 20.04 或更新的版本
 - CentOS：不建议使用
 
 ### 终端（Terminal）
@@ -67,14 +65,20 @@ WSL 安装后会自带一个终端（在运行中输入 `wsl` 即可启动），
 
 Windows Terminal 能够自动检测本机所有的 WSL 发行版。如果在使用时导入了新的 WSL 发行版，在设置中随意进行一点改动并保存，就能触发自动检测机制。
 
+### 配置 Linux 系统
+
+安装好 WSL 以后，就可以在终端中配置 Linux 系统了。
+
+接下来，请参考 [Linux 环境配置](../linux) 文档。
+
 ### WSL 下 X11 环境的配置
 
 如果需要在 WSL 中使用 GUI 程序，需要安装 X Server。
 
 - **如果你正在使用 Windows 11**: WSL2 可能已经带有了一个 X Server 实现 ([WSLg](https://github.com/microsoft/wslg))。通过以下方法检查：
-    - 启动终端进入 WSL2 发行版，执行 `echo $DISPLAY`，如果显示不为空，说明存在 WSlg。
+    - 启动终端进入 WSL2 发行版，执行 `echo $DISPLAY`，如果显示不为空，说明存在 WSLg。
 - **如果你没有在使用 Windows 11，或者上述测试输出为空**: 需要自行安装 X Server，并手动设置 DISPLAY 环境变量。
-    - 推荐安装 [vcXsrv](https://sourceforge.net/projects/vcxsrv/files/)。然后运行 `XLaunch` ，然后应该可以在右下角的状态栏中找到它。这时 X Server 已经启动
+    - 推荐安装 [VcXsrv](https://sourceforge.net/projects/VcXsrv/files/)。然后运行 `XLaunch`，会弹出一个配置窗口，一路前进，勾选 `Disable access control`，最后选择 `Finish`，然后应该可以在右下角的状态栏中找到它。这时 X Server 已经启动。第一次启动的时候可能会弹出窗口询问是否打开防火墙权限，此时要勾选所有的网络并同意。
     - 接着需要在 WSL 里面配置 `DISPLAY` 环境变量。这一步在不同的 WSL 版本中要用不同的办法。
 
 #### WSL2
@@ -83,29 +87,30 @@ WSL2 可以参考 [@Light1110 同学提供的解决方案](https://github.com/ph
 
 解决方案：
 
-首先，如下配置环境变量 `DISPLAY`：
+启动 X11 server，同时，配置 X11 server 使其允许远程接入：如：启动 VcXsrv 时，**勾选 `Disable access control`**。
 
-```
+在 WSL 内按如下命令配置环境变量 `DISPLAY`：
+
+```bash
 export DISPLAY=$(ip route show default | cut -d' ' -f3):0
 ```
 
 如果上述命令还是不能工作，可以尝试下面的命令：
 
-```
+```bash
 export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
 ```
 
-如果**类似**下面的效果(IP 可能不同)：
+如果 **类似** 下面的效果（实际 IP 可能不同）：
 
 ```bash
 $ echo $DISPLAY
-:0
 172.22.192.1:0
 ```
 
-就算设置成功了，可以把这个设置写入到 `~/.bashrc` 中。
+这样就算设置成功了。可以把这个设置写入到 `~/.bashrc` 中，这样下次启动 wsl bash 的时候也会生效。
 
-同时，配置 X11 server 使其允许远程接入：如：使用 VcXsrv 时，勾选 `Disable access control`
+如果还是连不上，可以尝试用管理员权限启动 VcXsrv。
 
 参考：https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2
 
@@ -134,14 +139,31 @@ $ echo $DISPLAY
 
 #### 测试 X Server
 
-可以安装 `x11-apps` 软件包并执行 xclock，如果 X Server 运转正常，可以显示出一个钟表。
+可以在 Linux 中安装 `x11-apps` 软件包并执行 xclock，如果 X Server 运转正常，可以显示出一个钟表。
 
-```
+```bash
 sudo apt install x11-apps
 xclock
 ```
 
+注意，上面是 x 十一，不是 x 两个 L。
+
 注：如果你在使用 WSLg，初次启动图形程序会有一定延迟，大约 10-20 秒，是正常现象。
+
+#### 问题排查
+
+如果还是连不上，按照以下的方式检查：
+
+1. 检查 DISPLAY 环境变量是否配置了：`echo $DISPLAY`
+2. 确认你用的是 WSL1 还是 WSL2：在 **命令提示符** 里运行 `wsl -l -v` 可以看到版本
+3. 确认你在上面运行的命令和你的 WSL 版本是一致的
+4. 检查 VcXsrv 是否启动：桌面右下角应该可以找到它的图标
+5. 确认 VcXsrv 启动的时候勾选了 **Disable access control**：如果不记得了，退出 VcXsrv 再重新开一次
+6. 在桌面右下角图标里右键，选择 Applications -> xcalc，确认 VcXsrv 本身可以显示窗口
+7. 修改防火墙规则：设置，找到防火墙，选择高级设置，左侧找到入站规则，在中间找到所有 VcXsrv 相关的条目，如果左边显示的不是绿色的勾，则双击对应的属性，选择允许连接。保证所有 VcXsrv 相关的规则都是绿色的
+8. 如果还是不行，尝试关闭杀毒软件
+9. 如果还是不行，尝试用管理员权限启动 VcXsrv
+10. 如果还是不行，尝试禁用整个防火墙
 
 ## 虚拟机
 
@@ -157,4 +179,4 @@ xclock
 
 ## MinGW/Cygwin
 
-不建议使用，同学可以自己摸索。
+助教不使用这个环境，如果有同学要使用的话，可以自己摸索。

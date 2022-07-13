@@ -2,13 +2,15 @@ Linux 是最符合课程要求的环境，我们推荐使用 Debian GNU/Linux，
 
 ## Linux 发行版安装
 
-如果要安装一个新的 Linux 发行版，那么：
+如果你是 WSL 用户，已经安装好了 Linux 发行版，可以跳过这一步。
 
-- Ubuntu：使用 20.04 或更新的版本
+如果要安装一个新的 Linux 发行版，优先级从高到低：
+
 - Debian：使用 bullseye 或更新的版本
+- Ubuntu：使用 20.04 或更新的版本
 - CentOS：不建议使用
 
-安装一个 Linux 发行版的流程大致是：
+在虚拟机中或者物理机中安装一个 Linux 发行版的流程大致是：
 
 1. 下载一个安装镜像 .iso 文件
 2. 如果是虚拟机，则挂载到虚拟机的虚拟光盘；如果是物理机，可以先烧录到 U 盘上，再从 U 盘启动
@@ -31,9 +33,24 @@ Linux 是最符合课程要求的环境，我们推荐使用 Debian GNU/Linux，
 
 然后 `sudo apt update` ，如果没有失败，则配置成功。
 
+最终文件内容类似于：
+
+```
+deb http://mirrors.tuna.tsinghua.edu.cn/debian bullseye main contrib non-free
+```
+
 ### Ubuntu
 
-如果是 Ubuntu，则用类似于 Debian 的方法把 `archive.ubuntu.com` 替换为 `mirrors.tuna.tsinghua.edu.cn` ，然后 `sudo apt update` 即可。
+如果是 Ubuntu，则用类似于 Debian 的方法把 `archive.ubuntu.com`（或者 `cn.archive.ubuntu.com`） 替换为 `mirrors.tuna.tsinghua.edu.cn` ，然后 `sudo apt update` 即可。
+
+最终文件内容类似于：
+
+```
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu focal main restricted universe multiverse
+```
+
+其中 focal 是 20.04 LTS 的代号。如果看到的是 bionic，那就说明安装了错误的 Ubuntu 版本。
+
 
 ## 常用 apt 命令
 
@@ -43,3 +60,45 @@ Linux 是最符合课程要求的环境，我们推荐使用 Debian GNU/Linux，
 2. 运行 `sudo apt install xxxx`，安装指定的包
 
 如果不知道包的名字，可以尝试在本地寻找：`sudo apt search xxx`；也可以在网页上搜索，例如 <https://packages.ubuntu.com/> 和 <https://www.debian.org/distrib/packages> 。
+
+## 用 apt 安装 python
+
+安装好 Ubuntu/Debian 系统以后，我们可以安装 python3 和一些常用的包:
+
+```shell
+sudo apt install -y python3 python3-pip python3-tk
+python3 --version
+```
+
+安装好后，就可以看到 python3 的版本了。你应该可以看到 Python 3.8 或者更高的版本，否则就说明你的系统太老了。
+
+接下来，我们就可以用 `apt` 来安装一些常用的 python 包：
+
+```shell
+sudo apt install -y python3-matplotlib python3-numpy
+python3 -c 'import matplotlib;import numpy'
+```
+
+用 pip3 也可以：
+
+```shell
+pip3 install matplotlib numpy
+python3 -c 'import matplotlib;import numpy'
+```
+
+如果第二条命令导入的时候没有出错，就说明安装成功了。
+
+如果 `pip3 install` 的时候显示网络错误，可以用 TUNA 镜像安装：
+
+```shell
+pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+pip3 install matplotlib numpy
+```
+
+测试 matplotlib 能否显示图像：
+
+```shell
+python3 -c 'import matplotlib.pyplot;matplotlib.pyplot.plot([3,2,1,2,3]);matplotlib.pyplot.show()'
+```
+
+如果弹出了窗口，并且窗口中出现了一个 V 字型，就说明绘图功能正常。

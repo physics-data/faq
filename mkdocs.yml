@@ -6,15 +6,16 @@ copyright: 'Copyright &copy; 2020 Teaching Team of Big Data in Experimental Phys
 theme: 
   name: 'material'
   language: 'zh'
+  custom_dir: 'theme-override/'
   icon:
     logo: material/help
-    repo: fontawesome/brands/github
+    repo: fontawesome/brands/gitlab
   features:
     - tabs
     - instant
 
 repo_name: 'physics-data/faq'
-repo_url: 'https://github.com/physics-data/faq'
+repo_url: 'https://git.tsinghua.edu.cn/physics-data/faq'
 
 extra:
   pagetime: 'on'
@@ -22,6 +23,10 @@ extra:
 nav:
   - 主页: index.md
   - 先修要求: prerequisite.md
+  - 作业评分:
+    - 白盒评分: rules/whitebox.md
+    - 查重规则: rules/plagiarism.md
+    - 迟交规则: rules/late_submission.md
   - 环境配置:
     - Windows 环境配置: env/windows.md
     - Linux 环境配置: env/linux.md
@@ -37,7 +42,6 @@ nav:
     - GitHub Workflow 配置: tutorials/workflow.md
     - 常用的软件包的安装方式: tutorials/install.md
     - 并行计算与加速手段: tutorials/parallel-accel.md
-    - 代码风格: tutorials/coding-style.md
   - 常见问题:
     - APT 相关问题: misc/apt.md
     - Git 相关问题: misc/git.md
@@ -46,6 +50,7 @@ nav:
     - vitables 相关问题: misc/vitables.md
     - macOS 相关问题: misc/mac.md
     - mail 作业依赖打环问题: misc/mail.md
+    - 课程相关问题: misc/course.md
 
 plugins:
   - search
@@ -54,6 +59,11 @@ plugins:
   - git-authors:
       show_contribution: true
       show_line_count: true
+  - redirects:
+      redirect_maps:
+        'tutorials/whitebox.md': 'rules/whitebox.md'
+        'whitebox.md': 'rules/whitebox.md'
+        'plagiarism.md': 'rules/plagiarism.md'
 
 markdown_extensions:
   - admonition
@@ -65,7 +75,8 @@ markdown_extensions:
   - meta
   - toc:
       permalink: true
-  - pymdownx.arithmatex
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.caret
@@ -78,8 +89,14 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
   - attr_list
 
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

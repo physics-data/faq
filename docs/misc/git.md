@@ -32,7 +32,7 @@ Hi xxx! You've successfully authenticated, but GitHub does not provide shell acc
 
 出现上面的消息，就说明 SSH Key 配置成功了。否则，按照下面的步骤配置 SSH Key：
 
-生成 SSH Key（`ssh-keygen`，注意，只要 `~/.ssh/id_rsa` 文件存在就不用再次生成），然后把 `~/.ssh.id_rsa.pub` 的内容添加到 GitHub 的 SSH Keys 设置中。
+生成 SSH Key（运行 `ssh-keygen`，一路回车，注意，只要 `~/.ssh/id_rsa` 文件存在就不用再次生成），然后把 `~/.ssh.id_rsa.pub` 的内容添加到 GitHub 的 SSH Keys 设置中。
 
 需要注意的是，SSH Key 只需要配置一次即可，它相当于你的 GitHub 帐号的登录凭证。
 
@@ -61,4 +61,15 @@ origin  https://github.com/username/repository.git (fetch)
 origin  https://github.com/username/repository.git (push)
 ```
 
-则需执行`git remote set-url origin git@github.com:username/repository.git`，然后再次尝试进行`git push`，注意`username`为 Github 用户名，`repository`为仓库名。
+则需执行 `git remote set-url origin git@github.com:username/repository.git`，然后再次尝试进行 `git push`，注意 `username` 为 Github 用户名，`repository` 为仓库名。
+
+## Push 的时候出现 "port 22: Network is unreachable"
+
+1. 首先检查网络，尝试访问其他网站，例如用浏览器访问 `https://git.tsinghua.edu.cn`，在 WSL 中运行 `ping 101.6.6.6`
+2. 如果网络正常，请配置清华的 [SSLVPN](https://deny.tsinghua.edu.cn)
+
+## Push 的时候出现 "setsockopt IPV6_TCLASS 8: Operation not permitted"
+
+这是因为 WSL1 实现不完整的问题。可以忽略，不影响使用。
+
+参考：<https://github.com/microsoft/WSL/issues/1869>
