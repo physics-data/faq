@@ -1,0 +1,31 @@
+stages:
+  - build
+  - deploy
+
+build:
+  before_script:
+    - apt update -y
+    - apt install python3 python3-pip -y
+    - python3 -m pip install --upgrade pip
+    - pip3 install -r requirements.txt
+  script:
+    - mkdocs build
+
+deploy:
+  stage: deploy
+  only:
+    - master
+    - ci-test
+  before_script:
+    before_script:
+      - eval $(ssh-agent -s)
+      - echo "$DEPLOY_KEY" | tr -d '\r' | ssh-add -
+      - mkdir -p ~/.ssh
+      - chmod 700 ~/.ssh
+      - git config --global user.email "ci@git.tsinghua.edu.cn"
+      - git config --global user.name "GitLab CI"
+    script:
+      - cd site
+      - git init && git remote add deploy git@meow.plus:physics-data/faq.git
+      - git add . && git commit -m "Deploy"
+      - GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git push deploy master -f
