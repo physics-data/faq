@@ -13,6 +13,7 @@ theme:
   features:
     - tabs
     - instant
+  font: false
 
 repo_name: 'physics-data/faq'
 repo_url: 'https://git.tsinghua.edu.cn/physics-data/faq'
@@ -100,3 +101,5 @@ extra_javascript:
   - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+extra_css:
+  - stylesheets/fonts.css
