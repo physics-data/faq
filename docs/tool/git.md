@@ -31,7 +31,13 @@ git config --global user.email "name@example.com" # 请使用注册 GitHub 的�
 
 ## 生成 SSH Key
 
-运行 `ssh-keygen`，一路按回车，会生成密钥：
+首先安装 SSH 客户端：
+
+```shell
+sudo apt install openssh-client
+```
+
+接着，运行 `ssh-keygen`，一路按回车，会生成密钥：
 
 - `~/.ssh/id_rsa`: 私钥，需要保密
 - `~/.ssh/id_rsa.pub`: 公钥，可以公开
