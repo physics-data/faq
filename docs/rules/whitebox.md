@@ -71,7 +71,7 @@
     * 不要编写的过于详细或过于简略
     * 可以采用一些格式，例如 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#examples)
     * 不掺杂个人情绪
-    * 可以添加一些 Emoji
+    * 可以添加一些 Emoji。[gitmoji](https://gitmoji.dev/) 为提交说明中使用的 Emoji 提出了一些建议，可以参考。
 
 ## Honor Code
 
