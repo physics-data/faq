@@ -45,6 +45,9 @@
 
 不建议私聊助教微信，因为这样其他同学看不到，无法给其他同学带来帮助。
 
-## 意见与建议
+## 联系我们
 
-如有其他意见或建议想向教学团队反映，请发送邮件至 <physics-data@tuna.tsinghua.edu.cn>。
+如需联系教学团队，请发送邮件至：
+
+* 任何与作业有关的内容（如迟交说明、评分疑问，大作业申请）： <physics-data+assignments@tuna.tsinghua.edu.cn>
+* 其他内容（如课程建设）：<physics-data@tuna.tsinghua.edu.cn>
