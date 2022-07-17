@@ -27,7 +27,7 @@ nav:
   - 作业评分:
     - 白盒标准: rules/whitebox.md
     - 查重规则: rules/plagiarism.md
-    - 评分规则: rules/regrading.md
+    - 重新评分: rules/regrading.md
   - 环境配置:
     - Windows 环境配置: env/windows.md
     - Linux 环境配置: env/linux.md
