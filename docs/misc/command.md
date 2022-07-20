@@ -12,6 +12,17 @@ sudo apt install python3-tk
 
 这是因为如果没有安装 `python3-tk`，matplotlib 找不到图形界面库，就无法显示图形界面。
 
+## matplotlib 显示 "Couldn't find foreign struct converter for 'cairo.Context'"
+
+运行如下命令：
+
+```shell
+sudo apt update
+sudo apt install python-gi-cairo
+```
+
+参考文档：<https://github.com/rbgirshick/py-faster-rcnn/issues/221>
+
 ## 运行 `ssh-keygen` 以后找不到 `~/.ssh/id_rsa.pub`
 
 运行 `ssh-keygen` 的时候，它会问你生成的的路径等问题，这时候不要输入内容（姓名、学号等等），直接一路回车即可。
