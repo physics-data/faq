@@ -18,7 +18,7 @@ sudo apt install python3-tk
 
 ```shell
 sudo apt update
-sudo apt install python-gi-cairo
+sudo apt install python3-gi-cairo
 ```
 
 参考文档：<https://github.com/rbgirshick/py-faster-rcnn/issues/221>
