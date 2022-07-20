@@ -102,3 +102,9 @@ python3 -c 'import matplotlib.pyplot;matplotlib.pyplot.plot([3,2,1,2,3]);matplot
 ```
 
 如果弹出了窗口，并且窗口中出现了一个 V 字型，就说明绘图功能正常。
+
+如果不能正常显示，排查：
+
+1. X11 server（如 VcXsrv）是否启动
+2. 测试能否运行其他图形界面程序，如 `xclock` 和 `xeyes`
+3. 运行 apt 安装依赖：`sudo apt install python3-tk python3-gi-cairo`
