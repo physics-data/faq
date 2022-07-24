@@ -48,6 +48,7 @@ nav:
     - Git 相关问题: misc/git.md
     - WSL 相关问题: misc/wsl.md
     - 命令行相关问题: misc/command.md
+    - matplotlib 相关问题: misc/matplotlib.md
     - vitables 相关问题: misc/vitables.md
     - macOS 相关问题: misc/mac.md
     - mail 作业依赖打环问题: misc/mail.md
