@@ -1,6 +1,6 @@
 ## matplotlib 图片中中文无法显示，变成了方块
 
-由于 matplotlib 对中文字体支持的缺陷，我们**不推荐在 matplotlib 中直接使用中文**。具体来说：
+由于 matplotlib 对中文字体支持的缺陷，我们 **不推荐在 matplotlib 中直接使用中文**。具体来说：
 
 - 如果指定一个字体列表，则 matplotlib 只会应用其中第一个可用的字体。[#18883](https://github.com/matplotlib/matplotlib/issues/18883)
 - 对于 `.ttc` 字体集，如果包含多种字体，则也将只应用其中的第一种字体。[#3135](https://github.com/matplotlib/matplotlib/issues/3135)
@@ -23,7 +23,7 @@
     sudo apt install fonts-wqy-zenhei
     ```
 
-    再执行 `fc-list :lang=zh`，即可查看新安装的字体。然后执行如下命令，删除原有的字体缓存目录：
+    再执行 `fc-list :lang=zh`，即可查看新安装的字体。然后执行如下命令，删除 matplotlib 原有的缓存目录：
 
     ``` bash
     rm -r ~/.cache/matplotlib
@@ -31,7 +31,7 @@
 
     重启 python 解释器，再调用 matplotlib 时会自动载入新的字体。
 
-2. 将中文字体应用到 `matplotlib`。以下均以“文泉驿正黑”举例，**需要将其替换为要设置的字体**。
+2. 将中文字体应用到 `matplotlib`。以下均以“文泉驿正黑”举例，**需要将其对应替换为要设置的字体**。
 
     - 如果在个别位置使用中文，请查阅函数的文档，并将中文字体名称填入相应参数。通常设置关键字参数 `fontdict={'family': 'WenQuanYi Zen Hei'}` 即可生效。
 
