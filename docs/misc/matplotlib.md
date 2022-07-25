@@ -46,3 +46,9 @@
         **此外，由于西文字符也将使用该字体，请在使用该方法时，尽量选用大字符集的字体**，如[思源宋体](https://github.com/adobe-fonts/source-han-serif/blob/master/README-CN.md)。
 
 注意，由于 matplotlib 只支持 `.ttc` 字体集中的第一个字体，因此如果设置不生效，则可以换用同一文件下其他字体再次尝试。
+
+> **Note**
+> 
+> - TTF (TrueType Fonts): 是一种跨平台的矢量字体，文件后缀名为 `.ttf`。
+> - OTF (OpenType Fonts): 一种扩展性更好的、跨平台的矢量字体。基于 TrueType 开发的 OTF 字体后缀名也是 `.ttf` ，而基于 PostScript 开发的 OTF 字体后缀名为 `.otf`。
+> - TTC (TrueType Collections): 是 TTF 字体的集合，后缀名为 `.ttc`
