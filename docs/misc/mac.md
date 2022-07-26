@@ -45,3 +45,11 @@ make --version | grep GNU
 ```
 
 如果每个命令的版本信息都有 `GNU`，就说明配置正确了。
+
+## 怎么安装带有 guile 支持的 make？
+
+```shell
+brew tap jiegec/formulas
+brew install make-guile
+export PATH="$(brew --prefix)/opt/make-guile/libexec/gnubin:$PATH"
+```
