@@ -7,7 +7,7 @@ Linux 是最符合课程要求的环境，我们推荐使用 Debian GNU/Linux，
 如果要安装一个新的 Linux 发行版，优先级从高到低：
 
 - Debian：使用 bullseye 或更新的版本
-- Ubuntu：使用 20.04 或更新的版本
+- Ubuntu：使用 22.04 或更新的版本
 - CentOS：不建议使用
 
 在虚拟机中或者物理机中安装一个 Linux 发行版的流程大致是：
@@ -46,10 +46,10 @@ deb http://mirrors.tuna.tsinghua.edu.cn/debian bullseye main contrib non-free
 最终文件内容类似于：
 
 ```
-deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu focal main restricted universe multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu jammy main restricted universe multiverse
 ```
 
-其中 focal 是 20.04 LTS 的代号。如果看到的是 bionic，那就说明安装了错误的 Ubuntu 版本。
+其中 jammy 是 22.04 LTS 的代号。如果看到的是 focal 或 bionic，那就说明安装了错误的 Ubuntu 版本。
 
 
 ## 常用 apt 命令
