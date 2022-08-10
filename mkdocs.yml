@@ -47,6 +47,7 @@ nav:
     - APT 相关问题: misc/apt.md
     - Git 相关问题: misc/git.md
     - WSL 相关问题: misc/wsl.md
+    - Python 相关问题: misc/python.md
     - 命令行相关问题: misc/command.md
     - matplotlib 相关问题: misc/matplotlib.md
     - vitables 相关问题: misc/vitables.md
