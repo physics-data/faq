@@ -52,3 +52,10 @@
 > - TTF (TrueType Fonts): 是一种跨平台的矢量字体，文件后缀名为 `.ttf`。
 > - OTF (OpenType Fonts): 一种扩展性更好的、跨平台的矢量字体。基于 TrueType 开发的 OTF 字体后缀名也是 `.ttf` ，而基于 PostScript 开发的 OTF 字体后缀名为 `.otf`。
 > - TTC (TrueType Collections): 是 TTF 字体的集合，后缀名为 `.ttc`
+
+## matplotlib 绘图时出现文字被截断的问题
+
+在绘图时如果遇到上下标题被卡成一半的情况，可以参考如下解决方案：
+
+https://stackoverflow.com/questions/27878217/how-do-i-extend-the-margin-at-the-bottom-of-a-figure-in-matplotlib
+
