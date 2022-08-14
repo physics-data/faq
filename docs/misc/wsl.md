@@ -132,5 +132,8 @@ core.filemode=false
 
 ## 已知并且没有被修复的 WSL bug
 
-1. [WSL1 下 Ubuntu 20.04 的 gzip 无法执行](https://github.com/microsoft/WSL/issues/8219)
-2. [WSL1 下 Ubuntu 20.04 的 gdb 无法调试](https://github.com/microsoft/WSL/issues/8356)
+WSL1:
+
+1. [WSL1 下 Ubuntu 22.04 的 gzip 无法执行](https://github.com/microsoft/WSL/issues/8219)：Debian Bullseye 和 Ubuntu 20.04 正常
+2. [WSL1 下 Ubuntu 22.04 的 gdb 无法打断点](https://github.com/microsoft/WSL/issues/8356)：GDB 11 开始不兼容，Debian Bullseye 和 Ubuntu 20.04 的 GDB 正常
+3. [WSL1 下部分动态库（如 libQt5Core.so）不工作](https://github.com/microsoft/WSL/issues/3023)：Debian Bullseye 可以复现：`wireshark: error while loading shared libraries: libQt5Core.so.5: cannot open shared object file: No such file or directory`
