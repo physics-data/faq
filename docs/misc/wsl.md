@@ -129,3 +129,8 @@ core.filemode=false
 2. 进入仓库，向需要调整权限的脚本添加执行权限，直到本地评分通过
 3. 此时运行 `git status`，会提示有文件权限的变更
 4. 提交修改
+
+## 已知并且没有被修复的 WSL bug
+
+1. [WSL1 下 Ubuntu 20.04 的 gzip 无法执行](https://github.com/microsoft/WSL/issues/8219)
+2. [WSL1 下 Ubuntu 20.04 的 gdb 无法调试](https://github.com/microsoft/WSL/issues/8356)
