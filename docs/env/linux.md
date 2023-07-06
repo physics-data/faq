@@ -6,9 +6,10 @@ Linux 是最符合课程要求的环境，我们推荐使用 Debian GNU/Linux，
 
 如果要安装一个新的 Linux 发行版，优先级从高到低：
 
-- Debian：使用 bullseye 或更新的版本
-- Ubuntu：使用 22.04 或更新的版本
-- CentOS：不建议使用
+- Debian：使用 12 (bookworm) 或更新的版本
+- Gentoo：使用 stable 版本
+- Ubuntu：不建议使用，带有内嵌广告
+- CentOS：建议不使用，已经停止开发
 
 在虚拟机中或者物理机中安装一个 Linux 发行版的流程大致是：
 
@@ -36,21 +37,12 @@ Linux 是最符合课程要求的环境，我们推荐使用 Debian GNU/Linux，
 最终文件内容类似于：
 
 ```
-deb http://mirrors.tuna.tsinghua.edu.cn/debian bullseye main contrib non-free
+deb http://mirrors.tuna.tsinghua.edu.cn/debian bookworm main contrib non-free
 ```
 
 ### Ubuntu
 
-如果是 Ubuntu，则用类似于 Debian 的方法把 `archive.ubuntu.com`（或者 `cn.archive.ubuntu.com`） 替换为 `mirrors.tuna.tsinghua.edu.cn` ，然后 `sudo apt update` 即可。
-
-最终文件内容类似于：
-
-```
-deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu jammy main restricted universe multiverse
-```
-
-其中 jammy 是 22.04 LTS 的代号。如果看到的是 focal 或 bionic，那就说明安装了错误的 Ubuntu 版本。
-
+不建议使用 Ubuntu，因为该发行版内嵌广告，且从 22.04 版本以来强制推行 `snap` 工具，(给用户带来极大不便)[https://www.reddit.com/r/Ubuntu/comments/uollzl/why_the_firefox_snap_fucking_sucks/]。
 
 ## 常用 apt 命令
 
@@ -59,11 +51,11 @@ deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu jammy main restricted universe mu
 1. 运行 `sudo apt update`，保证目前采用的是最新的软件包
 2. 运行 `sudo apt install xxxx`，安装指定的包
 
-如果不知道包的名字，可以尝试在本地寻找：`sudo apt search xxx`；也可以在网页上搜索，例如 <https://packages.ubuntu.com/> 和 <https://www.debian.org/distrib/packages> 。
+如果不知道包的名字，可以尝试在本地寻找：`sudo apt search xxx`；也可以在网页上搜索，例如 <https://www.debian.org/distrib/packages> 。
 
 ## 用 apt 安装 python
 
-安装好 Ubuntu/Debian 系统以后，我们可以安装 python3 和一些常用的包:
+安装好 Debian 系统以后，我们可以安装 python3 和一些常用的包:
 
 ```shell
 sudo apt install -y python3 python3-pip python3-tk

@@ -51,11 +51,12 @@ wsl --set-default-version 2
 
 ### 安装 Linux 发行版
 
-之后，你就可以到 Microsoft Store 中安装你喜欢的发行版（推荐使用 Debian，其次 Ubuntu，否则可能无法按照老师的教程操作）：
+之后，你就可以到 Microsoft Store 中安装你喜欢的发行版（推荐使用 Debian，否则可能无法按照老师的教程操作）：
 
-- Debian：使用 bullseye 或更新的版本
-- Ubuntu：使用 20.04 或更新的版本
-- CentOS：不建议使用
+- Debian：使用 12 (bookworm) 或更新的版本
+- Gentoo：使用 stable 版本
+- Ubuntu：不建议使用，带有内嵌广告
+- CentOS：建议不使用，已经停止开发
 
 ### 终端（Terminal）
 
