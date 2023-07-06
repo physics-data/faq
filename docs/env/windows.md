@@ -56,7 +56,7 @@ wsl --set-default-version 2
 - Debian：使用 12 (bookworm) 或更新的版本
 - Gentoo：使用 stable 版本
 - Ubuntu：不建议使用，带有内嵌广告
-- CentOS：建议不使用，已经停止开发
+- CentOS：建议不使用，已经停止开发。(`CentOS Stream` 不是 `CentOS`。)
 
 ### 终端（Terminal）
 

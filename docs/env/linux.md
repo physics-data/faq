@@ -9,7 +9,7 @@ Linux 是最符合课程要求的环境，我们推荐使用 Debian GNU/Linux，
 - Debian：使用 12 (bookworm) 或更新的版本
 - Gentoo：使用 stable 版本
 - Ubuntu：不建议使用，带有内嵌广告
-- CentOS：建议不使用，已经停止开发
+- CentOS：建议不使用，已经停止开发。(`CentOS Stream` 不是 `CentOS`。)
 
 在虚拟机中或者物理机中安装一个 Linux 发行版的流程大致是：
 
