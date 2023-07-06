@@ -8,7 +8,7 @@
 - 主动不参考别人完成的实验代码
 - 只在 “绝对可以求助” 的时候才寻求帮助
 
-如果你想知道具体的行为界限，请参考 [MIT's Policy on Collaboration and Sharing](https://web.mit.edu/6.031/www/fa20/general/collaboration.html)
+如果你想知道具体的行为界限，请参考 [MIT's Policy on Collaboration and Sharing](https://web.mit.edu/6.031/www/fa20/general/collaboration.html)，[中文翻译](https://jia.je/programming/2022/07/12/writing-code-cn/)。
 
 ## 警告
 
