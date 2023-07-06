@@ -44,6 +44,8 @@ deb http://mirrors.tuna.tsinghua.edu.cn/debian bookworm main contrib non-free
 
 不建议使用 Ubuntu，因为该发行版内嵌广告，且从 22.04 版本以来强制推行 `snap` 工具，(给用户带来极大不便)[https://www.reddit.com/r/Ubuntu/comments/uollzl/why_the_firefox_snap_fucking_sucks/]。
 
+如果你不小心安装了 Ubuntu ，并且想作出改变，请参考(如何把 Ubuntu 升级成 Debian)[http://hep.tsinghua.edu.cn/~orv/teaching/physics-data/BDEPh2022_16.mp4#t=12323]。
+
 ## 常用 apt 命令
 
 在学习课程的过程中，通常会使用 apt 来安装一些包。如果已经知道了包的名字，我们一般采用如下的方法：
