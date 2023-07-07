@@ -24,7 +24,7 @@ WSL2 要求 Windows 版本如下：
 
 ### 安装 WSL
 
-可以观看[助教录制的 WSL 安装视频](http://hep.tsinghua.edu.cn/~berrysoft/bdeph2022/WSL2Tutorial.mp4)。
+可以观看[助教录制的 WSL 安装视频](https://hep.tsinghua.edu.cn/~orv/teaching/physics-data/WSL2Tutorial.mp4)。
 
 详细的介绍，可见 OI Wiki 的 [WSL (Windows 10)](https://oi-wiki.org/tools/wsl/) 页面。简单来说，有如下几步：
 
