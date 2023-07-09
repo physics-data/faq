@@ -66,6 +66,25 @@ python3 -c 'import matplotlib;import numpy'
 
 如果第二条命令导入的时候没有出错，就说明安装成功了。
 
+## 配置 Gentoo/Prefix
+
+打开命令行，执行下面的命令：
+
+```shell
+wget https://gitweb.gentoo.org/repo/proj/prefix.git/plain/scripts/bootstrap-prefix.sh
+chmod +x bootstrap-prefix.sh
+./bootstrap-prefix.sh
+```
+
+询问的问题一路采用默认值即可。如果一切顺利，编译完成后，可以在 `~/Gentoo` 目录下启动 Gentoo/Prefix：
+
+```shell
+cd ~/Gentoo
+./startprefix.sh
+```
+
+这样就配好了 Gentoo/Prefix 环境，之后可以用 `emerge` 命令来安装软件。
+
 ## 配置 Nix
 
 首先按照 <https://nixos.org/download.html> 上的方法，进行 `Multi-user installation`。执行成功以后，就可以在命令行中执行 `nix-env` 命令了。
