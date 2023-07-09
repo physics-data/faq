@@ -60,3 +60,9 @@ sudo nano /etc/apt/sources.list
 请在从你的 **工作环境**（如 WSL / Remote SSH）启动的 VSCode 中，安装 Python 插件。注意安装在 Windows 中的插件不起作用。
 
 然后，打开对应的文件夹，愉快地使用吧！
+
+### 插件安装 FAQ
+在 VS Code 中搜索插件时，出现错误提示“Error while fetching extentions. XHR failed”：
+
+* 可能你正在科学上网。这种情况下可以关闭你的梯子，并刷新网络设置。参考：https://zhuanlan.zhihu.com/p/614288766
+* 可能你的 VS Code 版本太老了。从左下角的设置按钮点击“检查更新”，并按照提示安装新版本。
