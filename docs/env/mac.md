@@ -1,8 +1,49 @@
-macOS 提供了较为标准的 POSIX 环境，但没有内置包管理器。因此我们一般会使用第三方的包管理器，推荐程度从高到低：
+macOS 提供了较为标准的 POSIX 环境，但属于 BSD 流派，与 GNU 有微妙不好查觉的偏差，而且没有内置包管理器。因此我们一般会使用第三方的包管理器，推荐程度从高到低：
 
+- Gentoo Prefix
 - Homebrew
 - Nix
 - MacPorts
+
+## Gentoo Prefix
+[Gentoo Prefix](https://wiki.gentoo.org/wiki/Project:Prefix) 是当前由续本达领导开发的用户态基于 Gentoo Linux 的通用 GNU 环境。它的安装需要编译 Python 和 Portage （Gentoo 的包管理器）和 GCC，需要的时间较长，因此请保证计算机的供电。
+
+如果从前没有在 macOS 上编译过程序，则需要安装苹果的 XCode 编译器。
+```shell
+xcode-select --install
+xcode-select --switch /Library/Developer/CommandLineTools
+```
+
+接下来到[General Boostrap Process](https://wiki.gentoo.org/wiki/Project:Prefix/Bootstrap) 页面的 "Bootstrapping Prefix" 一节，安提示下载 `bootstrap-prefix.sh`。
+
+打开 macOS 的终端命令行环境，执行下面的命令：
+```shell
+curl -O https://gitweb.gentoo.org/repo/proj/prefix.git/plain/scripts/bootstrap-prefix.sh
+chmod +x bootstrap-prefix.sh
+```
+
+在运行安装之前，指定清华 TUNA 的镜像可以加速网络连接。
+```
+export GENTOO_MIRRORS=http://mirrors.tuna.tsinghua.edu.cn/gentoo
+export GNU_URL=http://mirrors.tuna.tsinghua.edu.cn/gnu
+./bootstrap-prefix.sh
+```
+
+询问的问题一路采用默认值即可。如果一切顺利，编译完成后，会出现如图所示的信息
+
+![bootstrap 成功](prefix-success.png)
+
+系统在 `~/Gentoo` 目录，它称为 `EPREFIX` 目录，意为 `portage` 的 prefix。在之下启动 Gentoo Prefix：
+
+```shell
+~/Gentoo/startprefix.sh
+```
+
+这样就配好了 Gentoo Prefix 环境，之后可以用 `emerge` 命令来安装软件。例如
+
+```shell
+emerge -avt git
+```
 
 ## 配置 Homebrew
 
@@ -65,25 +106,6 @@ python3 -c 'import matplotlib;import numpy'
 ```
 
 如果第二条命令导入的时候没有出错，就说明安装成功了。
-
-## 配置 Gentoo/Prefix
-
-打开命令行，执行下面的命令：
-
-```shell
-wget https://gitweb.gentoo.org/repo/proj/prefix.git/plain/scripts/bootstrap-prefix.sh
-chmod +x bootstrap-prefix.sh
-./bootstrap-prefix.sh
-```
-
-询问的问题一路采用默认值即可。如果一切顺利，编译完成后，可以在 `~/Gentoo` 目录下启动 Gentoo/Prefix：
-
-```shell
-cd ~/Gentoo
-./startprefix.sh
-```
-
-这样就配好了 Gentoo/Prefix 环境，之后可以用 `emerge` 命令来安装软件。
 
 ## 配置 Nix
 
