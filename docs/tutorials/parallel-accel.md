@@ -23,7 +23,7 @@
 * <https://cenalulu.github.io/python/gil-in-python/>
 * <https://cloud.tencent.com/developer/news/743497>
 
-鉴于上述的原因， **在你没有深入地了解多线程、锁、 GIL 等原理前，不要在 Python 中手工编写多线程代码**。
+鉴于上述的原因， **在你没有深入地了解多线程、锁、GIL 等原理前，不要在 Python 中手工编写多线程代码**。
 
 事实上，一些 Python 库（如 `numpy`）会调用原生代码（native code）并使用多个线程进行计算，此时则不会受到 GIL 的影响。
 

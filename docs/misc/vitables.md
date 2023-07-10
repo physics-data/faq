@@ -10,7 +10,7 @@ Debian 为了配合 2021 年 8 月 16 日开课，在 14 日发布了 Debian 11�
 apt install lsb-release
 ```
 
-执行`lsb_release -a`，例如:
+执行`lsb_release -a`，例如：
 
 ```shell
 $ lsb_release -a

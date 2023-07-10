@@ -56,7 +56,7 @@ sudo cp /etc/apt/sources.list.old /etc/apt/sources.list
 
 不建议使用 Ubuntu，因为该发行版内嵌广告，且从 22.04 版本以来强制推行 `snap` 工具，(给用户带来极大不便)[https://www.reddit.com/r/Ubuntu/comments/uollzl/why_the_firefox_snap_fucking_sucks/]。
 
-如果你不小心安装了 Ubuntu ，并且想作出改变，请参考(如何把 Ubuntu 升级成 Debian)[http://hep.tsinghua.edu.cn/~orv/teaching/physics-data/BDEPh2022_16.mp4#t=12323]。
+如果你不小心安装了 Ubuntu，并且想作出改变，请参考 (如何把 Ubuntu 升级成 Debian)[http://hep.tsinghua.edu.cn/~orv/teaching/physics-data/BDEPh2022_16.mp4#t=12323]。
 
 ## 常用 apt 命令
 
@@ -69,7 +69,7 @@ sudo cp /etc/apt/sources.list.old /etc/apt/sources.list
 
 ## 用 apt 安装 python
 
-安装好 Debian 系统以后，我们可以安装 python3 和一些常用的包:
+安装好 Debian 系统以后，我们可以安装 python3 和一些常用的包：
 
 ```shell
 sudo apt install -y python3 python3-pip python3-tk

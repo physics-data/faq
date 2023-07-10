@@ -6,7 +6,7 @@ macOS 提供了较为标准的 POSIX 环境，但属于 BSD 流派，与 GNU 有
 - MacPorts
 
 ## Gentoo Prefix
-[Gentoo Prefix](https://wiki.gentoo.org/wiki/Project:Prefix) 是当前由续本达领导开发的用户态基于 Gentoo Linux 的通用 GNU 环境。它的安装需要编译 Python 和 Portage （Gentoo 的包管理器）和 GCC，需要的时间较长，因此请保证计算机的供电。
+[Gentoo Prefix](https://wiki.gentoo.org/wiki/Project:Prefix) 是当前由续本达领导开发的用户态基于 Gentoo Linux 的通用 GNU 环境。它的安装需要编译 Python 和 Portage（Gentoo 的包管理器）和 GCC，需要的时间较长，因此请保证计算机的供电。
 
 如果从前没有在 macOS 上编译过程序，则需要安装苹果的 XCode 编译器。
 ```shell

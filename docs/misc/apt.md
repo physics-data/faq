@@ -4,7 +4,7 @@
 
 先尝试 `sudo apt update`，再重新执行之前报错的命令。
 
-如果仍然不行，再检查一下自己是否已经使用TUNA清华源，配置方式请参考[配置TUNA清华源](https://physics-data.meow.plus/faq/env/linux/#tuna).
+如果仍然不行，再检查一下自己是否已经使用 TUNA 清华源，配置方式请参考[配置 TUNA 清华源](https://physics-data.meow.plus/faq/env/linux/#tuna).
 
 ## 执行 `apt update` 或 `git push` 等操作遇到 `unresolved hostname` 或 `Temporary failure in name resolution`
 

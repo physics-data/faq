@@ -66,7 +66,7 @@ sudo e2fsck $(mount | grep ext4 | awk '{print $1}') -p
 
 WSL 系统中可以使用 root 用户身份重置普通用户的密码。
 
-启用命令行或 PowerShell，如果需要重置的用户是 **默认WSL分发版** 的用户，使用以下命令登录 root 用户：
+启用命令行或 PowerShell，如果需要重置的用户是 **默认 WSL 分发版** 的用户，使用以下命令登录 root 用户：
 
 ```cmd
 wsl -u root

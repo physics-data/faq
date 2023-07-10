@@ -1,6 +1,6 @@
 ## cut 在 macOS 上行为与 Linux 上不同的问题
 
-`cut` 有不同的版本，在 Linux 上常用的是 GNU cut，来自 coreutils，而 macOS 自带的 cut（位于 `/usr/bin/cut`） 则是 BSD cut。它们之间可以接受的参数有相同的也有不同的。
+`cut` 有不同的版本，在 Linux 上常用的是 GNU cut，来自 coreutils，而 macOS 自带的 cut（位于 `/usr/bin/cut`）则是 BSD cut。它们之间可以接受的参数有相同的也有不同的。
 
 为了解决这个问题，可以在 macOS 上也安装 coreutils：
 
