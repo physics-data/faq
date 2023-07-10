@@ -36,7 +36,7 @@ export GNU_URL=http://mirrors.tuna.tsinghua.edu.cn/gnu
 系统在 `~/Gentoo` 目录，它称为 `EPREFIX` 目录，意为 `portage` 的 prefix。在之下启动 Gentoo Prefix：
 
 ```shell
-~/Gentoo/startprefix.sh
+~/Gentoo/startprefix
 ```
 
 这样就配好了 Gentoo Prefix 环境，之后可以用 `emerge` 命令来安装软件。例如
