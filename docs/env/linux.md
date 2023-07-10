@@ -23,7 +23,13 @@ Linux 是最符合课程要求的环境，我们推荐使用 Debian GNU/Linux，
 
 ### Debian
 
-对于 Debian，编辑 `/etc/apt/sources.list`：
+对于 Debian，需要编辑 `/etc/apt/sources.list`。为了防止键入命令错误导致的事故，先进行备份：
+
+```shell
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.old
+```
+
+这样创建了一个备份文件`/etc/apt/sources.list.old`。再进行编辑：
 
 1. 运行 `sudo nano /etc/apt/sources.list`
 2. 按 `Ctrl+\`，输入 `deb.debian.org`，回车；如果搜不到，并且文件中已经包括 `mirrors.tuna.tsinghua.edu.cn`，则不需要进行下面的操作
@@ -38,6 +44,12 @@ Linux 是最符合课程要求的环境，我们推荐使用 Debian GNU/Linux，
 
 ```
 deb http://mirrors.tuna.tsinghua.edu.cn/debian bookworm main contrib non-free
+```
+
+如果失败，可以回退之后重试：
+
+```
+sudo cp /etc/apt/sources.list.old /etc/apt/sources.list
 ```
 
 ### Ubuntu
