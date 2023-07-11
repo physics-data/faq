@@ -138,9 +138,9 @@ WSL1:
 2. [WSL1 下 Ubuntu 22.04 的 gdb 无法打断点](https://github.com/microsoft/WSL/issues/8356)：GDB 11 开始不兼容，报错 `Cannot insert breakpoint 1`，Debian Bullseye 和 Ubuntu 20.04 的 GDB 正常
 3. [WSL1 下部分动态库（如 libQt5Core.so）不工作](https://github.com/microsoft/WSL/issues/3023)：Debian Bullseye 可以复现：`wireshark: error while loading shared libraries: libQt5Core.so.5: cannot open shared object file: No such file or directory`
 
-## 移动 WSL 在计算机中的储存路径
+## 移动 WSL 在计算机中的储存路径，或迁移 WSL 至新系统/新电脑
 
-以下内容均在 CMD 下完成，以移动 Ubuntu 到 `D:\WSL` 为例。
+如未说明，以下内容均在 CMD 或 PS（以下统称 Windows CLI）下完成。以将 Ubuntu 发行版移动到 `D:\WSL` 为例。
 
 1. 查看 wsl 名称
 
@@ -150,39 +150,71 @@ WSL1:
     wsl -l -v
     ```
 
-    记住 Name 栏显示的内容（以下记为 Name），注意操作的时候最好停止运行 Ubuntu，不要让 state 显示 Running
+    记住 Name 栏显示的发行版名称（以下记为 &lt;*Name*&gt;），注意至少在下一步操作前应使用：
 
-2. 搬运
+    ```
+    wsl -t <Name>
+    ```
 
-    1. 导出备份
+    或类似指令停止运行你的 WSL 发行版，不要让 state 显示 Running，而是 Stopped。
 
-        ```
-        wsl --export Name D:\WSL\Ubuntu.tar
-        ```
+2. 导出备份（以导出至 `D:\WSL\Ubuntu.tar` 为例）
 
-    2. 注销原本的 wsl
+    ```
+    wsl --export <Name> D:\WSL\Ubuntu.tar
+    ```
 
+3. 注销原本的 wsl
 
-        ```
-        wsl --unregister Name
-        ```
+    ```
+    wsl --unregister <Name>
+    ```
 
+4. 重建（如果要迁移至新系统，则从此步开始也需要在新系统中操作）
 
-    3. 重建
+    ```
+    wsl --import <Name> D:\WSL D:\WSL\Ubuntu.tar
+    ```
 
+    这样就把 WSL 搬到 `D:\WSL` 里了。
 
-        ```
-        wsl --import Name D:\WSL D:\WSL\Ubuntu.tar
-        ```
+    如果想和之前的系统使用同样的目标路径（即这里的 `D:\WSL` ）以节省空间（比如使用了同一个移动硬盘），须先将该路径中的 `.vhdx` 文件剪切走（推荐）或删去，方可执行此行命令。
 
-        这样就把 WSL 搬到 `D:\WSL` 里了
+5. 恢复默认用户
 
-    4. 恢复默认用户
+    ```
+    <Name'> config --default-user 用户名
+    ```
 
+    其中 &lt;*Name'*&gt; 是指 &lt;*Name*&gt; 去掉所有符号的结果，比如如果 Name 是 Ubuntu-22.04，那么 Name'就是 Ubuntu2204。
 
-        ```
-        Name' config --default-user 用户名
-        ```
+    如果上述方式报错或不可用（比如试不出对应的 &lt;*Name'*&gt;），可以采用以下的另一种方式。
 
-        其中 Name' 是指 Name 去掉所有符号的结果，比如如果 Name 是 Ubuntu-22.04，那么 Name'就是 Ubuntu2204。
+    ### 恢复默认用户的另一种方法（修改 `wsl.conf`）
+
+    在 Windows CLI 中先通过 `wsl` 指令进入 WSL 发行版，
+
+    然后在 shell（bash等）中运行如下命令，其中 &lt;*myUsername*&gt; 是欲配置的默认用户名：
+
+    ```
+    myUsername = <myUsername>
+
+    echo -e "[user]\ndefault = $myUsername" >> /etc/wsl.conf
+
+    echo -e "[boot]\ncommand = cd ~" >> /etc/wsl.conf
+    ```
+
+    这样，就可以通过写入 `/etc/wsl.conf` 的方式设置默认用户，并在启动 WSL 后 `cd` 到默认目录下。
+
+    然后可以通过（在 Windows CLI 中运行）：
+
+    ```
+    wsl -t <Name>
+
+    wsl -d <Name>
+    ```
+
+    来观察用户名和目录是否符合需要。
+
+    如果因多人共用等原因，想给共用同一 WSL 发行版的不同 Windows 系统配置不同的默认用户，也就是需要新创建用户时，可参见 <a>https://learn.microsoft.com/zh-cn/windows/wsl/use-custom-distro#add-wsl-specific-components-like-a-default-user</a>，来新创建用户并给予 `sudo` 权限。
 
