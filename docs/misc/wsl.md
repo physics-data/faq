@@ -138,46 +138,51 @@ WSL1:
 2. [WSL1 下 Ubuntu 22.04 的 gdb 无法打断点](https://github.com/microsoft/WSL/issues/8356)：GDB 11 开始不兼容，报错 `Cannot insert breakpoint 1`，Debian Bullseye 和 Ubuntu 20.04 的 GDB 正常
 3. [WSL1 下部分动态库（如 libQt5Core.so）不工作](https://github.com/microsoft/WSL/issues/3023)：Debian Bullseye 可以复现：`wireshark: error while loading shared libraries: libQt5Core.so.5: cannot open shared object file: No such file or directory`
 
-## 移动WSL在计算机中的储存路径
+## 移动 WSL 在计算机中的储存路径
 
-以下内容均在CMD下完成
+以下内容均在 CMD 下完成，以移动 Ubuntu 到 `D:\WSL` 为例。
 
-1、查看wsl名称
+1. 查看 wsl 名称
 
-输入
+    输入
 
+    ```
+    wsl -l -v
+    ```
 
->wsl -l -v
+    记住 Name 栏显示的内容（以下记为 Name），注意操作的时候最好停止运行 Ubuntu，不要让 state 显示 Running
 
-记住Name栏显示的内容（以下记为Name），注意操作的时候最好停止运行Ubuntu，不要让state显示Running
+2. 搬运
 
-2、搬运
+    1. 导出备份
 
-（1）导出备份
+        ```
+        wsl --export Name D:\WSL\Ubuntu.tar
+        ```
 
-
->wsl --export Name D:\WSL\Ubuntu.tar
-
-
-（2）注销原本的wsl
-
-
->wsl --unregister Name
+    2. 注销原本的 wsl
 
 
-(3)重建
+        ```
+        wsl --unregister Name
+        ```
 
 
->wsl --import Name D:\WSL D:\WSL\Ubuntu.tar
+    3. 重建
 
 
-这样就把WSL搬到D:\WSL里了
+        ```
+        wsl --import Name D:\WSL D:\WSL\Ubuntu.tar
+        ```
 
-3、恢复默认用户
+        这样就把 WSL 搬到 `D:\WSL` 里了
+
+    4. 恢复默认用户
 
 
->Name' config --default-user 用户名
+        ```
+        Name' config --default-user 用户名
+        ```
 
-
-其中Name'是指Name去掉所有符号的结果，比如如果Name是Ubuntu-22.04,那么Name'就是Ubuntu2204。
+        其中 Name' 是指 Name 去掉所有符号的结果，比如如果 Name 是 Ubuntu-22.04，那么 Name'就是 Ubuntu2204。
 
