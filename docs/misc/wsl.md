@@ -137,3 +137,47 @@ WSL1:
 1. [WSL1 下 Ubuntu 22.04 的 gzip 无法执行](https://github.com/microsoft/WSL/issues/8219)：Ubuntu 22.04 可以复现：`/usr/bin/gzip: cannot execute binary file: Exec format error`，Debian Bullseye 和 Ubuntu 20.04 正常
 2. [WSL1 下 Ubuntu 22.04 的 gdb 无法打断点](https://github.com/microsoft/WSL/issues/8356)：GDB 11 开始不兼容，报错 `Cannot insert breakpoint 1`，Debian Bullseye 和 Ubuntu 20.04 的 GDB 正常
 3. [WSL1 下部分动态库（如 libQt5Core.so）不工作](https://github.com/microsoft/WSL/issues/3023)：Debian Bullseye 可以复现：`wireshark: error while loading shared libraries: libQt5Core.so.5: cannot open shared object file: No such file or directory`
+
+## 移动WSL在计算机中的储存路径
+
+以下内容均在CMD下完成
+
+1、查看wsl名称
+
+输入
+
+
+>wsl -l -v
+
+记住Name栏显示的内容（以下记为Name），注意操作的时候最好停止运行Ubuntu，不要让state显示Running
+
+2、搬运
+
+（1）导出备份
+
+
+>wsl --export Name D:\WSL\Ubuntu.tar
+
+
+（2）注销原本的wsl
+
+
+>wsl --unregister Name
+
+
+(3)重建
+
+
+>wsl --import Name D:\WSL D:\WSL\Ubuntu.tar
+
+
+这样就把WSL搬到D:\WSL里了
+
+3、恢复默认用户
+
+
+>Name' config --default-user 用户名
+
+
+其中Name'是指Name去掉所有符号的结果，比如如果Name是Ubuntu-22.04,那么Name'就是Ubuntu2204。
+
