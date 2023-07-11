@@ -45,6 +45,63 @@ export GNU_URL=http://mirrors.tuna.tsinghua.edu.cn/gnu
 emerge -avt git
 ```
 
+### Gentoo Prefix 安装faq
+
+#### DSO support routines 报错
+运行stage3安装时，多位同学遇到因网络问题造成的`Failed to emerge sys-apps/some_package`。具体错误信息如下：
+
+TUNA镜像下载报错为
+```shell
+ERROR 404: Not Found
+```
+
+gitweb.gentoo.org/artfiles.org/mirrorservice.org等下载渠道报错为
+```shell
+8678637888:error:25FFF06C:DSO support routines:CRYPTO_internal:functionality not supported:dso/dso_lib.c:226:
+8678637888:error:0EFFF06E:configuration file routines:CRYPTO_internal:error loading dso:conf/conf_mod.c:273:module=providers, path=providers
+8678637888:error:0EFFF071:configuration file routines:CRYPTO_internal:unknown module name:conf/conf_mod.c:214:module=providers
+```
+
+此时，请先确认自己的网络稳定。可以重新运行`./bootstrap-prefix.sh`来确认问题是否能复现。
+
+查看错误代码，怀疑与 https://github.com/ClickHouse/ClickHouse/issues/4470#issuecomment-467035217 问题类似，因此查看openssl相关配置。
+
+首先，查看一下`dev-libs/openssl`的版本，具体做法：
+```shell
+grep "dev-libs/openssl" /Users/zhangpeng/Gentoo/stage3.log
+```
+如果这里没结果，说明 stage3 还没有安装 openssl。以上的错误是从 macOS 系统自带的 openssl 没有配置好。
+
+再查看下载用的命令是什么：
+```shell
+$ /Users/zhangpeng/Gentoo/usr/bin/portageq envvar FETCHCOMMAND
+wget -t 3 -T 60 --passive-ftp -O "${DISTDIR}/${FILE}" "${URI}"
+```
+
+在出问题的案例中，同学系统里 wget 并不存在，系统 fallback 到了某个不能用的命令上（未知）。
+
+因此参考 https://forums.gentoo.org/viewtopic-t-306884-start-0.html 做以下的尝试：
+
+首先，确认 curl 命令的位置，这里`-a`是all的意思：
+
+```shell
+which -a curl
+```
+
+如果返回路径中存在`/usr/bin/curl`，则在`/Users/username/Gentoo/etc/portage/make.conf`中（注意把username替换成自己的账户名称）添加下面两行：
+
+```shell
+# The necessary code to make portage use curl instead of wget
+FETCHCOMMAND="/usr/bin/curl --connect-timeout 15 -# -o \${DISTDIR}/\${FILE} \${URI}"
+RESUMECOMMAND="/usr/bin/curl --connect-timeout 15 -# -C - -o \${DISTDIR}/\${FILE}\${URI}" 
+```
+
+之后使用
+```shell
+/Users/zhangpeng/Gentoo/usr/bin/portageq envvar FETCHCOMMAND
+```
+确认配置是否生效。如果返回值中`wget`命令替换为`curl`，则说明配置生效。重新运行`./bootstrap-prefix.sh`，确认问题是否解决。
+
 ## 配置 Homebrew
 
 Homebrew 是 macOS 上的包管理器，可以方便地安装各类工具。
