@@ -140,7 +140,7 @@ WSL1:
 
 ## 移动 WSL 在计算机中的储存路径，或迁移 WSL 至新系统/新电脑
 
-如未说明，以下内容均在 CMD 或 PS（以下统称 Windows CLI）下完成。以将 Ubuntu 发行版移动到 `D:\WSL` 为例。
+如未说明，以下内容均在 Cmd 或 PowerShell（以下统称 Windows CLI）下完成。以将 Ubuntu 发行版移动到 `D:\WSL` 为例。
 
 1. 查看 wsl 名称
 
