@@ -150,7 +150,7 @@ WSL1:
     wsl -l -v
     ```
 
-    记住 Name 栏显示的发行版名称（以下记为 &lt;*Name*&gt;），注意至少在下一步操作前应使用：
+    记住 Name 栏显示的发行版名称（以下记为 <*Name*>），注意至少在下一步操作前应使用：
 
     ```
     wsl -t <Name>
@@ -186,15 +186,15 @@ WSL1:
     <Name'> config --default-user 用户名
     ```
 
-    其中 &lt;*Name'*&gt; 是指 &lt;*Name*&gt; 去掉所有符号的结果，比如如果 Name 是 Ubuntu-22.04，那么 Name'就是 Ubuntu2204。
+    其中 <*Name'*> 是指 <*Name*> 去掉所有符号的结果，比如如果 Name 是 Ubuntu-22.04，那么 Name'就是 Ubuntu2204。
 
-    如果上述方式报错或不可用（比如试不出对应的 &lt;*Name'*&gt;），可以采用以下的另一种方式。
+    如果上述方式报错或不可用（比如试不出对应的 <*Name'*>），可以采用以下的另一种方式。
 
     ### 恢复默认用户的另一种方法（修改 `wsl.conf`）
 
     在 Windows CLI 中先通过 `wsl` 指令进入 WSL 发行版，
 
-    然后在 shell（bash等）中运行如下命令，其中 &lt;*myUsername*&gt; 是欲配置的默认用户名：
+    然后在 **WSL 发行版**的 shell（bash等）中运行如下命令，其中 <*myUsername*> 是欲配置的默认用户名：
 
     ```
     myUsername = <myUsername>
@@ -204,7 +204,7 @@ WSL1:
     echo -e "[boot]\ncommand = cd ~" >> /etc/wsl.conf
     ```
 
-    这样，就可以通过写入 `/etc/wsl.conf` 的方式设置默认用户，并在启动 WSL 后 `cd` 到默认目录下。
+    这样，就可以通过写入（WSL 发行版中的） `/etc/wsl.conf` 的方式设置默认用户，并在启动 WSL 后 `cd` 到默认目录下。
 
     然后可以通过（在 Windows CLI 中运行）：
 
@@ -216,5 +216,5 @@ WSL1:
 
     来观察用户名和目录是否符合需要。
 
-    如果因多人共用等原因，想给共用同一 WSL 发行版的不同 Windows 系统配置不同的默认用户，也就是需要新创建用户时，可参见 <a>https://learn.microsoft.com/zh-cn/windows/wsl/use-custom-distro#add-wsl-specific-components-like-a-default-user</a>，来新创建用户并给予 `sudo` 权限。
+    如果想给共用同一 WSL 发行版的不同 Windows 系统配置不同的默认用户，比如多个 Windows 用户作为多个 WSL 发行版用户使用同一个 WSL 容器的时候，此时不需要恢复默认用户，而是需要新创建用户。对此可参见 [Microsoft WSL 文档](https://learn.microsoft.com/zh-cn/windows/wsl/use-custom-distro#add-wsl-specific-components-like-a-default-user)，来新创建用户并给予 `sudo` 权限。
 
