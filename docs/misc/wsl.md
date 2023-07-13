@@ -200,11 +200,15 @@ WSL1:
     myUsername = <myUsername>
 
     echo -e "[user]\ndefault = $myUsername" >> /etc/wsl.conf
-
-    echo -e "[boot]\ncommand = cd ~" >> /etc/wsl.conf
     ```
 
-    这样，就可以通过写入（WSL 发行版中的） `/etc/wsl.conf` 的方式设置默认用户，并在启动 WSL 后 `cd` 到默认目录下。
+    这样，就可以通过写入（WSL 发行版中的） `/etc/wsl.conf` 的方式设置默认用户。
+
+    如果还想要每次启动 WSL 之后都能自动 `cd` 到默认用户的 `~` 目录，则可以在配置完成后通过修改 `.bashrc` 实现这一点（推荐），或者也可以运行下面这一行：
+
+    ```
+    echo -e "[boot]\ncommand = cd ~" >> /etc/wsl.conf
+    ```
 
     然后可以通过（在 Windows CLI 中运行）：
 
