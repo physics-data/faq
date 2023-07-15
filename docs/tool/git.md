@@ -37,7 +37,7 @@ git config --global user.email "name@example.com" # 请使用注册 GitHub 的�
 sudo apt install openssh-client
 ```
 
-接着，运行 `ssh-keygen`，一路按回车，之后会提示
+接着，运行 `ssh-keygen`，之后会提示
 
 `
 Created directory 'xxx'. Enter passphrase (empty for no passphrase):
