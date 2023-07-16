@@ -50,7 +50,7 @@ Created directory 'xxx'. Enter passphrase (empty for no passphrase):
 
 若曾经在生成密钥时有设置密码，又不慎遗忘，可以通过 `rm .ssh/id_rsa` `rm .ssh/id_rsa.pub` 将密钥抹去，之后按照上述方法重新尝试生成密钥即可。
 
-注意，重新生成密钥后，需要用新生成的密钥重新配置Git。
+注意，重新生成密钥后，需要用新生成的密钥重新配置 Git。
 
 ## Git.Tsinghua
 
