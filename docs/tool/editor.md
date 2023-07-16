@@ -49,7 +49,11 @@ sudo nano /etc/apt/sources.list
 
 ### 环境准备
 
-如果你使用 macOS 或者 Linux，则无需特别配置。如果你发现无法通过 `code` 指令运行 VScode，你可以在 VScode 中通过 `Cmd+Shift+P` 指令打开命令面板（Command Palette），然后输入  `shell command` 找到相应指令。其他问题可以参考[官方教程](https://code.visualstudio.com/docs/setup/mac)。
+如果你使用 macOS 或者 Linux，则无需特别配置。
+
+如果你使用 macOS 发现无法通过 `code` 指令运行 VScode，你可以在 VScode 中通过 `Cmd+Shift+P` 指令打开命令面板（Command Palette），然后输入  `shell command` 找到相应指令。其他问题可以参考[官方教程](https://code.visualstudio.com/docs/setup/mac)。
+
+如果你使用 Linux 系统，各种问题也可以参考[官方教程](https://code.visualstudio.com/docs/setup/linux)。
 
 如果你使用 Windows，请参照 [官方教程](https://code.visualstudio.com/docs/remote/wsl-tutorial) 安装 WSL 支持。
 
