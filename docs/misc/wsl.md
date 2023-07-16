@@ -194,7 +194,7 @@ WSL1:
 
     在 Windows CLI 中先通过 `wsl` 指令进入 WSL 发行版，
 
-    然后在 **WSL 发行版**的 shell（bash等）中运行如下命令，其中 <*myUsername*> 是欲配置的默认用户名：
+    然后在 **WSL 发行版**的 shell（bash 等）中运行如下命令，其中 <*myUsername*> 是欲配置的默认用户名：
 
     ```
     myUsername = <myUsername>
