@@ -48,7 +48,7 @@ Created directory 'xxx'. Enter passphrase (empty for no passphrase):
 - `~/.ssh/id_rsa`: 私钥，需要保密
 - `~/.ssh/id_rsa.pub`: 公钥，可以公开
 
-若曾经在生成密钥时有设置密码，又不慎遗忘，可以通过 `rm -r .ssh` 将密钥抹去，之后按照上述方法重新尝试生成密钥即可。
+若曾经在生成密钥时有设置密码，又不慎遗忘，可以通过 `rm -r .ssh/id_rsa` `rm -r .ssh/id_rsa.pub` 将密钥抹去，之后按照上述方法重新尝试生成密钥即可。
 
 注意，重新生成密钥后，需要用新生成的密钥重新配置Git。
 
