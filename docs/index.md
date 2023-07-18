@@ -37,17 +37,13 @@
 
 1. 网络学堂的课程答疑和课程讨论
 2. 在 https://git.tsinghua.edu.cn/physics-data/faq/issues 下创建 issue
-3. 在 https://github.com/physics-data/faq/discussions 下发起讨论
-4. FAQ 相关页面的下方讨论区
-5. 课程微信群
-6. 通过邮件发送给老师/助教
-7. 在指定的时间参加集中答疑
+3. FAQ 相关页面的下方讨论区
+4. 发送邮件到邮件列表 <pd@l.airelinux.org>
+5. 发送邮件给老师/助教
+6. 在指定的时间参加集中答疑
 
 不建议私聊助教微信，因为这样其他同学看不到，无法给其他同学带来帮助。
 
 ## 联系我们
 
-如需联系教学团队，请发送邮件至：
-
-* 任何与作业有关的内容（如迟交说明、评分疑问，大作业申请）： <physics-data+assignments@tuna.tsinghua.edu.cn>
-* 其他内容（如课程建设）：<physics-data@tuna.tsinghua.edu.cn>
+如需联系教学团队，请发送邮件至： <pd@l.airelinux.org>
