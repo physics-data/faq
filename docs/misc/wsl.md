@@ -226,7 +226,7 @@ WSL1:
 
 ### 在命令提示符界面查看当前默认发行版
 
-``wsl --list --verbose  #查看所有正在运行的WSL发行版，默认发行版有*标明``
+``wsl --list --verbose  #等价于wsl -l -v查看所有正在运行的WSL发行版，默认发行版有*标明``
 
 会弹出以下信息，此时Ubuntu为默认发行版
 
@@ -234,6 +234,14 @@ WSL1:
   NAME      STATE           VERSION
 * Ubuntu    Stopped         2
   Debian    Running         2
+```
+
+旧版本的wsl -l不支持-v，此时输入``wsl -l #或者wsl --list``,会弹出以下信息:
+
+```
+适用于 Linux 的 Windows 子系统分发:
+Ubuntu (默认)
+Debian
 ```
 
 ### 更换默认发行版
@@ -246,4 +254,12 @@ WSL1:
   NAME      STATE           VERSION
 * Debian    Running         2
   Ubuntu    Stopped         2
+```
+
+或者
+
+```
+适用于 Linux 的 Windows 子系统分发:
+Debian (默认)
+Ubuntu
 ```
