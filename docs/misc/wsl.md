@@ -219,3 +219,31 @@ WSL1:
     不过，根据 @wangyy21 的提示：
 
     > 如果想要给每个 Windows 用户配置 WSL 的默认用户，要在这个 Windows 用户的用户目录下配置 .wslconfig 文件，但是这样做是针对所有 WSL 实例的。我的建议是，不如每个用户单独用一个 WSL 实例，不要共用同一个。
+
+## WSL 中如何更改发行版
+
+> wsl发行版会影响到例如VScode等编辑器的默认终端，而如何解决切换其默认终端，最根本最彻底最简便的方法便是更改wsl的默认发行版。
+
+### 在命令提示符界面查看当前默认发行版
+
+``wsl --list --verbose  #等价于wsl -l -v``
+
+会弹出以下信息，此时Ubuntu为默认发行版
+
+```
+  NAME      STATE           VERSION
+* Ubuntu    Stopped         2
+  Debian    Running         2
+```
+
+### 更换默认发行版
+
+``wsl -s <Name>  #例如 wsl -s Debian``
+
+系统弹出“操作成功完成。”即完成切换操作。重复上一步可看到如下信息，即代表切换成功。
+
+```
+  NAME      STATE           VERSION
+* Debian    Running         2
+  Ubuntu    Stopped         2
+```
