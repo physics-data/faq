@@ -226,7 +226,7 @@ WSL1:
 
 ### 在命令提示符界面查看当前默认发行版
 
-``wsl --list --verbose  #等价于wsl -l -v``
+``wsl --list --verbose  #查看所有正在运行的WSL发行版，默认发行版有*标明``
 
 会弹出以下信息，此时Ubuntu为默认发行版
 
