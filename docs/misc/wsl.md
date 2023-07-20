@@ -263,3 +263,25 @@ Debian
 Debian (默认)
 Ubuntu
 ```
+
+## WSL 重启操作 wsl --shutdown相关操作
+
+无论是Debian还是Ubuntu，在我们的日常使用中，经常会出现我们的wsl2尚且完好，但我们的Linux亦或卡死、亦或报错。这时候除了耐心等待、反复重启Debian（或者Ubuntu），甚至这两者也不起作用时，你便可以尝试一下``wsl --shutdown``然后重启。
+
+举个例子，当Debian （或者Ubuntu）报出以下错误，你就“可能”可以通过``wsl --shutdown``解决。
+
+>中文：没有收到虚拟机或容器的回应，操作超时; 英文：WSL2 failed to run, no response from virtual machine or container
+
+### 具体操作步骤
+
+1. 在任务栏搜索栏中搜索“命令提示符”（或者``Win + r``输入``wt.exe``），右键单击顶部结果，然后选择“以管理员身份运行”选项。
+
+2. 输入``wsl -l -v`` 或者``wsl --list --verbose``（见上面回答）可以观察到你的wsl中运行的发行版Linux，其中``STATE``为``Running``是正在运行，是``Stopped``停止运行 。
+
+3. 输入``wsl -t <DISTRO-NAME>``命令关闭一个Linux发行版，在命令中，确保将``<DISTRO-NAME>``替换为要关闭的发行版的名称，例如，``wsl -t Ubuntu-20.04``。
+
+更便捷、彻底的是，输入``wsl --shutdown``关闭所有正在运行的Linux发行版。
+
+4. 如何重启Linux发行版，``wsl --distribution DISTRO-NAME``命令在命令提示符下再次将想要打开的Linux发行版打开，或者更简单的就是再次打开就行。
+
+如果上述所有关闭命令、网上的解决方案、助教的建议都都都都不起作用的话，``wsl --unregister <DistributionName>``，卸载重装、重新配置“解君愁”。
