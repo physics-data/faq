@@ -216,9 +216,7 @@ WSL1:
 
     如果想给共用同一 WSL 发行版的不同 Windows 系统配置不同的用户，比如多个 Windows 用户作为多个 WSL 发行版用户使用同一个 WSL 实例的时候，此时不需要恢复默认用户，而是需要新创建用户。对此可参见 [Microsoft WSL 文档](https://learn.microsoft.com/zh-cn/windows/wsl/use-custom-distro#add-wsl-specific-components-like-a-default-user)，来新创建用户并给予 `sudo` 权限。
 
-    不过，根据 @wangyy21 的提示：
-
-    > 如果想要给每个 Windows 用户配置 WSL 的默认用户，要在这个 Windows 用户的用户目录下配置 .wslconfig 文件，但是这样做是针对所有 WSL 实例的。我的建议是，不如每个用户单独用一个 WSL 实例，不要共用同一个。
+    如果想要给每个 Windows 用户配置 WSL 的默认用户，要在这个 Windows 用户的用户目录下配置 .wslconfig 文件，但是这样做是针对所有 WSL 实例的。建议每个用户单独用一个 WSL 实例，不要共用同一个。
 
 ## WSL 中如何更改发行版
 
