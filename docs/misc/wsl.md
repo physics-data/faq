@@ -222,13 +222,11 @@ WSL1:
 
 ## WSL 中如何更改发行版
 
-> wsl 发行版会影响到例如 VScode 等编辑器的默认终端，而如何解决切换其默认终端，最根本最彻底最简便的方法便是更改 wsl 的默认发行版。
+wsl 发行版会影响到例如 VScode 等编辑器的默认终端，而如何解决切换其默认终端，最根本最彻底最简便的方法便是更改 wsl 的默认发行版。
 
 ### 在命令提示符界面查看当前默认发行版
 
-``wsl --list --verbose  #等价于 wsl -l -v 查看所有正在运行的 WSL 发行版，默认发行版有*标明``
-
-会弹出以下信息，此时 Ubuntu 为默认发行版
+运行 `wsl --list --verbose` 命令，或者 `wsl -l -v`，查看所有正在运行的 WSL 发行版，默认发行版用 * 标明。下面是一个例子，此时 Ubuntu 为默认发行版：
 
 ```
   NAME      STATE           VERSION
@@ -236,7 +234,7 @@ WSL1:
   Debian    Running         2
 ```
 
-旧版本的 wsl -l 不支持-v，此时输入``wsl -l #或者 wsl --list``,会弹出以下信息：
+旧版本的 `wsl -l` 不支持 `-v` 选项，此时运行 `wsl -l` 或者 `wsl --list`，会出现以下信息：
 
 ```
 适用于 Linux 的 Windows 子系统分发:
@@ -246,9 +244,7 @@ Debian
 
 ### 更换默认发行版
 
-``wsl -s <Name>  #例如 wsl -s Debian``
-
-系统弹出“操作成功完成。”即完成切换操作。重复上一步可看到如下信息，即代表切换成功。
+运行命令 `wsl -s <Name>`，例如 `wsl -s Debian`，如果系统弹出“操作成功完成。”即完成切换操作。如果列出 WSL 发行版可看到如下信息，即代表切换成功。
 
 ```
   NAME      STATE           VERSION
@@ -264,30 +260,24 @@ Debian (默认)
 Ubuntu
 ```
 
-## WSL 重启操作 wsl --shutdown相关操作
+## WSL 重启操作 wsl --shutdown 相关操作
 
-无论是Debian还是Ubuntu，在我们的日常使用中，经常会出现我们的wsl2尚且完好，但我们的Linux亦或卡死、亦或报错。这时候除了耐心等待、反复重启Debian（或者Ubuntu），甚至这两者也不起作用时，你便可以尝试一下``wsl --shutdown``然后重启。
+无论是 Debian 还是 Ubuntu，在我们的日常使用中，经常会出现我们的 wsl2 尚且完好，但我们的 Linux 亦或卡死、亦或报错。这时候除了耐心等待、反复重启 Debian（或者 Ubuntu），甚至这两者也不起作用时，你便可以尝试一下 `wsl --shutdown` 然后重启。
 
-举个例子，当Debian （或者Ubuntu）报出以下错误，你就“可能”可以通过``wsl --shutdown``解决。
+举个例子，当 Debian（或者 Ubuntu）报出以下错误，你就“可能”可以通过 `wsl --shutdown` 解决。
 
->中文：没有收到虚拟机或容器的回应，操作超时; 英文：WSL2 failed to run, no response from virtual machine or container
+    中文：没有收到虚拟机或容器的回应，操作超时;
+    
+    英文：WSL2 failed to run, no response from virtual machine or container
 
 ### 具体操作步骤
 
-1. 在任务栏搜索栏中搜索“命令提示符”（或者``Win + r``输入``wt.exe``），右键单击顶部结果，然后选择“以管理员身份运行”选项。
-   
-   >助教补充：wt.exe 是 Windows Terminal，一些老版本的 Windows 10 是没有的。最好的办法是 Win+X 或者直接在开始按钮上右键，在弹出来的菜单中选择“命令提示符（管理员）”或者“终端管理员”
+1. 在任务栏搜索栏中搜索“命令提示符”，右键单击顶部结果，然后选择“以管理员身份运行”选项。
 
-2. 输入``wsl -l -v`` 或者``wsl --list --verbose``（见上面回答）可以观察到你的wsl中运行的发行版Linux，其中``STATE``为``Running``是正在运行，是``Stopped``停止运行 。
+2. 输入 `wsl -l -v` 或者 `wsl --list --verbose`（见上面回答）可以观察到你的 wsl 中运行的 Linux 发行版，其中 `STATE` 为 `Running` 是正在运行，`Stopped` 是停止运行。
 
-  > 对于不支持 -v命令的老版wsl，目前并未查到替代措施，欢迎补充。
+3. 输入`wsl -t <DISTRO-NAME>` 命令关闭一个 Linux 发行版，在命令中，确保将 `<DISTRO-NAME>` 替换为要关闭的发行版的名称，例如，`wsl -t Ubuntu-20.04`。更彻底的是，输入 `wsl --shutdown` 关闭所有正在运行的 Linux 发行版。
 
-3. 输入``wsl -t <DISTRO-NAME>``命令关闭一个Linux发行版，在命令中，确保将``<DISTRO-NAME>``替换为要关闭的发行版的名称，例如，``wsl -t Ubuntu-20.04``。
+4. 启动 Linux 发行版，运行 `wsl --distribution DISTRO-NAME` 或者 `wsl -d DISTRO-NAME` 命令，再次将想要打开的 Linux 发行版打开。
 
-更便捷、彻底的是，输入``wsl --shutdown``关闭所有正在运行的Linux发行版。
-
-4. 如何重启Linux发行版，``wsl --distribution DISTRO-NAME``或者``wsl -d DISTRO-NAME``命令在命令提示符下再次将想要打开的Linux发行版打开，或者更简单的就是再次打开就行。
-
-如果上述所有关闭命令、网上的解决方案、助教的建议都都都都不起作用的话，``wsl --unregister <DistributionName>``，卸载重装、重新配置“解君愁”。
-
->备注：风险很高！如果下定决心打算卸载重装Debian或者Ubuntu，请务必保证好文件和相关用户信息的保存！确保备份完成后再选择卸载重装！
+如果上述所有关闭命令、网上的解决方案、助教的建议都都都都不起作用的话，`wsl --unregister <DistributionName>` ，卸载重装、重新配置“解君愁”。如果下定决心打算卸载重装 Debian 或者 Ubuntu，请务必保证好文件和相关用户信息的保存！确保备份完成后再选择卸载重装！
