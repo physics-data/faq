@@ -46,4 +46,4 @@
 
 ## 联系我们
 
-如需联系教学团队，请发送邮件至： <pdta@l.airelinux.org>
+如需联系教学团队，请发送邮件至： <pd@l.airelinux.org>
