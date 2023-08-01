@@ -1,6 +1,6 @@
 ## nano 安装与使用
 
-如果是 Debian/Ubuntu 系的系统，可以安装：
+如果是 Debian 系的系统，可以安装：
 
 ```bash
 sudo apt install -y nano
@@ -30,14 +30,14 @@ sudo nano /etc/apt/sources.list
 
 ## Emacs 安装与使用
 
-在 Debian/Ubuntu 中，可以安装 `emacs` 软件包，或者安装 `emacs-gtk` 以获得更多功能。
+在 Debian 中，可以安装 `emacs` 软件包，或者安装 `emacs-gtk` 以获得更多功能。
 
 - 保存：C-x C-s
 - 退出：C-x C-c
 
 ## Vim 安装与使用
 
-在 Debian/Ubuntu 中，可以安装 `vim` 软件包，或者安装 `vim-gtk3`（可能会使 vim 启动变慢，因为它会寻找 X11 服务器打开窗口）以获得更多功能。
+在 Debian 中，可以安装 `vim` 软件包，或者安装 `vim-gtk3`（可能会使 vim 启动变慢，因为它会寻找 X11 服务器打开窗口）以获得更多功能。
 
 如果需要保存并退出，请按 `Esc :wq`，可将 `wq` 替换为 `q!`，此时不会保存文件。
 
