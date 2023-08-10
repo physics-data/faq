@@ -22,9 +22,7 @@ $$ S' = S \times \min(0.9, 0.95^D) $$
 
 ## 邮件模板
 
-课程团队的邮箱为 <physics-data+assignments@tuna.tsinghua.edu.cn>。请原样使用此地址，尤其是 **不要去掉加号和后面的部分**。
-
-在向课程团队发送邮件时，请使用下面的模板（请使用 Markdown 格式，即在两行文本间空一行）：
+课程团队的邮箱为 <pdta@l.airelinux.org>。在向课程团队发送邮件时，请使用下面的模板（请使用 Markdown 格式，即在两行文本间空一行）：
 
 ```markdown
 姓名：续本达
@@ -39,7 +37,7 @@ Git 用户名：orv
 
 提交时间：2022/7/12 17:17:20
 
-提交链接：https://git.tsinghua.edu.cn/physics-data/2022/aplusb/aplusb-orv/-/commit/fe19a62be71616fde0846209ef3b0615f694a8ad
+提交链接：https://git.tsinghua.edu.cn/physics-data/2023/aplusb/aplusb-orv/-/commit/fe19a62be71616fde0846209ef3b0615f694a8ad
 
 具体说明：在这里填写你的说明。如果是迟交，则说明是重新标记最终版本。如果是评分疑问，请写具体的内容（如黑盒/白盒）。
 ```
