@@ -100,7 +100,7 @@ RESUMECOMMAND="/usr/bin/curl --connect-timeout 15 -# -C - -o \${DISTDIR}/\${FILE
 
 这种问题出现的原因往往是之前安装过Homebrew或Conda，导致`.zshrc`, `.bashrc`等涉及默认路径的配置文件被修改，系统优先调用该环境中的python。
 
-进入Gentoo环境后，‘grep -nH PATH .bash_profile .bashrc .zshrc .zprofile’ 可以大致确定哪些文件中增加了额外的PATH，例如可能出现
+进入 Gentoo 环境后，`grep -nH PATH .bash_profile .bashrc .zshrc .zprofile` 可以大致确定哪些文件中增加了额外的PATH，例如可能出现
 
 ```
 .zprofile:3:# Set PATH, MANPATH, etc., for Homebrew.
