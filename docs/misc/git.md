@@ -73,3 +73,19 @@ origin  https://github.com/username/repository.git (push)
 这是因为 WSL1 实现不完整的问题。可以忽略，不影响使用。
 
 参考：<https://github.com/microsoft/WSL/issues/1869>
+
+## Push 的时候报错 "failed to push some refs to ...(A default branch (e.g. master) does not yet exist)"
+
+这是git的一些历史遗留问题，可能在挂梯子且设置全局模式后出现。
+
+参考：<https://www.theserverside.com/feature/Why-GitHub-renamed-its-master-branch-to-main>
+     <https://sfconservancy.org/news/2020/jun/23/gitbranchname>
+     <https://git.tsinghua.edu.cn/physics-data/faq/-/issues/300>
+
+解决方案：把分支名取为‘master’
+
+```
+git checkout -b master
+git push origin master
+
+```
