@@ -106,7 +106,7 @@ RESUMECOMMAND="/usr/bin/curl --connect-timeout 15 -# -C - -o \${DISTDIR}/\${FILE
 .zprofile:3:# Set PATH, MANPATH, etc., for Homebrew.
 ```
 
-这意味着之前安装Homebrew时`.zprofile`被修改，之后`code .zprofile`打开之将涉及Homebrew的部分删除即可。
+这意味着之前安装 Homebrew 时`.zprofile`被修改，之后`code .zprofile`打开之将涉及 Homebrew 的部分删除即可。
 
 具体的讨论参见：
 - https://git.tsinghua.edu.cn/physics-data/faq/-/issues/97
