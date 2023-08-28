@@ -96,7 +96,7 @@ RESUMECOMMAND="/usr/bin/curl --connect-timeout 15 -# -C - -o \${DISTDIR}/\${FILE
 
 #### 进入 Gentoo 环境后仍然调用非 Gentoo 环境中的 Python
 
-首先，如果在 VSCode 等编辑器中出现这种情况，可以通过设置默认 python 默认解释器的方法来解决。而对于在终端中调用 python 的场景（例如通过make执行python脚本），解决的方式会相对复杂一些。
+首先，如果在 VSCode 等编辑器中出现这种情况，可以通过设置默认 python 默认解释器的方法来解决。而对于在终端中调用 python 的场景（例如通过 make 执行 python 脚本），解决的方式会相对复杂一些。
 
 这种问题出现的原因往往是之前安装过 Homebrew 或 Conda，导致`.zshrc`, `.bashrc`等涉及默认路径的配置文件被修改，系统优先调用该环境中的 python。
 
