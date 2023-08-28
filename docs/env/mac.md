@@ -94,19 +94,30 @@ RESUMECOMMAND="/usr/bin/curl --connect-timeout 15 -# -C - -o \${DISTDIR}/\${FILE
 
 确认配置是否生效。如果返回值中 `wget` 命令替换为 `curl`，则说明配置生效。重新运行 `./bootstrap-prefix.sh`，确认问题是否解决。
 
-#### 进入Gentoo环境后仍然调用非Gentoo环境中的Python
+#### 进入 Gentoo 环境后仍然调用非 Gentoo 环境中的 Python
 
-首先，如果在VSCode等编辑器中出现这种情况，可以通过设置默认python默认解释器的方法来解决。而对于在终端中调用python的场景（例如通过make执行python脚本），解决的方式会相对复杂一些。
+首先，如果在 VSCode 等编辑器中出现这种情况，可以通过设置默认 python 默认解释器的方法来解决。而对于在终端中调用 python 的场景（例如通过make执行python脚本），解决的方式会相对复杂一些。
 
-这种问题出现的原因往往是之前安装过Homebrew或Conda，导致`.zshrc`, `.bashrc`等涉及默认路径的配置文件被修改，系统优先调用该环境中的python。
+这种问题出现的原因往往是之前安装过 Homebrew 或 Conda，导致`.zshrc`, `.bashrc`等涉及默认路径的配置文件被修改，系统优先调用该环境中的 python。
 
-进入 Gentoo 环境后，`grep -nH PATH .bash_profile .bashrc .zshrc .zprofile` 可以大致确定哪些文件中增加了额外的PATH，例如可能出现
+进入 Gentoo 环境后，`grep -nH PATH .bash_profile .bashrc .zshrc .zprofile` 可以大致确定哪些文件中增加了额外的 PATH，例如可能出现
 
 ```
 .zprofile:3:# Set PATH, MANPATH, etc., for Homebrew.
 ```
 
-这意味着之前安装 Homebrew 时`.zprofile`被修改，之后`code .zprofile`打开之将涉及 Homebrew 的部分删除即可。
+这意味着之前安装 Homebrew 时`.zprofile`被修改，之后`code .zprofile`打开之，将涉及 Homebrew 的部分删除即可。
+
+需要注意的是，这可能会导致之后在 Homebrew 或 Conda 环境调用 python 时出现一些问题，请谨慎操作。
+
+此外，还有一种可能的解决方案，是将
+
+```
+alias python="/Users/ere.lihy/Gentoo/bin/python3"
+alias python3="/Users/ere.lihy/Gentoo/bin/python3"
+```
+
+加入到`.zprofile`，`bash_profile`等文件中，但是该方案无法改变 make 语句的调用目标。
 
 具体的讨论参见：
 - https://git.tsinghua.edu.cn/physics-data/faq/-/issues/97
