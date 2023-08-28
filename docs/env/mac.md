@@ -94,6 +94,22 @@ RESUMECOMMAND="/usr/bin/curl --connect-timeout 15 -# -C - -o \${DISTDIR}/\${FILE
 
 确认配置是否生效。如果返回值中 `wget` 命令替换为 `curl`，则说明配置生效。重新运行 `./bootstrap-prefix.sh`，确认问题是否解决。
 
+#### 进入Gentoo环境后仍然调用非Gentoo环境中的Python
+
+首先，如果在VSCode等编辑器中出现这种情况，可以通过设置默认python默认解释器的方法来解决。而对于在终端中调用python的场景（例如通过make执行python脚本），解决的方式会相对复杂一些。
+
+这种问题出现的原因往往是之前安装过Homebrew或Conda，导致`.zshrc`, `.bashrc`等涉及默认路径的配置文件被修改，系统优先调用该环境中的python。
+
+进入Gentoo环境后，‘grep -nH PATH .bash_profile .bashrc .zshrc .zprofile’ 可以大致确定哪些文件中增加了额外的PATH，例如可能出现
+
+```
+.zprofile:3:# Set PATH, MANPATH, etc., for Homebrew.
+```
+
+这意味着之前安装Homebrew时`.zprofile`被修改，之后`code .zprofile`打开之将涉及Homebrew的部分删除即可。
+
+具体的讨论参见 https://git.tsinghua.edu.cn/physics-data/faq/-/issues/97 https://git.tsinghua.edu.cn/physics-data/faq/-/issues/132 https://git.tsinghua.edu.cn/physics-data/faq/-/issues/275 
+
 ## 配置 Homebrew
 
 Homebrew 是 macOS 上的包管理器，可以方便地安装各类工具。
