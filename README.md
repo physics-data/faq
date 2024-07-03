@@ -2,7 +2,7 @@
 
 本仓库通过 issue 的形式，用于回答课程相关的问题、分享心得。
 
-Issue 列表: https://git.tsinghua.edu.cn/physics-data/faq/-/issues
+Issue 列表：https://git.tsinghua.edu.cn/physics-data/faq/-/issues
 
 ## 使用方法
 
@@ -13,7 +13,7 @@ Debian 上 `glab` 包可由 `sudo apt install glab` 安装。
 0. 在提问前做充足调研。看看 [docs](docs) 下的文档、已有的 issues 是否已经解决你的问题。
 1. 进入 https://git.tsinghua.edu.cn/physics-data/faq/-/issues/new
 2. 为你的问题起合适的标题，填入标题栏，并在描述框中详细阐述问题
-3. 如果你希望 issue 的任何进展能邮件通知 (Cc) 某位用户，可以在 issue 描述/回复中 @用户名 。特别的，可以使用 `/assign @用户名` 指定负责人
+3. 如果你希望 issue 的任何进展能邮件通知 (Cc) 某位用户，可以在 issue 描述/回复中 @用户名。特别的，可以使用 `/assign @用户名` 指定负责人
 4. 你可以使用 `/due` 命令来设置 issue 的 deadline
 5. 不妨考虑为 issue 添加 label 进行分类
 
