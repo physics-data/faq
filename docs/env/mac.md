@@ -1,11 +1,22 @@
-macOS 提供了较为标准的 POSIX 环境，但属于 BSD 流派，与 GNU 有微妙不好查觉的偏差，而且没有内置包管理器。因此我们一般会使用第三方的包管理器，推荐程度从高到低：
+# macOS 环境配置
 
-- Gentoo Prefix
-- Homebrew
-- Nix
-- MacPorts
+macOS 提供了较为标准的 POSIX 环境，但属于 BSD 流派，与 GNU 有微妙不好查觉的偏差，而且没有内置包管理器。因此我们一般有两种方案：
 
-## Gentoo Prefix
+1. 安装虚拟机，在虚拟机里运行 Linux
+2. 直接在 macOS 上开发，并且使用第三方的包管理器，推荐程度从高到低：
+    - Gentoo Prefix
+    - Homebrew
+    - Nix
+    - MacPorts
+
+## 虚拟机安装
+
+推荐使用 [UTM](https://mac.getutm.app/) 安装和运行 Linux 虚拟机。安装完成以后，按照 [Linux 环境配置](./linux.md) 文档进行进一步配置。
+
+## 第三方包管理器
+
+### Gentoo Prefix
+
 [Gentoo Prefix](https://wiki.gentoo.org/wiki/Project:Prefix) 是当前由续本达领导开发的用户态基于 Gentoo Linux 的通用 GNU 环境。它的安装需要编译 Python 和 Portage（Gentoo 的包管理器）和 GCC，需要的时间较长，因此请保证计算机的供电。
 
 如果从前没有在 macOS 上编译过程序，则需要安装苹果的 XCode 编译器。
@@ -45,9 +56,9 @@ export GNU_URL=http://mirrors.tuna.tsinghua.edu.cn/gnu
 emerge -avt git
 ```
 
-### 可能遇到的问题及解决方案
+#### 可能遇到的问题及解决方案
 
-#### DSO support routines 报错
+##### DSO support routines 报错
 
 运行 stage3 安装时，多位同学遇到因网络问题造成的 `Failed to emerge sys-apps/some_package` 错误。具体错误信息如下：
 
@@ -94,7 +105,7 @@ RESUMECOMMAND="/usr/bin/curl --connect-timeout 15 -# -C - -o \${DISTDIR}/\${FILE
 
 确认配置是否生效。如果返回值中 `wget` 命令替换为 `curl`，则说明配置生效。重新运行 `./bootstrap-prefix.sh`，确认问题是否解决。
 
-#### 进入 Gentoo 环境后仍然调用非 Gentoo 环境中的 Python
+##### 进入 Gentoo 环境后仍然调用非 Gentoo 环境中的 Python
 
 首先，如果在 VSCode 等编辑器中出现这种情况，可以通过设置默认 python 默认解释器的方法来解决。而对于在终端中调用 python 的场景（例如通过 make 执行 python 脚本），解决的方式会相对复杂一些。
 
@@ -124,11 +135,11 @@ alias python3="/Users/ere.lihy/Gentoo/bin/python3"
 - https://git.tsinghua.edu.cn/physics-data/faq/-/issues/132 
 - https://git.tsinghua.edu.cn/physics-data/faq/-/issues/275 
 
-## 配置 Homebrew
+### 配置 Homebrew
 
 Homebrew 是 macOS 上的包管理器，可以方便地安装各类工具。
 
-### 安装 Homebrew
+#### 安装 Homebrew
 
 详细安装方式，请参考 https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/。
 
@@ -156,7 +167,7 @@ brew update
 
 中途可能会询问你的密码以使用 root 权限，还有回车以确认进行安装操作。
 
-### 使用 Homebrew
+#### 使用 Homebrew
 
 安装后，就可以用 `brew` 命令安装包了：
 
@@ -166,7 +177,7 @@ brew install xxx
 
 由于 `brew` 运行的时候会从 GitHub 上更新仓库，所以这一步可能会卡住，建议使用一些方法来加速 GitHub 访问。
 
-### 配置 python 环境
+#### 配置 python 环境
 
 安装 brew 以后，可以用 brew 来安装 python 环境：
 
@@ -186,7 +197,7 @@ python3 -c 'import matplotlib;import numpy'
 
 如果第二条命令导入的时候没有出错，就说明安装成功了。
 
-## 配置 Nix
+### 配置 Nix
 
 首先按照 <https://nixos.org/download.html> 上的方法，进行 `Multi-user installation`。执行成功以后，就可以在命令行中执行 `nix-env` 命令了。
 
@@ -198,6 +209,6 @@ nix-env -i xxx
 
 可以在 <https://search.nixos.org> 上搜索想要安装的包的名字。
 
-## 配置 MacPorts
+### 配置 MacPorts
 
 助教不使用这个环境，如果有同学要使用的话，可以自己摸索。
