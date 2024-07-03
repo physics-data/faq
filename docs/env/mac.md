@@ -1,19 +1,27 @@
 # macOS 环境配置
 
-macOS 提供了较为标准的 POSIX 环境，但属于 BSD 流派，与 GNU 有微妙不好查觉的偏差，而且没有内置包管理器。因此我们一般有两种方案：
+macOS 提供了较为标准的 POSIX 环境，但属于 BSD 流派，与 GNU 有微妙不好查觉的偏差，而且没有内置包管理器。在 macOS 上建立 GNU 环境，分为虚拟机、包管理器与双系统启动三种，虚拟机适合初学者，包管理器适合对系统软件研发感兴趣的同学，双系统启动适合不喜欢 macOS 但要用 mac 硬件的同学。
 
-1. 安装虚拟机，在虚拟机里运行 Linux
-2. 直接在 macOS 上开发，并且使用第三方的包管理器，推荐程度从高到低：
-    - Gentoo Prefix
-    - Homebrew
-    - Nix
-    - MacPorts
+## 虚拟机
 
-## 虚拟机安装
+macOS 上的虚拟机软件中，同时满足开源自由、性能好、易用三点的工作为[UTM](https://mac.getutm.app/)。
 
-推荐使用 [UTM](https://mac.getutm.app/) 安装和运行 Linux 虚拟机。安装完成以后，按照 [Linux 环境配置](./linux.md) 文档进行进一步配置。
+### UTM
+
+[UTM](https://mac.getutm.app/) 基于 [QEMU](https://www.qemu.org/) 开发，支持 amd64 和 arm64 指令集的硬件加速和图形加速，性能较好。
+
+下载[UTM.dmg](https://github.com/utmapp/UTM/releases/latest/download/UTM.dmg)并安装，启动程序后，创建一台虚拟机。从 [TUNA 清华大学开源软件镜像站](https://mirrors.tuna.tsinghua.edu.cn/) 下载 [amd64](https://mirrors.tuna.tsinghua.edu.cn/debian-cd/current/amd64/iso-cd/debian-12.6.0-amd64-netinst.iso) 或 [arm64](https://mirrors.tuna.tsinghua.edu.cn/debian-cd/current/arm64/iso-cd/debian-12.6.0-arm64-netinst.iso) 的安装光盘文件，挂载到新创建的虚拟机中。
+
+启动虚拟机，按提示安装 Debian GNU/Linux 系统。
 
 ## 第三方包管理器
+
+第三方的包管理器基于 macOS 的原生环境构建出一套 GNU 的子环境，与系统的集成好。但由于 Apple 公司经常改动系统级别的 API ，这些方案都不太稳定，建议对 macOS 有深入理解并且决心在 macOS 上进行研发的同学尝试。以下推荐程度从高到低：
+
+- Gentoo Prefix
+- Homebrew
+- Nix
+- MacPorts
 
 ### Gentoo Prefix
 
@@ -212,3 +220,6 @@ nix-env -i xxx
 ### 配置 MacPorts
 
 助教不使用这个环境，如果有同学要使用的话，可以自己摸索。
+
+# 双系统启动
+安装新系统可能因误操作损失数据，请注意备份已有数据。具体作法在此暂不讨论，遇到困难请联系助教。
