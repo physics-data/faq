@@ -35,3 +35,23 @@ export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/nu
 ```
 
 实际上就是利用了 WSL2 的特性，Windows 会自动把自己的 IP 地址设为 WSL2 的默认 DNS 服务器。这里取了 `/etc/resolv.conf` 的第一行的 IP 地址作为 DISPLAY 环境变量中 IP 地址的设置。
+
+## 换源发现 Debian 12 默认无 HTTPS 支持
+
+在 WSL 安装的 Debian 12 中发现并在多个人上复现了这个问题.
+
+如果是全新安装, [tuna 镜像文档](https://mirrors.tuna.tsinghua.edu.cn/help/debian/)说 Debian Buster 以上版本默认支持 HTTPS 源, 但实际上没有 apt-transport-https 和 ca-certificates 这两个包.
+
+为此, 可以首先安装这两个包之后再换源
+
+```shell
+sudo apt install apt-transport-https ca-certificates
+```
+
+或者, 使用 HTTP 源也可以解决这个问题
+
+1. 修改 `/etc/apt/sources.list` 文件, 将所有 `https://` 替换为 `http://`
+2. 执行 `sudo apt update` 更新源
+3. 执行 `sudo apt install apt-transport-https ca-certificates` 安装证书
+4. 修改 `/etc/apt/sources.list` 文件, 将所有 `http://` 换回 `https://`
+5. 执行 `sudo apt update` 更新源
