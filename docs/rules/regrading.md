@@ -22,7 +22,7 @@ $$ S' = S \times \min(0.9, 0.95^D) $$
 
 ## 邮件模板
 
-课程团队的邮箱为 <pdta@airelinux.org>。在向课程团队发送邮件时，请使用下面的模板（请使用 Markdown 格式，即在两行文本间空一行）：
+反馈作业问题的邮箱为 <homework@airelinux.org>。在向课程团队发送邮件时，请使用下面的模板（请使用 Markdown 格式，即在两行文本间空一行）：
 
 ```markdown
 姓名：续本达
