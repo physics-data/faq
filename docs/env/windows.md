@@ -76,10 +76,11 @@ Windows Terminal 能够自动检测本机所有的 WSL 发行版。如果在使�
 
 **推荐更新到最新的 Windows 10 或者 Windows 11 系统，在这些版本下 X11 环境是开箱即用的，无需任何配置。**
 
-- **如果你正在使用 Windows 10 版本 19044+ 或 Windows 11**: WSL2 默认已经带有了一个 X Server 实现 ([WSLg](https://github.com/microsoft/wslg))。通过以下方法检查：
+- 如果你正在使用 Windows 10 版本 19044+ 或 Windows 11: WSL2 默认已经带有了一个 X Server 实现 ([WSLg](https://github.com/microsoft/wslg))。通过以下方法检查：
+    - 在 Windows 命令行中使用 `winver` [查看系统版本](https://learn.microsoft.com/zh-cn/windows/client-management/client-tools/windows-version-search)。
     - 启动终端进入 WSL2 发行版，执行 `echo $DISPLAY`，如果显示不为空，说明存在 WSLg。
     - 如果没有 WSLg，可以尝试升级一下 WSL：`wsl --update`，看看升级后的 WSL2 是否存在 WSLg。
-- **如果你没有在使用上述版本的 Windows，或者在更新 WSL 后 DISPLAY 环境变量仍然为空**: 需要自行安装 X Server，并手动设置 DISPLAY 环境变量。
+- 如果你没有在使用上述版本的 Windows，或者在更新 WSL 后 DISPLAY 环境变量仍然为空: 需要自行安装 X Server，并手动设置 DISPLAY 环境变量。
     - 推荐安装 [VcXsrv](https://sourceforge.net/projects/VcXsrv/files/)。然后运行 `XLaunch`，会弹出一个配置窗口，一路前进，勾选 `Disable access control`，最后选择 `Finish`，然后应该可以在右下角的状态栏中找到它。这时 X Server 已经启动。第一次启动的时候可能会弹出窗口询问是否打开防火墙权限，此时要勾选所有的网络并同意。
     - 接着需要在 WSL 里面配置 `DISPLAY` 环境变量。这一步在不同的 WSL 版本中要用不同的办法。
 
