@@ -33,10 +33,14 @@ nav:
     - Windows 环境配置: env/windows.md
     - Linux 环境配置: env/linux.md
     - macOS 环境配置: env/mac.md
+  - 编辑器:
+    - Emacs: editor/emacs.md
+    - VIM: editor/VIM.md
+    - VSCode: editor/VSCode.md
+    - nano: editor/nano.md
   - 工具:
     - SSH 服务端配置: tool/sshd.md
     - Git 使用与配置: tool/git.md
-    - 编辑器使用与配置: tool/editor.md
     - 常用命令行工具: tool/command.md
   - 教程:
     - Linux 下的路径: tutorials/path.md
