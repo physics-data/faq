@@ -73,13 +73,12 @@ sudo nano /etc/apt/sources.list
 
 ### Python 交互窗口
 
-[Jupyter](https://jupyter-notebook.readthedocs.io/en/latest/)（以前称为 IPython Notebook）是一个开源项目，可将 Markdown 文本和可执行 Python 源代码组合在一个称为笔记本的画布上。在安装 Jypyter 包后，在工作环境中的VSCode中安装 Python 和 Jupyter 插件，可以使用类似于 Jupyter Notebook 的功能。 
+[Jupyter](https://jupyter-notebook.readthedocs.io/en/latest/)（以前称为 IPython Notebook）是一个开源项目，可将 Markdown 文本和可执行 Python 源代码组合在一个称为笔记本的画布上。在安装 Jupyter 包后，在工作环境中的VSCode中安装 Python 和 Jupyter 插件，可以使用类似于 Jupyter Notebook 的功能。 
 
 在 Debian 系的系统中，推荐使用以下命令安装 Jupyter：
 ```bash
 sudo apt install python3-ipykernel
 ```
-也可以利用 `pipx` 安装，或者使用 `anaconda` 环境。
 
 #### Jupyter 代码单元
 
@@ -103,10 +102,10 @@ print(msg)
 
 在 VSCode 中，按下 `Ctrl+Shift+P` ，输入 `Jupyter：Create Interactive Window`（`Jupyter：创建交互式窗口`） 。这样可以直接启动一个 Python 交互窗口，在最下方输入 Python 代码并查看输出。
 
-相关内容可以参考：https://vscode.github.net.cn/docs/datascience/python-interactive
+相关内容可以参考：https://code.visualstudio.com/docs/datascience/python-interactive
 
 #### 在 VSCode 中使用 Jupyter Notebook
 
 安装 Jupyter 包后，可以在VSCode中打开`.ipynb`文件，使用 Jupyter Notebook 的功能。
 
-参考：https://vscode.github.net.cn/docs/datascience/jupyter-notebooks
+参考：https://code.visualstudio.com/docs/datascience/jupyter-notebooks
