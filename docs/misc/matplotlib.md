@@ -61,4 +61,4 @@ https://stackoverflow.com/questions/27878217/how-do-i-extend-the-margin-at-the-b
 
 
 ## 一个好用的 matplotlib cheatsheet
-matplotlib 的函数、参数很多很杂，可通过 https://matplotlib.org/cheatsheets/ 链接访问并下载 matplotlib 官网上的 cheatsheet，方便检索。点击图像、函数旁的`API`，可直接链接到相应的官方文档。
+matplotlib 的函数、参数很多很杂，可通过 https://matplotlib.org/cheatsheets/ 访问并下载 matplotlib 官网上的 cheatsheet，方便检索。点击图像、函数旁的`API`，可直接链接到相应的官方文档。
