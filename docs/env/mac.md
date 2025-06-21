@@ -10,7 +10,7 @@ macOS 上的虚拟机软件中，同时满足开源自由、性能好、易用�
 
 [UTM](https://mac.getutm.app/) 基于 [QEMU](https://www.qemu.org/) 开发，支持 amd64 和 arm64 指令集的硬件加速和图形加速，性能较好。
 
-下载 [UTM.dmg](https://github.com/utmapp/UTM/releases/latest/download/UTM.dmg) 并安装，启动程序后，创建一台虚拟机。从 [TUNA 清华大学开源软件镜像站](https://mirrors.tuna.tsinghua.edu.cn/) 下载 [amd64](https://mirrors.tuna.tsinghua.edu.cn/debian-cd/current/amd64/iso-cd/debian-12.6.0-amd64-netinst.iso) 或 [arm64](https://mirrors.tuna.tsinghua.edu.cn/debian-cd/current/arm64/iso-cd/debian-12.6.0-arm64-netinst.iso) 的安装光盘文件，挂载到新创建的虚拟机中。
+下载 [UTM.dmg](https://github.com/utmapp/UTM/releases/latest/download/UTM.dmg) 并安装，启动程序后，创建一台虚拟机。从 [TUNA 清华大学开源软件镜像站](https://mirrors.tuna.tsinghua.edu.cn/) 下载 [amd64](https://mirrors.tuna.tsinghua.edu.cn/debian-cd/current/amd64/iso-cd/debian-12.11.0-amd64-netinst.iso) 或 [arm64](https://mirrors.tuna.tsinghua.edu.cn/debian-cd/current/arm64/iso-cd/debian-12.11.0-arm64-netinst.iso) 的安装光盘文件，挂载到新创建的虚拟机中。伴随 Debian 的版本更新文件名会一同变化，若因找不到文件（HTTP 404）下载失败请直接到 [amd64](https://mirrors.tuna.tsinghua.edu.cn/debian-cd/current/amd64/iso-cd) 或 [arm64](https://mirrors.tuna.tsinghua.edu.cn/debian-cd/current/arm64/iso-cd) 文件夹中，选择形如 `debian-xx.yy.zz-arm64-netinst.iso` 的最新文件。
 
 启动虚拟机，按提示安装 Debian GNU/Linux 系统。
 
