@@ -59,6 +59,7 @@ nav:
     - macOS 相关问题: misc/mac.md
     - mail 作业依赖打环问题: misc/mail.md
     - 课程相关问题: misc/course.md
+    - 终端文本编辑器中文乱码问题: misc/utf8.md
   - 学生投稿:
     - 给基础较弱的同学的小建议: misc/suggestions.md
 
