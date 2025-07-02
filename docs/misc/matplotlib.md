@@ -2,7 +2,6 @@
 
 由于 matplotlib 对中文字体支持的缺陷，我们 **不推荐在 matplotlib 中直接使用中文**。具体来说：
 
-- 如果指定一个字体列表，则 matplotlib 只会应用其中第一个可用的字体。[#18883](https://github.com/matplotlib/matplotlib/issues/18883)
 - 对于 `.ttc` 字体集，如果包含多种字体，则也将只应用其中的第一种字体。[#3135](https://github.com/matplotlib/matplotlib/issues/3135)
 
 如果要使用中文，可以用如下方式临时解决：
