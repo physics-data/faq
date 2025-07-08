@@ -58,6 +58,26 @@
 
 https://stackoverflow.com/questions/27878217/how-do-i-extend-the-margin-at-the-bottom-of-a-figure-in-matplotlib
 
+## matplotlib 显示 `UserWarning: Matplotlib is currently using agg, which is a non-GUI backend` 然后不显示窗口
+
+需要安装 `python3-tk`：
+
+```shell
+sudo apt install python3-tk
+```
+
+这是因为如果没有安装 `python3-tk`，matplotlib 找不到图形界面库，就无法显示图形界面。
+
+## matplotlib 显示 "Couldn't find foreign struct converter for 'cairo.Context'"
+
+运行如下命令：
+
+```shell
+sudo apt update
+sudo apt install python3-gi-cairo
+```
+
+
 
 ## 一个好用的 matplotlib cheatsheet
 matplotlib 的函数、参数很多很杂，可通过 https://matplotlib.org/cheatsheets/ 访问并下载 matplotlib 官网上的 cheatsheet，方便检索。点击图像、函数旁的`API`，可直接链接到相应的官方文档。

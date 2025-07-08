@@ -2,25 +2,6 @@
 
 这个文件里面写的是 bash 启动的时候自动运行的命令，它本身不是直接执行的。如果要让 .bashrc 的内容立即生效，应该用 `source ~/.bashrc`。
 
-## matplotlib 显示 `UserWarning: Matplotlib is currently using agg, which is a non-GUI backend` 然后不显示窗口
-
-需要安装 `python3-tk`：
-
-```shell
-sudo apt install python3-tk
-```
-
-这是因为如果没有安装 `python3-tk`，matplotlib 找不到图形界面库，就无法显示图形界面。
-
-## matplotlib 显示 "Couldn't find foreign struct converter for 'cairo.Context'"
-
-运行如下命令：
-
-```shell
-sudo apt update
-sudo apt install python3-gi-cairo
-```
-
 参考文档：<https://github.com/rbgirshick/py-faster-rcnn/issues/221>
 
 ## 运行 `ssh-keygen` 以后找不到 `~/.ssh/id_rsa.pub`
@@ -39,3 +20,7 @@ sudo apt install openssh-client
 ## 命令行下面中文显示不正常，变成了豆腐块
 
 请修改一下字体。例如，对于命令提示符，可以在标题栏右键，找到字体设置，然后设置为中文字体。
+
+## 我使用kill命令终结任务失败怎么办？
+
+`kill`与`fg`、`bg`等命令不同，前者是系统级的命令，不仅可以处理shell内的任务，也可以直接处理系统中的进程PID，而后者只能处理shell内的任务，所以使用`kill`命令时需要注明需要终结的是shell中的任务序号（`jobs`命令显示的序号如`[1]`）还是系统中的进程PID（`ps`命令或`jobs -p`显示的PID）。对象为shell中的任务时，使用`kill %1`（其中`%1`为任务序号），对象为系统中的进程时，使用`kill 1234`（其中`1234`为进程PID）。在处理进程PID时，可能需要使用`sudo`权限，若进程依然无法终结，可以尝试使用 `kill -9`命令强制终结。
