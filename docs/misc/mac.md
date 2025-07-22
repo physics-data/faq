@@ -56,3 +56,35 @@ brew tap jiegec/formulas
 brew install make-guile
 export PATH="$(brew --prefix)/opt/make-guile/libexec/gnubin:$PATH"
 ```
+
+## Arm Debian 包管理
+
+参考 `gcc(1)`，Arm 平台上的 GOT 大小为 28k，超过后需要使用 `-fPIC`。在下载编译 R 包时可能会遇到此问题。
+
+```
+-fpic
+  Generate position-independent code (PIC) suitable for use in a shared library,  if
+  supported  for  the  target  machine.   Such  code accesses all constant addresses
+  through a global offset table (GOT).  The dynamic loader resolves the GOT  entries
+  when  the program starts (the dynamic loader is not part of GCC; it is part of the
+  operating system).  If the GOT size for the linked executable exceeds  a  machine-
+  specific  maximum  size,  you get an error message from the linker indicating that
+  -fpic does not work; in that case, recompile with -fPIC instead.  (These  maximums
+  are  8k on the SPARC, 28k on AArch64 and 32k on the m68k and RS/6000.  The x86 has
+  no such limit.)
+```
+
+解决办法：
+
+修改下列选项为 `-fPIC`：
+
+```
+$ cat /etc/R/Makeconf | grep fpic
+CPICFLAGS = -fpic
+CXXPICFLAGS = -fpic
+CXX11PICFLAGS = -fpic
+CXX14PICFLAGS = -fpic
+CXX17PICFLAGS = -fpic
+CXX20PICFLAGS = -fpic
+FPICFLAGS = -fpic
+```
